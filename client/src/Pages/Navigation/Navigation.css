@@ -1,0 +1,82 @@
+/* Navigation Component */
+#navigation-component {
+  font-size: var(--text-font-size);
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+  background-color: rgba(0, 0, 0, 0.774);
+  color: #F6F741;
+}
+
+/* Navigation Logo & Title Container */
+#navigation-component-website-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 15px;
+}
+
+/* Navigation Logo */
+#navigation-component-website-icon {
+  height: 54px;
+  width: 54px;
+  margin-left: 20px;
+  background-image: url('../../Assets/website-logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#navigation-component-website-container:hover #navigation-component-website-icon {
+  background-image: url('../../Assets/logo-animated.gif');
+}
+
+/* Navigation Headers */
+#navigation-component-header-section {
+  gap: 40px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.navigation-component-header-container {
+  color: #F6F741;
+}
+
+.navigation-component-header-container:hover .navigation-component-icon {
+  animation: glow 1s infinite alternate;
+}
+
+.navigation-component-header-container:hover {
+  color: #a3a314;
+}
+
+/* Individual header containers */
+.navigation-component-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Icons for each header */
+.navigation-component-icon {
+  height: 32px;
+  width: 32px;
+  background-image: url('../../Assets/header-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+}
+
+/* Animation Keyframes */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px -3px #a3a314;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #a3a314;
+  }
+}
