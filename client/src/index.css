@@ -12,3 +12,14 @@ body {
   /* Remove Default Margin */
   margin: 0;
 }
+
+/* Custom Border */
+.custom-border-1 {
+  border-radius: 0.8px;
+  box-shadow: 
+    0 0 0 2px rgb(88,65,23),
+    0 0 0 5px #AA7F30,
+    0 0 0 10px #6B1114,
+    0 0 0 14px #AA7F30,
+    0 0 0 15px black;
+}
