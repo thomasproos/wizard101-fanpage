@@ -18,6 +18,19 @@ body {
   margin: 0;
 }
 
+/* Setting Proper Height Values */
+html, #root {
+  height: 100%;
+}
+
+body {
+  height: calc(100% - 15px);
+}
+
+main {
+  height: calc(100% - 69px);
+}
+
 /* Custom Border */
 .custom-border-1 {
   border-radius: 0.8px;

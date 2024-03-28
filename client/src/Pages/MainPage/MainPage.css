@@ -1,0 +1,11 @@
+/* Main Page Component */
+#main-page-component {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.774);
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -2;
+  position: relative;
+  color: #F6F741;
+}
