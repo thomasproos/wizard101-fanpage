@@ -1,0 +1,14 @@
+/* Navigation Component */
+#navigation-component {
+  font-size: var(--text-font-size);
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Navigation Logo */
+#navigation-component-website-icon {
+  height: 3rem;
+  margin-left: 1rem;
+}
