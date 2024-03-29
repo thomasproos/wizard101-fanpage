@@ -1,0 +1,218 @@
+/* Blacksmith Content */
+#blacksmith-component-display-box {
+  position: relative;
+  background-image: url('../../../Assets/character-window.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 340px;
+  height: 500px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* All the equipment icons */
+.blacksmith-gear-icon {
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.blacksmith-gear-selected {
+  animation: glow 1s infinite alternate;
+}
+
+/* Hat */
+#blacksmith-component-display-hat {
+  background-image: url('../../../Assets/hat-icon.png');
+  background-size:auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  margin-top: 40px;
+}
+
+/* Amulet */
+#blacksmith-component-display-amulet {
+  background-image: url('../../../Assets/amulet-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+/* Ring - Robe - Wand */
+#blacksmith-component-display-row-3 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#blacksmith-component-display-ring {
+  background-image: url('../../../Assets/ring-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+#blacksmith-component-display-robe {
+  background-image: url('../../../Assets/robe-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+#blacksmith-component-display-wand {
+  background-image: url('../../../Assets/wand-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+/* Deck - Athame */
+#blacksmith-component-display-row-4 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  gap: 90px;
+}
+
+#blacksmith-component-display-deck {
+  background-image: url('../../../Assets/deck-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+#blacksmith-component-display-athame {
+  background-image: url('../../../Assets/athame-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  margin-top: 10px;
+}
+
+/* Boots */
+#blacksmith-component-display-boots {
+  background-image: url('../../../Assets/boots-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+}
+
+/* Connecting lines */
+.blacksmith-component-gear-line {
+  width: 100px;
+  position: absolute;
+  height: 7px;
+}
+
+/* Lines */
+#g-line-1 {
+  width: 200px;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  margin-top: 43px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#g-line-2 {
+  rotate: 90deg;
+  left: 0;
+  margin-left: -17px;
+}
+
+#g-line-3 {
+  rotate: 90deg;
+  right: 0;
+  margin-right: -15px;
+}
+
+#g-line-4 {
+  rotate: 45deg;
+  margin-left: 10px;
+  bottom: 0;
+}
+
+#g-line-5 {
+  rotate: -45deg;
+  margin-right: 10px;
+  right: 0;
+  bottom: 0;
+}
+
+#g-line-6 {
+  rotate: -45deg;
+  left: 0;
+  margin-left: 15px;
+}
+
+#g-line-7 {
+  rotate: 45deg;
+  right: 0;
+  margin-right: 15px;
+}
+
+#g-line-8 {
+  rotate: 90deg;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -100px;
+}
+
+/* Animation Keyframes */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px -3px #a3a314;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #a3a314;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+  50% {
+    -webkit-transform: rotate3d(0, 0, 1, 180deg);
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+  75% {
+    -webkit-transform: rotate3d(0, 0, 1, 270deg);
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}

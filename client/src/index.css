@@ -8,6 +8,9 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
 
+  /* Overflow */
+  overflow: hidden;
+
   /* Global Variables */
   --title-font-size: 24px;
   --text-font-size: 18px;
@@ -37,10 +40,10 @@ main {
   box-shadow: 
     0 0 0 2px rgb(88,65,23),
     0 0 0 2.5px black,
-    0 0 0 6px #AA7F30,
+    0 0 0 6px #CDA847,
     0 0 0 6.5px black,
     0 0 0 10px #6B1114,
     0 0 0 10.5px black,
-    0 0 0 14px #AA7F30,
+    0 0 0 14px #CDA847,
     0 0 0 15px black;
 }

@@ -8,11 +8,14 @@
   margin: 15px;
   background-color: rgba(0, 0, 0, 0.774);
   color: #F6F741;
+  z-index: 3;
+  position: relative;
 }
 
 /* Class for active headers */
-.active .navigation-component-icon {
-  background-image: url('../../Assets/ice-logo.png');
+.active {
+  /* background-image: url('../../Assets/ice-logo.png'); */
+  color: #a3a314;
 }
 
 /* Navigation Logo & Title Container */
@@ -44,10 +47,6 @@
   display: flex;
   flex-direction: row;
   margin-right: 20px;
-}
-
-.navigation-component-header-container {
-  color: #F6F741;
 }
 
 .navigation-component-header-container:hover .navigation-component-icon {
