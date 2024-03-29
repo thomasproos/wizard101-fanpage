@@ -4,6 +4,7 @@ import { useState } from 'react';
 // Import CSS
 import './Blacksmith.css';
 import GearCreator from './GearCreator/GearCreator';
+import GearSearch from './GearSearch/GearSearch';
 
 export default function Blacksmith() {
   const [currentGear, setCurrentGear] = useState('');
@@ -14,6 +15,7 @@ export default function Blacksmith() {
         <div id="blacksmith-component-title">Blacksmith</div>
       </div>
       <div id="blacksmith-component-content-container">
+        <GearSearch currentGear={currentGear}/>
         <GearCreator currentGear={currentGear} setCurrentGear={setCurrentGear}/>
       </div>
     </section>

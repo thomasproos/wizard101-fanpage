@@ -11,6 +11,9 @@ html {
   /* Overflow */
   overflow: hidden;
 
+  /* Custom Cursor */
+  cursor: url('./Assets/cursor-small.png'), auto;
+
   /* Global Variables */
   --title-font-size: 24px;
   --text-font-size: 18px;
