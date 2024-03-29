@@ -9,6 +9,7 @@ import './index.css';
 // Import React Components
 import Navigation from './Pages/Navigation/Navigation';
 import MainPage from './Pages/MainPage/MainPage';
+import Blacksmith from './Pages/Blacksmith/Blacksmith';
 
 // Define routes config
 const router = createHashRouter([
@@ -16,7 +17,8 @@ const router = createHashRouter([
     path: "/",
     element: <Navigation />,
     children: [
-      { path: '/', element: <MainPage /> }
+      { path: '/', element: <MainPage /> },
+      { path: '/blacksmith', element: <Blacksmith />}
     ]
   }
 ]);
