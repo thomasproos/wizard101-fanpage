@@ -8,6 +8,14 @@
   margin: 15px;
   background-color: rgba(0, 0, 0, 0.774);
   color: #F6F741;
+  z-index: 3;
+  position: relative;
+}
+
+/* Class for active headers */
+.active {
+  /* background-image: url('../../Assets/ice-logo.png'); */
+  color: #a3a314;
 }
 
 /* Navigation Logo & Title Container */
@@ -15,7 +23,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  cursor: pointer;
   gap: 15px;
 }
 
@@ -41,10 +48,6 @@
   margin-right: 20px;
 }
 
-.navigation-component-header-container {
-  color: #F6F741;
-}
-
 .navigation-component-header-container:hover .navigation-component-icon {
   animation: glow 1s infinite alternate;
 }
@@ -58,14 +61,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
 }
 
 /* Icons for each header */
+#navigation-component-blacksmith-icon {
+  background-image: url('../../Assets/hat-icon.png');
+}
+
+#navigation-component-gardening-icon {
+  background-image: url('../../Assets/gardening-icon.png');
+}
+
+#navigation-component-guides-icon {
+  background-image: url('../../Assets/recipes-icon.png');
+}
+
 .navigation-component-icon {
   height: 32px;
   width: 32px;
-  background-image: url('../../Assets/header-icon.png');
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 50%;

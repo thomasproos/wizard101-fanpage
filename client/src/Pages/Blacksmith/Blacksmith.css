@@ -1,0 +1,56 @@
+/* Blacksmith Component */
+#blacksmith {
+  width: 80%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.774);
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  position: relative;
+  color: #F6F741;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Blacksmith Title */
+#blacksmith-title {
+  font-size: 30px;
+  padding-top: 2px;
+  color: black;
+  font-weight: 1000;
+  text-shadow: 0px 0.5px, 0.5px 0px, 0.5px 0.5px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#blacksmith-title-background {
+  background-image: url('../../Assets/title-banner.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 500px;
+  height: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: -65px;
+  z-index: 3;
+  position: relative;
+}
+
+#blacksmith-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 60px;
+  width: 1000px;
+  height: 635px;
+  padding: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+  background-image: url('../../Assets/book.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
