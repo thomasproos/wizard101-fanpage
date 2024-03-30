@@ -1,63 +1,115 @@
 /* Gear Search Component */
-#blacksmith-component-gear-search {
+#blacksmith-gear-search {
   width: 340px;
   height: 500px;
 }
 
 /* Search Bar */
-#blacksmith-component-gear-search-bar-container {
+#blacksmith-gear-search-bar-container {
   position: relative;
   display: flex;
   flex-direction: row;
   gap: 11px;
+  margin-bottom: 5px;
 }
 
-#blacksmith-component-gear-search-input-bar {
-  background-color: rgba(0, 0, 0, 0.562);
+/* Filter Drop Down Menu */
+#blacksmith-gear-search-display {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 15.8px;
+}
+
+/* Custom Classes for different gear options */
+.active-gear-hat {
+  background-image: url('../../../Assets/hat-icon.png');
+}
+
+.active-gear-amulet {
+  background-image: url('../../../Assets/amulet-icon.png');
+}
+
+.active-gear-robe {
+  background-image: url('../../../Assets/robe-icon.png');
+}
+
+.active-gear-deck {
+  background-image: url('../../../Assets/deck-icon.png');
+}
+
+.active-gear-wand {
+  background-image: url('../../../Assets/wand-icon.png');
+}
+
+.active-gear-athame {
+  background-image: url('../../../Assets/athame-icon.png');
+}
+
+.active-gear-boots {
+  background-image: url('../../../Assets/boots-icon.png');
+}
+
+.active-gear-ring {
+  background-image: url('../../../Assets/ring-icon.png');
+}
+
+/* Search bar Input */
+#blacksmith-gear-search-input-bar {
+  background-color: #42111e;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   border: none;
-  width: 255px;
+  width: 220px;
   height: 30px;
-  margin-left: 8px;
+  margin-left: 16px;
   margin-bottom: 15px;
-  padding-left: 15px;
+  padding-left: 35px;
   cursor: url('../../../Assets/cursor-small.png'), auto;
-  caret-color: #F6F741;
-  color: #F6F741;
+  caret-color: #a3a314;;
+  color: #a3a314;;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: var(--text-font-size);
   text-transform: uppercase;
   font-weight: 1000;
 }
 
-#blacksmith-component-gear-search-input-bar::placeholder {
-  color: #a3a314;
+#blacksmith-gear-search-input-bar:focus {
+  outline: none;
+}
+
+#blacksmith-gear-search-input-bar::placeholder {
+  color: black;
 }
 
 /* Search Query Button */
-#blacksmith-component-gear-search-go-button {
-  background-image: url('../../../Assets/button-short.png');
+#blacksmith-gear-search-go-button {
+  background-color: #42111e;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 42px;
-  height: 42px;
-  margin-top: -5px;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  margin-top: 0px;
 }
 
-#blacksmith-component-gear-search-go-button:hover {
+#blacksmith-gear-search-go-button:hover {
   transform: scale(1.10);
 }
 
-#blacksmith-component-gear-search-go-button:active {
+#blacksmith-gear-search-go-button:active {
   transform: scale(1.0);
   filter: brightness(120%);
 }
 
-#blacksmith-component-gear-search-go-arrow {
+#blacksmith-gear-search-go-arrow {
   width: 30px;
   height: 25px;
-  margin-left: 6px;
-  margin-top: 8px;
+  margin-left: 2px;
+  margin-top: 4px;
 }
 
 /* CSS Lines for the search bar border */
@@ -98,7 +150,7 @@
 }
 
 /* Item List */
-#blacksmith-component-gear-search-item-list {
+#blacksmith-gear-search-item-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,7 +162,7 @@
 }
 
 /* Search Placeholder */
-.blacksmith-component-gear-search-item-placeholder {
+.blacksmith-gear-search-item-placeholder {
   width: 100%;
   height: 40px;
   background-image: url('../../../Assets/slot-gear-banner.png');
@@ -120,14 +172,14 @@
 }
 
 /* Moving Buttons */
-#blacksmith-component-gear-search-move-container {
+#blacksmith-gear-search-move-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-.blacksmith-component-gear-search-move-button {
+.blacksmith-gear-search-move-button {
   background-repeat: no-repeat;
   background-size: cover;
   width: 50px;
@@ -135,21 +187,21 @@
   border-radius: 50%;
 }
 
-.blacksmith-component-gear-search-move-button:hover {
-  transform: scale(1.20);
+.blacksmith-gear-search-move-button:hover {
+  transform: scale(1.10);
 }
 
-.blacksmith-component-gear-search-move-button:active {
+.blacksmith-gear-search-move-button:active {
   transform: scale(1.0);
   filter: brightness(120%);
 }
 
-#blacksmith-component-gear-search-backwards {
+#blacksmith-gear-search-backwards {
   background-image: url('../../../Assets/back-icon.png');
   margin-left: 10px;
 }
 
-#blacksmith-component-gear-search-forward {
+#blacksmith-gear-search-forward {
   background-image: url('../../../Assets/forward-icon.png');
   margin-right: 10px;
 }

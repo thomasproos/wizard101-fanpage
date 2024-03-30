@@ -50,3 +50,16 @@ main {
     0 0 0 14px #CDA847,
     0 0 0 15px black;
 }
+
+.custom-border-2 {
+  box-shadow: 
+    0 0 0 1px #A69F1A,
+    0 0 0 1.75px #5D1C2F,
+    0 0 0 2.5px #502425,
+    0 0 0 3.5px #392223,
+    0 0 0 4px #807721,
+    0 0 0 5.75px #ACA71A,
+    0 0 0 6.50px #9A921E,
+    0 0 0 7px #6A6019,
+    0 0 0 7.5px black;
+}
