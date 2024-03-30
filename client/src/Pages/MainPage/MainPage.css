@@ -1,11 +1,111 @@
 /* Main Page Component */
 #main-page-component {
   width: 80%;
-  background-color: rgba(0, 0, 0, 0.774);
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.774);
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
   position: relative;
   color: #F6F741;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Main Title */
+#main-title-container-2 {
+  margin-top: 30px;
+}
+
+.main-title {
+  font-size: 30px;
+  padding-top: 2px;
+  color: black;
+  font-weight: 1000;
+  text-shadow: 0px 0.5px, 0.5px 0px, 0.5px 0.5px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main-title-background {
+  background-image: url('../../Assets/title-banner.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 500px;
+  height: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: -65px;
+  z-index: 3;
+  position: relative;
+}
+
+/* About US */
+.main-about-container {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+  padding: 20px;
+  min-width: 500px;
+  width: 40%;
+  background-color: #42111e;
+}
+
+/* Headers */
+.main-about-header-1 {
+  text-align: center;
+}
+
+.main-about-header-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  line-height: 32px;
+  gap: 10px;
+}
+
+.main-about-header-icon {
+  height: 32px;
+  width: 32px;
+}
+
+/* Link Headers */
+.main-about-header-container {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.main-about-header-container:hover {
+  /* color: #05ff65; */
+  color: #05FDFF;
+  cursor: url('../../Assets/cursor-target-small.png'), auto;
+}
+
+.main-about-header-container:hover .main-about-header-icon {
+  transform: scale(1.10);
+}
+
+/* Paragraphs */
+.main-about-paragraph-1 {
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Links */
+.main-about-link-external {
+  text-decoration: none;
+  color: #05FDFF;
+  cursor: url('../../Assets/cursor-target-small.png'), auto;
+}
+
+.main-about-link-internal {
+  text-decoration: none;
+  color: #ff67ff;
+  cursor: url('../../Assets/cursor-target-small.png'), auto;
 }

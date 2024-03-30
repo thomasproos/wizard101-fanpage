@@ -51,6 +51,10 @@
   background-size: contain;
 }
 
+.blacksmith-gear-dropdown-icon:hover {
+  transform: scale(1.10);
+}
+
 /* Custom Classes for different gear options */
 .active-gear-all {
   background-image: url('../../../Assets/spiral-icon.png');
