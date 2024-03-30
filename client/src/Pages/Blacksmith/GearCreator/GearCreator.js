@@ -8,11 +8,7 @@ export default function GearCreator({ currentGear, setCurrentGear }) {
 
   // Handle clicking on a gear set
   const handleGearClick = (gear) => {
-    if (currentGear === gear) {
-      setCurrentGear('');
-    } else {
-      setCurrentGear(gear);
-    }
+    setCurrentGear(gear);
   };
 
   return(

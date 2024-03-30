@@ -7,7 +7,7 @@ import GearCreator from './GearCreator/GearCreator';
 import GearSearch from './GearSearch/GearSearch';
 
 export default function Blacksmith() {
-  const [currentGear, setCurrentGear] = useState('');
+  const [currentGear, setCurrentGear] = useState('hat');
 
   return(
     <section id="blacksmith-component" className="custom-border-1">
@@ -15,8 +15,8 @@ export default function Blacksmith() {
         <div id="blacksmith-component-title">Blacksmith</div>
       </div>
       <div id="blacksmith-component-content-container">
-        <GearSearch currentGear={currentGear}/>
         <GearCreator currentGear={currentGear} setCurrentGear={setCurrentGear}/>
+        <GearSearch currentGear={currentGear}/>
       </div>
     </section>
   );

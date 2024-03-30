@@ -4,6 +4,100 @@
   height: 500px;
 }
 
+/* Search Bar */
+#blacksmith-component-gear-search-bar-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 11px;
+}
+
+#blacksmith-component-gear-search-input-bar {
+  background-color: rgba(0, 0, 0, 0.562);
+  border: none;
+  width: 255px;
+  height: 30px;
+  margin-left: 8px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  cursor: url('../../../Assets/cursor-small.png'), auto;
+  caret-color: #F6F741;
+  color: #F6F741;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: var(--text-font-size);
+  text-transform: uppercase;
+  font-weight: 1000;
+}
+
+#blacksmith-component-gear-search-input-bar::placeholder {
+  color: #a3a314;
+}
+
+/* Search Query Button */
+#blacksmith-component-gear-search-go-button {
+  background-image: url('../../../Assets/button-short.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 42px;
+  height: 42px;
+  margin-top: -5px;
+}
+
+#blacksmith-component-gear-search-go-button:hover {
+  transform: scale(1.10);
+}
+
+#blacksmith-component-gear-search-go-button:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+#blacksmith-component-gear-search-go-arrow {
+  width: 30px;
+  height: 25px;
+  margin-left: 6px;
+  margin-top: 8px;
+}
+
+/* CSS Lines for the search bar border */
+#search-line-1 {
+  left: 0;
+  top: 0;
+  margin-top: -5px;
+  margin-left: 6px;
+  width: 275px;
+}
+
+#search-line-2 {
+  left: 0;
+  bottom: 0;
+  margin-bottom: 10px;
+  margin-left: 6px;
+  width: 275px;
+}
+
+#search-line-3 {
+  left: 0;
+  top: 0;
+  margin-top: 12.5px;
+  rotate: 90deg;
+  margin-left: -11px;
+  width: 41px;
+  object-fit: none;
+}
+
+#search-line-4 {
+  right: 0;
+  top: 0;
+  margin-top: 12.5px;
+  rotate: 90deg;
+  margin-right: 40px;
+  width: 41px;
+  object-fit: none;
+}
+
+/* Item List */
 #blacksmith-component-gear-search-item-list {
   display: flex;
   flex-direction: column;
