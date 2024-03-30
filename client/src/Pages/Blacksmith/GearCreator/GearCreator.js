@@ -21,12 +21,10 @@ export default function GearCreator({ currentGear, setCurrentGear }) {
       <div id="blacksmith-display-amulet" className={"blacksmith-gear-icon " + (currentGear === 'amulet' ? 'blacksmith-gear-selected' : '')} 
         onClick={() => {handleGearClick('amulet')}}/>
 
-      {/* Ring - Robe - Wand */}
+      {/* Ring - Wand */}
       <div id="blacksmith-display-row-3">
         <div id="blacksmith-display-ring" className={"blacksmith-gear-icon " + (currentGear === 'ring' ? 'blacksmith-gear-selected' : '')} 
         onClick={() => {handleGearClick('ring')}}/>
-        <div id="blacksmith-display-robe" className={"blacksmith-gear-icon " + (currentGear === 'robe' ? 'blacksmith-gear-selected' : '')} 
-        onClick={() => {handleGearClick('robe')}}/>
         <div id="blacksmith-display-wand" className={"blacksmith-gear-icon " + (currentGear === 'wand' ? 'blacksmith-gear-selected' : '')} 
         onClick={() => {handleGearClick('wand')}}/>
 
@@ -37,10 +35,17 @@ export default function GearCreator({ currentGear, setCurrentGear }) {
         <img src={BorderLine} alt="" id="g-line-8" className="blacksmith-gear-line" />
       </div>
 
-      {/* Deck - Athame */}
+      <div id="blacksmith-display-row-center">
+        <div id="blacksmith-display-all" className={"blacksmith-gear-icon " + (currentGear === 'all' ? 'blacksmith-gear-selected' : '')} 
+          onClick={() => {handleGearClick('all')}}/>
+      </div>
+
+      {/* Deck - Robe - Athame */}
       <div id="blacksmith-display-row-4">
         <div id="blacksmith-display-deck" className={"blacksmith-gear-icon " + (currentGear === 'deck' ? 'blacksmith-gear-selected' : '')} 
         onClick={() => {handleGearClick('deck')}}/>
+        <div id="blacksmith-display-robe" className={"blacksmith-gear-icon " + (currentGear === 'robe' ? 'blacksmith-gear-selected' : '')} 
+        onClick={() => {handleGearClick('robe')}}/>
         <div id="blacksmith-display-athame" className={"blacksmith-gear-icon " + (currentGear === 'athame' ? 'blacksmith-gear-selected' : '')} 
         onClick={() => {handleGearClick('athame')}}/>
 

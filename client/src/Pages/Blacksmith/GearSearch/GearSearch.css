@@ -15,15 +15,47 @@
 
 /* Filter Drop Down Menu */
 #blacksmith-gear-search-display {
+  z-index: 4;
   position: absolute;
   width: 32px;
   height: 32px;
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: 15.8px;
+  cursor: url('../../../Assets/cursor-target-small.png'), auto;
+}
+
+#blacksmith-gear-search-dropdown-section {
+  display: none;
+  cursor: url('../../../Assets/cursor-target-small.png'), auto;
+  position: absolute;
+  z-index: 3;
+  border: 1px solid #A69F1A;
+  height: 249px;
+  width: 32px;
+  margin-left: 14.8px;
+  margin-top: -0.5px;
+  padding-top: 32px;
+  background-color: #42111e;
+  border-radius: 15px;
+}
+
+.display-visible {
+  display: block !important;
+}
+
+.blacksmith-gear-dropdown-icon {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /* Custom Classes for different gear options */
+.active-gear-all {
+  background-image: url('../../../Assets/spiral-icon.png');
+}
+
 .active-gear-hat {
   background-image: url('../../../Assets/hat-icon.png');
 }
