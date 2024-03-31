@@ -17,7 +17,7 @@ router.get('/random-items/:quantity/:item', async (req, res) => {
   }
 
   // Sanitize the actual content
-  if (!item.match('^[a-z]{1,5}$')) {
+  if (!item.match('^[a-z]{1,6}$')) {
     res.status(400).json({
       status: 400,
       message: 'Item parameter must be a proper string.'

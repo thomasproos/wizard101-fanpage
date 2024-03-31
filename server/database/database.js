@@ -134,6 +134,10 @@ const itemSchema = new mongoose.Schema({
   }]
 });
 
+function arrayLimit(value) {
+  return value.length <= 10;
+}
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -144,7 +148,21 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  wizard_slots: [itemSchema]
+  wizard_slots: {
+    type: [{
+      school: RequiredNumber,
+      level: RequiredNumber,
+      hat: itemSchema,
+      robe: itemSchema,
+      boots: itemSchema,
+      deck: itemSchema,
+      wand: itemSchema,
+      athame: itemSchema,
+      ring: itemSchema,
+      amulet: itemSchema
+    }],
+    validate: [arrayLimit, 'Wizard slots exceed the limit of 10']
+  }
 });
 
 // Hash user password

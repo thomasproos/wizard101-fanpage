@@ -1,7 +1,91 @@
 /* eslint-disable camelcase */
 const express = require('express');
-const { RobeModel } = require('../database/database.js');
+const { UserModel, RobeModel } = require('../database/database.js');
 const router = express.Router();
+
+router.post('/create-account', async (req, res) => {
+  // Check if the user is already logged in
+  if (req.session.username) {
+    res.status(401).json({
+      status: 401,
+      message: 'Unauthorized access to this endpoint.'
+    });
+    return;
+  } 
+
+  const account = req.body.account;
+
+  // Validate parameters
+  if (Object.keys(account).length !== 3) {
+    res.status(400).json({
+      status: 400,
+      message: 'Invalid account object input.'
+    });
+    return;
+  }
+
+  // Validate properties
+  if (typeof account.username !== String && typeof account.password !== String 
+      && typeof account.wizard_slots !== Object) {
+    res.status(400).json({
+      status: 400,
+      message: 'Invalid account object input.'
+    });
+    return;
+  }
+
+  // Validate username & password
+  if (!account.username.match('^[a-zA-Z0-9_.-]{1,20}$') || 
+    !account.password.match('^[a-zA-Z0-9]{8,30}$')) {
+    res.status(400).json({
+      status: 400,
+      message: 'Invalid account object input.'
+    });
+    return;
+  }
+
+  // Validate wizard slots
+  if (account.wizard_slots.length !== 0) {
+    res.status(400).json({
+      status: 400,
+      message: 'Invalid account object input.'
+    });
+    return;
+  }
+
+  // Check if username is already taken
+  try {
+    const user = await UserModel.find({ username: account.username });
+
+    // If a user is found, return an error message
+    if (Object.keys(user).length !== 0) {
+      res.status(400).json({
+        status: 400,
+        message: 'Username already taken.'
+      });
+      return;
+    }
+
+    // Create the user's account
+    const userAccount = await UserModel({
+      username: account.username,
+      password: account.password,
+      wizard_slots: account.wizard_slots
+    });
+
+    // Save the account to the database
+    await userAccount.save();
+
+    // Set the user's session
+    req.session.username = account.username;
+  } catch(error) {
+    res.status(500).json({
+      status: 500,
+      message: 'Server failed to create an account.'
+    });
+    return;
+  }  
+});
 
 router.get('/authenticate', async (req, res) => {
   try {

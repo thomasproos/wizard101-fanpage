@@ -2,6 +2,9 @@
 #blacksmith-gear-search {
   width: 340px;
   height: 500px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 /* Search Bar */
@@ -197,6 +200,15 @@
   width: 100%;
 }
 
+/* Display Icon for each item */
+.blacksmith-gear-search-display-icon {
+  height: 35px;
+  width: 35px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: brightness(100%) !important;
+}
+
 /* Search Placeholder */
 .blacksmith-gear-search-item-placeholder {
   width: 100%;
@@ -205,6 +217,62 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+/* Search Valid Gear */
+.blacksmith-gear-search-item-valid {
+  width: 96%;
+  height: 40px;
+  background-image: url('../../../Assets/equipable-gear-banner.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.blacksmith-gear-search-item-valid:hover {
+  filter: brightness(90%);
+}
+
+.blacksmith-gear-search-item-valid:active {
+  filter: brightness(100%);
+}
+
+/* Search Equipped Gear */
+.blacksmith-gear-search-item-equipped {
+  width: 96%;
+  height: 40px;
+  background-image: url('../../../Assets/empty-border.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.blacksmith-gear-search-item-equipped:hover {
+  filter: brightness(90%);
+}
+
+.blacksmith-gear-search-item-equipped:active {
+  filter: brightness(100%);
+}
+
+.blacksmith-gear-search-item-name {
+  max-width: 500px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Moving Buttons */
