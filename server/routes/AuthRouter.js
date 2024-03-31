@@ -78,6 +78,11 @@ router.post('/create-account', async (req, res) => {
 
     // Set the user's session
     req.session.username = account.username;
+
+    res.status(200).json({
+      status: 200,
+      message: 'Successfully created an account.'
+    });
   } catch(error) {
     res.status(500).json({
       status: 500,
@@ -85,6 +90,115 @@ router.post('/create-account', async (req, res) => {
     });
     return;
   }  
+});
+
+router.post('/login', async (req, res) => {
+  // Check if the user is already logged in
+  if (req.session.username) {
+    res.status(401).json({
+      status: 401,
+      message: 'Unauthorized access to this endpoint.'
+    });
+    return;
+  } 
+
+  const account = req.body.account;
+
+  // Validate parameters
+  if (Object.keys(account).length !== 2) {
+    res.status(400).json({
+      status: 400,
+      message: 'Invalid account object input.'
+    });
+    return;
+  }
+
+  // Validate properties
+  if (typeof account.username !== String && typeof account.password !== String) {
+    res.status(400).json({
+      status: 400,
+      message: 'Invalid account object input.'
+    });
+    return;
+  }
+
+  // Validate username & password
+  if (!account.username.match('^[a-zA-Z0-9_.-]{1,20}$') || 
+    !account.password.match('^[a-zA-Z0-9]{8,30}$')) {
+    res.status(400).json({
+      status: 400,
+      message: 'Invalid account object input.'
+    });
+    return;
+  }
+
+  // Check if the username exists
+  try {
+    const user = await UserModel.find({ username: account.username });
+    
+    // Check if a user was found
+    if (Object.keys(user).length === 3) {
+      res.status(400).json({
+        status: 400,
+        message: 'Username or password is invalid.'
+      });
+      return;
+    }
+    
+    // Check if the user passwords match
+    const isMatch = await user[0].comparePassword(account.password);
+    if (isMatch) {
+      // Set the session
+      req.session.username = user[0].username;
+
+      res.status(200).json({
+        status: 200,
+        message: 'Successfully logged-in.'
+      });
+    } else {
+      res.status(400).json({
+        status: 400,
+        message: 'Username or password is invalid.'
+      });
+      return;
+    }
+  } catch(error) {
+    res.status(500).json({
+      status: 500,
+      message: 'Server failed to login the account.'
+    });
+    return;
+  }
+});
+
+router.delete('/logout', async (req, res) => {
+  try {
+    await req.session.destroy();
+    res.status(200);
+    res.json({
+      loggedOut: true
+    });
+  } catch(error) {
+    res.status(500);
+    res.json({
+      loggedOut: false
+    });
+  }
+});
+
+router.get('/login-status', (req, res) => {
+  if (req.session.username) {
+    res.status(200);
+    res.send({
+      loggedIn: true,
+      username: req.session.username
+    });
+  } else {
+    res.status(200);
+    res.send({
+      loggedIn: false
+    });
+  }
 });
 
 router.get('/authenticate', async (req, res) => {
@@ -200,12 +314,12 @@ router.get('/authenticate', async (req, res) => {
     testItem.save();
 
     // Test if it saved
-    // const user = await UserModel.find({ username: 'test123' });
-    // const isMatch = await user[0].comparePassword('abc123');
-    // console.log('Match: ' + isMatch); 
+    const user = await UserModel.find({ username: 'test123' });
+    const isMatch = await user[0].comparePassword('abc123');
+    console.log('Match: ' + isMatch); 
 
-    // const isNotMatch = await user[0].comparePassword('asd123123');
-    // console.log('Match: ' + isNotMatch);
+    const isNotMatch = await user[0].comparePassword('asd123123');
+    console.log('Match: ' + isNotMatch);
 
     res.status(200).json('Success');
 
