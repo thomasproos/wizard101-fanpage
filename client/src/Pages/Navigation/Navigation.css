@@ -1,5 +1,5 @@
 /* Navigation Component */
-#navigation-component {
+#navigation {
   font-size: var(--text-font-size);
   height: 54px;
   display: flex;
@@ -19,7 +19,7 @@
 }
 
 /* Navigation Logo & Title Container */
-#navigation-component-website-container {
+#navigation-website-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,7 +27,7 @@
 }
 
 /* Navigation Logo */
-#navigation-component-website-icon {
+#navigation-website-icon {
   height: 54px;
   width: 54px;
   margin-left: 20px;
@@ -36,47 +36,55 @@
   background-size: cover;
 }
 
-#navigation-component-website-container:hover #navigation-component-website-icon {
+#navigation-website-container:hover #navigation-website-icon {
   background-image: url('../../Assets/logo-animated.gif');
 }
 
 /* Navigation Headers */
-#navigation-component-header-section {
+#navigation-header-section {
   gap: 40px;
   display: flex;
   flex-direction: row;
   margin-right: 20px;
 }
 
-.navigation-component-header-container:hover .navigation-component-icon {
+.navigation-header-container:hover .navigation-icon {
   animation: glow 1s infinite alternate;
 }
 
-.navigation-component-header-container:hover {
+.navigation-header-container:hover {
   color: #a3a314;
 }
 
 /* Individual header containers */
-.navigation-component-header-container {
+.navigation-header-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 /* Icons for each header */
-#navigation-component-blacksmith-icon {
+#navigation-blacksmith-icon {
   background-image: url('../../Assets/hat-icon.png');
 }
 
-#navigation-component-gardening-icon {
+#navigation-gardening-icon {
   background-image: url('../../Assets/gardening-icon.png');
 }
 
-#navigation-component-guides-icon {
+#navigation-guides-icon {
   background-image: url('../../Assets/recipes-icon.png');
 }
 
-.navigation-component-icon {
+#navigation-login-icon {
+  background-image: url('../../Assets/training-icon.png');
+}
+
+#navigation-logout-icon {
+  background-image: url('../../Assets/sun-icon.png');
+}
+
+.navigation-icon {
   height: 32px;
   width: 32px;
   background-repeat: no-repeat;

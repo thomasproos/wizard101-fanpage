@@ -3,6 +3,8 @@ import './CreateAccount.css';
 
 // Import dependencies
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionTypes } from '../../ReduxStore.js';
 
 // Import Assets
 import Info from '../../Assets/info-icon.png';
@@ -13,6 +15,15 @@ export default function CreateAccount() {
   const [password, setPassword] = useState('');
   const [usernameValid, setUsernameValid] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
+  const [systemMessage, setSystemMessage] = useState('');
+
+  // Global login status
+  const dispatch = useDispatch();
+
+  const loginStatus = useSelector(state => state.loginStatus);
+  const setLoginStatus = (value) => {
+    dispatch({ type: actionTypes.SET_LOGIN, payload: value });
+  };
 
   const createAccount = async () => {
     try {
@@ -29,11 +40,18 @@ export default function CreateAccount() {
         });
 
         if (response.ok) {
-          console.log('it worked!');
+          setLoginStatus(true);
+          navigate('/');
+        } else if (response.status(400)) {
+          const result = response.json();
+
+          if (result.message === 'Username already taken.') {
+            setSystemMessage('Username is already taken');
+          }
         }
       }
     } catch(error) {
-
+      console.error('Fetch Error : Failed to create an account.');
     }
   }
 
@@ -42,31 +60,58 @@ export default function CreateAccount() {
 
   return(
     <section id="create-account" className="custom-border-1" >
+      {/* Page Title */}
       <div className="create-account-title-background">
         <div className="create-account-title">Create Account</div>
       </div>
+
+      {/* Account Box */}
       <div className="create-account-container custom-border-2">
+
+        {/* Username Field */}
         <div className="create-account-container-field">
+          {/* Label */}
           <div id="create-account-username-label">Username</div>
+          
+          {/* Input Field */}
           <input type="text" className="create-account-input-field custom-border-2" minLength="4" maxLength="20" 
             onChange={(event) => {
               setUsername(event.target.value);
               setUsernameValid(event.target.value.match('^[a-zA-Z0-9_.-]{4,20}$'));
             }}/>
+
+          {/* Info Icon */}
           <img src={Info} alt="Info Icon" className="create-account-info-icon" />
         </div>
+
+        {/* Password Field */}
         <div className="create-account-container-field">
+          {/* Label */}
           <div id="create-account-password-label">Password</div>
+          
+          {/* Input Field */}
           <input type="password" className="create-account-input-field custom-border-2" minLength="8" maxLength="30" 
             onChange={(event) => {
               setPassword(event.target.value);
               setPasswordValid(event.target.value.match('^[a-zA-Z0-9]{8,30}$'));
             }}/>
+
+          {/* Info Icon */}
           <img src={Info} alt="Info Icon" className="create-account-info-icon" />
         </div>
+
+        {/* Create Button */}
         <div id="create-account-container-button" className={
-            '' + (usernameValid && passwordValid ? "create-account-valid" : "")
-          } onClick={createAccount}>Create</div>
+          '' + (usernameValid && passwordValid ? "create-account-valid" : "")
+        } onClick={createAccount}>Create</div>
+
+        {systemMessage !== '' ?
+          <div>{systemMessage}</div>
+          :
+          <></>
+        }
+        
+        {/* Already have an account text */}
         <div className="white-text">
           Already have an account?
         </div>
