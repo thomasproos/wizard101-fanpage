@@ -1,0 +1,126 @@
+/* Login Page */
+#login {
+  width: 80%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.774);
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  position: relative;
+  color: #F6F741;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Login Container */
+.login-title-background {
+  background-image: url('../../Assets/title-banner.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 500px;
+  height: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: -65px;
+  z-index: 3;
+  position: relative;
+}
+
+.login-title {
+  font-size: 30px;
+  padding-top: 2px;
+  color: black;
+  font-weight: 1000;
+  text-shadow: 0px 0.5px, 0.5px 0px, 0.5px 0.5px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Container Contents */
+.login-container {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+  padding: 20px;
+  min-width: 500px;
+  width: 40%;
+  background-color: #42111e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 40px;
+}
+
+.login-container-field {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.login-input-field {
+  background-color: rgba(0, 0, 0, 0.397);
+  border-radius: 25px;
+  border: none;
+  width: 180px;
+  height: 20px;
+  outline-width: 0;
+  margin-left: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: url('../../Assets/cursor-small.png'), auto;
+  caret-color: white;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 1000;
+  font-size: 16px;
+}
+
+/* Field Label */
+#login-password-label {
+  margin-left: 5px;
+}
+
+#login-username-label {
+  line-height: 20px;
+}
+
+/* Login Button */
+#login-container-button {
+  background-image: url('../../Assets/button-medium.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 160px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#login-container-button:hover {
+  transform: scale(1.10);
+}
+
+#login-container-button:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+#login-create-account-button {
+  margin-top: -20px;
+  color: white;
+  cursor: url('../../Assets/cursor-target-small.png'), auto;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  color: #05FDFF;
+}
+
+.white-text {
+  color: white;
+}
