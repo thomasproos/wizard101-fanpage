@@ -53,6 +53,21 @@
   align-items: center;
   gap: 30px;
   padding-top: 40px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.account-warning-visible {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -20px;
+  color: #c0325a;
+  background-color: #0f0407;
+  padding: 6px;
+}
+
+.account-warning-hidden {
+  display: none;
 }
 
 .create-account-container-field {
@@ -92,6 +107,7 @@
 /* Question Icon */
 .create-account-info-icon {
   height: 35px;
+  cursor: url('../../Assets/cursor-picker-small.png'), auto;
 }
 
 .create-account-info-icon:hover {
@@ -143,4 +159,32 @@
 
 #create-account-login-button:hover {
   transform: scale(1.05);
+}
+
+/* ToolTip */
+.tooltip {
+  position: absolute;
+  width: 200px;
+  right: 0;
+  margin-right: -145px;
+  background-color: #000000b4;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+  z-index: 5;
+}
+
+.tooltip-visible {
+  display: block;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 45%;
+  margin-left: -26px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #ACA71A transparent transparent;
 }

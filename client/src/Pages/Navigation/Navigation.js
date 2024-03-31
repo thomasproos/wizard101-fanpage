@@ -90,13 +90,13 @@ export default function Navigation() {
             <div id="navigation-blacksmith-title" className="navigation-title">Blacksmith</div>
           </div>
           {loginStatus ?
-            <div id="navigation-logout-container" className="navigation-header-container"
+            <div id="navigation-logout-container" className="navigation-header-container navigation-icon-user"
               onClick={handleLogout}>
               <div id="navigation-logout-icon" className="navigation-icon"/>
               <div id="navigation-logout-title" className="navigation-title">Logout</div>
             </div>
             :
-            <div id="navigation-login-container" className="navigation-header-container"
+            <div id="navigation-login-container" className="navigation-header-container navigation-icon-user"
               onClick={() => { navigate('/account/login'); }}>
               <div id="navigation-login-icon" className="navigation-icon"/>
               <div id="navigation-login-title" className="navigation-title">Login</div>

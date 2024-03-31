@@ -16,6 +16,7 @@ export default function CreateAccount() {
   const [usernameValid, setUsernameValid] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
   const [systemMessage, setSystemMessage] = useState('');
+  const [tooltipStatus, setTooltipStatus] = useState([false, false]);
 
   // Global login status
   const dispatch = useDispatch();
@@ -42,8 +43,8 @@ export default function CreateAccount() {
         if (response.ok) {
           setLoginStatus(true);
           navigate('/');
-        } else if (response.status(400)) {
-          const result = response.json();
+        } else {
+          const result = await response.json();
 
           if (result.message === 'Username already taken.') {
             setSystemMessage('Username is already taken');
@@ -81,7 +82,14 @@ export default function CreateAccount() {
             }}/>
 
           {/* Info Icon */}
-          <img src={Info} alt="Info Icon" className="create-account-info-icon" />
+          <img src={Info} alt="Info Icon" className="create-account-info-icon" onClick={() => {
+            const status = [!tooltipStatus[0], false];
+            setTooltipStatus(status);
+          }}/>
+          <div className={"tooltip custom-border-2 " + (tooltipStatus[0] ? "tooltip-visible" : "")}>
+            A username must be between 4 to 20 characters and can include numbers, 
+            letters, underscores, periods, and hyphens.
+          </div>
         </div>
 
         {/* Password Field */}
@@ -97,25 +105,28 @@ export default function CreateAccount() {
             }}/>
 
           {/* Info Icon */}
-          <img src={Info} alt="Info Icon" className="create-account-info-icon" />
+          <img src={Info} alt="Info Icon" className="create-account-info-icon" onClick={() => {
+            const status = [false, !tooltipStatus[1]];
+            setTooltipStatus(status);
+          }}/>
+          <div className={"tooltip custom-border-2 " + (tooltipStatus[1] ? "tooltip-visible" : "")}>
+            A password must be between 8 to 30 characters and can include numbers and letters.
+          </div>
         </div>
 
         {/* Create Button */}
         <div id="create-account-container-button" className={
           '' + (usernameValid && passwordValid ? "create-account-valid" : "")
         } onClick={createAccount}>Create</div>
-
-        {systemMessage !== '' ?
-          <div>{systemMessage}</div>
-          :
-          <></>
-        }
         
         {/* Already have an account text */}
         <div className="white-text">
           Already have an account?
         </div>
         <div id="create-account-login-button" onClick={() => { navigate('/account/login'); }}>Login</div>
+
+        {/* Warning Messages */}
+        <div className={"custom-border-2 " + (systemMessage === '' ? "account-warning-hidden" : "account-warning-visible")}>{systemMessage}</div>
       </div>
     </section>
   );

@@ -84,6 +84,10 @@
   background-image: url('../../Assets/sun-icon.png');
 }
 
+.navigation-icon-user:hover {
+  cursor: url('../../Assets/cursor-picker-small.png'), auto;
+}
+
 .navigation-icon {
   height: 32px;
   width: 32px;
