@@ -11,6 +11,7 @@ import Navigation from './Pages/Navigation/Navigation';
 import MainPage from './Pages/MainPage/MainPage';
 import Blacksmith from './Pages/Blacksmith/Blacksmith';
 import Login from './Pages/Login/Login';
+import CreateAccount from './Pages/CreateAccount/CreateAccount';
 
 // Define routes config
 const router = createHashRouter([
@@ -20,7 +21,8 @@ const router = createHashRouter([
     children: [
       { path: '/', element: <MainPage /> },
       { path: '/blacksmith', element: <Blacksmith /> },
-      { path: '/login', element: <Login /> }
+      { path: '/account/login', element: <Login /> },
+      { path: '/account/create-account', element: <CreateAccount /> }
     ]
   }
 ]);

@@ -314,12 +314,12 @@ router.get('/authenticate', async (req, res) => {
     testItem.save();
 
     // Test if it saved
-    const user = await UserModel.find({ username: 'test123' });
-    const isMatch = await user[0].comparePassword('abc123');
-    console.log('Match: ' + isMatch); 
+    // const user = await UserModel.find({ username: 'test123' });
+    // const isMatch = await user[0].comparePassword('abc123');
+    // console.log('Match: ' + isMatch); 
 
-    const isNotMatch = await user[0].comparePassword('asd123123');
-    console.log('Match: ' + isNotMatch);
+    // const isNotMatch = await user[0].comparePassword('asd123123');
+    // console.log('Match: ' + isNotMatch);
 
     res.status(200).json('Success');
 

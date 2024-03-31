@@ -1,7 +1,13 @@
 // Import CSS
 import './Login.css';
 
+// Import dependencies
+import { useNavigate } from 'react-router-dom';
+
 export default function Login() {
+  // Setup navigation
+  const navigate = useNavigate();
+
   return(
     <section id="login" className="custom-border-1">
       <div className="login-title-background">
@@ -20,7 +26,7 @@ export default function Login() {
         <div className="white-text">
           Don't have an account?
         </div>
-        <div id="login-create-account-button">Create Account</div>
+        <div id="login-create-account-button" onClick={() => { navigate('/account/create-account'); }}>Create Account</div>
       </div>
     </section>
   );

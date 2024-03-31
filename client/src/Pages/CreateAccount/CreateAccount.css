@@ -1,5 +1,5 @@
-/* Login Page */
-#login {
+/* Create Account Page */
+#create-account {
   width: 80%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.774);
@@ -12,8 +12,8 @@
   overflow-y: auto;
 }
 
-/* Login Container */
-.login-title-background {
+/* Create Account Container */
+.create-account-title-background {
   background-image: url('../../Assets/title-banner.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -26,7 +26,7 @@
   position: relative;
 }
 
-.login-title {
+.create-account-title {
   font-size: 30px;
   padding-top: 2px;
   color: black;
@@ -39,7 +39,7 @@
 }
 
 /* Container Contents */
-.login-container {
+.create-account-container {
   margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
@@ -55,13 +55,14 @@
   padding-top: 40px;
 }
 
-.login-container-field {
+.create-account-container-field {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
 }
 
-.login-input-field {
+.create-account-input-field {
   background-color: rgba(0, 0, 0, 0.397);
   border-radius: 25px;
   border: none;
@@ -79,39 +80,54 @@
   font-size: 16px;
 }
 
-/* Field Label */
-#login-password-label {
+/* Fields */
+#create-account-password-label {
   margin-left: 5px;
 }
 
-#login-username-label {
+#create-account-username-label {
   line-height: 20px;
 }
 
-/* Login Button */
-#login-container-button {
+/* Question Icon */
+.create-account-info-icon {
+  height: 35px;
+}
+
+.create-account-info-icon:hover {
+  transform: scale(1.10);
+}
+
+.create-account-info-icon:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+/* Create Button */
+#create-account-container-button {
   background-image: url('../../Assets/button-medium.png');
   background-repeat: no-repeat;
   background-size: contain;
-  width: 160px;
-  height: 35px;
-  line-height: 35px;
+  width: 150px;
+  height: 33px;
+  line-height: 33px;
   text-align: center;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
 
-#login-container-button:hover {
+#create-account-container-button:hover {
   transform: scale(1.10);
 }
 
-#login-container-button:active {
+#create-account-container-button:active {
   transform: scale(1.0);
   filter: brightness(120%);
 }
 
-#login-create-account-button {
+/* Login References */
+#create-account-login-button {
   margin-top: -20px;
   cursor: url('../../Assets/cursor-target-small.png'), auto;
   -webkit-user-select: none; /* Safari */
@@ -120,13 +136,6 @@
   color: #F6F741;
 }
 
-#login-create-account-button:hover {
+#create-account-login-button:hover {
   transform: scale(1.05);
-}
-
-.white-text {
-  color: white;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
 }
