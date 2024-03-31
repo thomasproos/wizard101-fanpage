@@ -13,10 +13,10 @@ router.post('/create-account', async (req, res) => {
     return;
   } 
 
-  const account = req.body.account;
+  const account = req.body;
 
   // Validate parameters
-  if (Object.keys(account).length !== 3) {
+  if (Object.keys(account).length !== 2) {
     res.status(400).json({
       status: 400,
       message: 'Invalid account object input.'
@@ -25,8 +25,7 @@ router.post('/create-account', async (req, res) => {
   }
 
   // Validate properties
-  if (typeof account.username !== String && typeof account.password !== String 
-      && typeof account.wizard_slots !== Object) {
+  if (typeof account.username !== 'string' || typeof account.password !== 'string') {
     res.status(400).json({
       status: 400,
       message: 'Invalid account object input.'
@@ -35,17 +34,8 @@ router.post('/create-account', async (req, res) => {
   }
 
   // Validate username & password
-  if (!account.username.match('^[a-zA-Z0-9_.-]{1,20}$') || 
+  if (!account.username.match('^[a-zA-Z0-9_.-]{4,20}$') || 
     !account.password.match('^[a-zA-Z0-9]{8,30}$')) {
-    res.status(400).json({
-      status: 400,
-      message: 'Invalid account object input.'
-    });
-    return;
-  }
-
-  // Validate wizard slots
-  if (account.wizard_slots.length !== 0) {
     res.status(400).json({
       status: 400,
       message: 'Invalid account object input.'
@@ -67,14 +57,14 @@ router.post('/create-account', async (req, res) => {
     }
 
     // Create the user's account
-    const userAccount = await UserModel({
+    const object = {
       username: account.username,
       password: account.password,
-      wizard_slots: account.wizard_slots
-    });
+      wizard_slots: []
+    };
 
-    // Save the account to the database
-    await userAccount.save();
+    // Insert the account object
+    await UserModel.create(object);
 
     // Set the user's session
     req.session.username = account.username;
@@ -114,7 +104,7 @@ router.post('/login', async (req, res) => {
   }
 
   // Validate properties
-  if (typeof account.username !== String && typeof account.password !== String) {
+  if (typeof account.username !== 'string' && typeof account.password !== 'string') {
     res.status(400).json({
       status: 400,
       message: 'Invalid account object input.'

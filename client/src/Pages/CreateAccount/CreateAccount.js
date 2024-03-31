@@ -6,8 +6,37 @@ import { useNavigate } from 'react-router-dom';
 
 // Import Assets
 import Info from '../../Assets/info-icon.png';
+import { useState } from 'react';
 
 export default function CreateAccount() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [usernameValid, setUsernameValid] = useState(false);
+  const [passwordValid, setPasswordValid] = useState(false);
+
+  const createAccount = async () => {
+    try {
+      if (usernameValid && passwordValid) {
+        const response = await fetch('/api/v1/auth/create-account', {
+          method: 'POST',
+          body: JSON.stringify({
+            "username" : username,
+            "password" : password 
+          }),
+          headers: {
+            'Content-Type' : 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          console.log('it worked!');
+        }
+      }
+    } catch(error) {
+
+    }
+  }
+
   // Setup navigation
   const navigate = useNavigate();
 
@@ -19,15 +48,25 @@ export default function CreateAccount() {
       <div className="create-account-container custom-border-2">
         <div className="create-account-container-field">
           <div id="create-account-username-label">Username</div>
-          <input type="text" className="create-account-input-field custom-border-2" maxLength="20" />
+          <input type="text" className="create-account-input-field custom-border-2" minLength="4" maxLength="20" 
+            onChange={(event) => {
+              setUsername(event.target.value);
+              setUsernameValid(event.target.value.match('^[a-zA-Z0-9_.-]{4,20}$'));
+            }}/>
           <img src={Info} alt="Info Icon" className="create-account-info-icon" />
         </div>
         <div className="create-account-container-field">
           <div id="create-account-password-label">Password</div>
-          <input type="password" className="create-account-input-field custom-border-2" maxLength="30" />
+          <input type="password" className="create-account-input-field custom-border-2" minLength="8" maxLength="30" 
+            onChange={(event) => {
+              setPassword(event.target.value);
+              setPasswordValid(event.target.value.match('^[a-zA-Z0-9]{8,30}$'));
+            }}/>
           <img src={Info} alt="Info Icon" className="create-account-info-icon" />
         </div>
-        <div id="create-account-container-button">Create</div>
+        <div id="create-account-container-button" className={
+            '' + (usernameValid && passwordValid ? "create-account-valid" : "")
+          } onClick={createAccount}>Create</div>
         <div className="white-text">
           Already have an account?
         </div>

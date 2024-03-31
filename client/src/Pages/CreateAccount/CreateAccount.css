@@ -115,15 +115,20 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  filter: grayscale(1);
 }
 
-#create-account-container-button:hover {
-  transform: scale(1.10);
+.create-account-valid:hover {
+  transform: scale(1.08);
 }
 
-#create-account-container-button:active {
+.create-account-valid:active {
   transform: scale(1.0);
   filter: brightness(120%);
+}
+
+.create-account-valid {
+  filter: grayscale(0) !important;
 }
 
 /* Login References */
