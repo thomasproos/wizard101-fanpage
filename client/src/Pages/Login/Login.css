@@ -40,6 +40,7 @@
 
 /* Container Contents */
 .login-container {
+  position: relative;
   margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
@@ -53,6 +54,7 @@
   align-items: center;
   gap: 30px;
   padding-top: 40px;
+  padding-bottom: 30px;
 }
 
 .login-container-field {
@@ -100,15 +102,20 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  filter: grayscale(1);
 }
 
-#login-container-button:hover {
-  transform: scale(1.10);
+.login-valid:hover {
+  transform: scale(1.08);
 }
 
-#login-container-button:active {
+.login-valid:active {
   transform: scale(1.0);
   filter: brightness(120%);
+}
+
+.login-valid {
+  filter: grayscale(0) !important;
 }
 
 #login-create-account-button {
@@ -129,4 +136,19 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+/* Unauthorized Access */
+.unauthorized-spiral-icon {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+#unauthorized-login-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

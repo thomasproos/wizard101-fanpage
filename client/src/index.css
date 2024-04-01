@@ -17,6 +17,9 @@ html {
   /* Global Variables */
   --title-font-size: 24px;
   --text-font-size: 18px;
+
+  /* Custom Scrollbar */
+  scrollbar-color: #afaf00 rgba(0, 0, 0, 0.452);
 }
 
 body {

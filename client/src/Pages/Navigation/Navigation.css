@@ -10,6 +10,9 @@
   color: #F6F741;
   z-index: 3;
   position: relative;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 /* Class for active headers */

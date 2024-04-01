@@ -188,3 +188,11 @@
   border-style: solid;
   border-color: transparent #ACA71A transparent transparent;
 }
+
+/* Unauthorized Access */
+#unauthorized-create-account-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}

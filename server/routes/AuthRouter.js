@@ -92,7 +92,7 @@ router.post('/login', async (req, res) => {
     return;
   } 
 
-  const account = req.body.account;
+  const account = req.body;
 
   // Validate parameters
   if (Object.keys(account).length !== 2) {
@@ -127,10 +127,10 @@ router.post('/login', async (req, res) => {
     const user = await UserModel.find({ username: account.username });
     
     // Check if a user was found
-    if (Object.keys(user).length === 3) {
+    if (Object.keys(user).length === 0) {
       res.status(400).json({
         status: 400,
-        message: 'Username or password is invalid.'
+        message: 'Invalid account object input.'
       });
       return;
     }
@@ -148,7 +148,7 @@ router.post('/login', async (req, res) => {
     } else {
       res.status(400).json({
         status: 400,
-        message: 'Username or password is invalid.'
+        message: 'Invalid account object input.'
       });
       return;
     }
