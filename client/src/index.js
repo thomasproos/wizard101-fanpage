@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './ReduxStore.js';
 
 // Import CSS
 import './index.css';
@@ -10,6 +12,8 @@ import './index.css';
 import Navigation from './Pages/Navigation/Navigation';
 import MainPage from './Pages/MainPage/MainPage';
 import Blacksmith from './Pages/Blacksmith/Blacksmith';
+import Login from './Pages/Login/Login';
+import CreateAccount from './Pages/CreateAccount/CreateAccount';
 
 // Define routes config
 const router = createHashRouter([
@@ -18,7 +22,9 @@ const router = createHashRouter([
     element: <Navigation />,
     children: [
       { path: '/', element: <MainPage /> },
-      { path: '/blacksmith', element: <Blacksmith />}
+      { path: '/blacksmith', element: <Blacksmith /> },
+      { path: '/account/login', element: <Login /> },
+      { path: '/account/create-account', element: <CreateAccount /> }
     ]
   }
 ]);
@@ -27,6 +33,8 @@ const router = createHashRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

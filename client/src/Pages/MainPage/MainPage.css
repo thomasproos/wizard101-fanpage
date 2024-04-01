@@ -80,7 +80,6 @@
 }
 
 .main-about-header-container:hover {
-  /* color: #05ff65; */
   color: #05FDFF;
   cursor: url('../../Assets/cursor-target-small.png'), auto;
 }

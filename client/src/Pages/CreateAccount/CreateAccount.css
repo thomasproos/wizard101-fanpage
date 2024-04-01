@@ -1,0 +1,198 @@
+/* Create Account Page */
+#create-account {
+  width: 80%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.774);
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  position: relative;
+  color: #F6F741;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Create Account Container */
+.create-account-title-background {
+  background-image: url('../../Assets/title-banner.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 500px;
+  height: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: -65px;
+  z-index: 3;
+  position: relative;
+}
+
+.create-account-title {
+  font-size: 30px;
+  padding-top: 2px;
+  color: black;
+  font-weight: 1000;
+  text-shadow: 0px 0.5px, 0.5px 0px, 0.5px 0.5px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Container Contents */
+.create-account-container {
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 50px;
+  padding: 20px;
+  min-width: 500px;
+  width: 40%;
+  background-color: #42111e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.account-warning-visible {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -20px;
+  color: #c0325a;
+  background-color: #0f0407;
+  padding: 6px;
+}
+
+.account-warning-hidden {
+  display: none;
+}
+
+.create-account-container-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-account-input-field {
+  background-color: rgba(0, 0, 0, 0.397);
+  border-radius: 25px;
+  border: none;
+  width: 180px;
+  height: 20px;
+  outline-width: 0;
+  margin-left: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: url('../../Assets/cursor-small.png'), auto;
+  caret-color: white;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 1000;
+  font-size: 16px;
+}
+
+/* Fields */
+#create-account-password-label {
+  margin-left: 5px;
+}
+
+#create-account-username-label {
+  line-height: 20px;
+}
+
+/* Question Icon */
+.create-account-info-icon {
+  height: 35px;
+  cursor: url('../../Assets/cursor-picker-small.png'), auto;
+}
+
+.create-account-info-icon:hover {
+  transform: scale(1.10);
+}
+
+.create-account-info-icon:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+/* Create Button */
+#create-account-container-button {
+  background-image: url('../../Assets/button-medium.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  filter: grayscale(1);
+}
+
+.create-account-valid:hover {
+  transform: scale(1.08);
+}
+
+.create-account-valid:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+.create-account-valid {
+  filter: grayscale(0) !important;
+}
+
+/* Login References */
+#create-account-login-button {
+  margin-top: -20px;
+  cursor: url('../../Assets/cursor-target-small.png'), auto;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  color: #F6F741;
+}
+
+#create-account-login-button:hover {
+  transform: scale(1.05);
+}
+
+/* ToolTip */
+.tooltip {
+  position: absolute;
+  width: 200px;
+  right: 0;
+  margin-right: -145px;
+  background-color: #000000b4;
+  border-radius: 10px;
+  padding: 10px;
+  display: none;
+  z-index: 5;
+}
+
+.tooltip-visible {
+  display: block;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 45%;
+  margin-left: -26px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #ACA71A transparent transparent;
+}
+
+/* Unauthorized Access */
+#unauthorized-create-account-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
