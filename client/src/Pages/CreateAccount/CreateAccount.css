@@ -166,12 +166,22 @@
   position: absolute;
   width: 200px;
   right: 0;
-  margin-right: -145px;
+  bottom: 0;
+  margin-bottom: -45px;
+  margin-right: -240px;
   background-color: #000000b4;
   border-radius: 10px;
   padding: 10px;
   display: none;
   z-index: 5;
+}
+
+#tooltip-info-1 {
+  margin-bottom: -55px;
+}
+
+.create-account-info-container {
+  position: relative;
 }
 
 .tooltip-visible {

@@ -1,0 +1,183 @@
+/* Logged Out Display */
+#blacksmith-empty-mirror-container {
+  overflow: hidden; 
+  position: relative;
+}
+
+#blacksmith-empty-mirror {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  background-image: url('../../../Assets/star-background-2.jpg');
+  background-size: cover;
+  transition: transform .5s ease;
+  width: 340px;
+  height: 500px;
+  box-shadow: rgb(0, 0, 0) 3px 3px 6px 5px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 5px inset;
+}
+
+#blacksmith-empty-mirror:hover {
+  transform: scale(1.2);
+}
+
+/* Shimmering Stars */
+.shimmering-star {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  z-index: 5;
+  animation: shimmer 2s infinite alternate;
+  top: 0;
+  left: 0;
+}
+
+#shimmering-star-1 {
+  margin-left: 160px;
+  margin-top: 50px;
+  animation-delay: 1s;
+}
+
+#shimmering-star-2 {
+  height: 10px;
+  width: 10px;
+  margin-left: 300px;
+  margin-top: 200px;
+  animation-delay: -3s;
+}
+
+#shimmering-star-3 {
+  height: 12px;
+  width: 12px;
+  rotate: 30deg;
+  margin-left: 100px;
+  margin-top: 180px;
+  animation-delay: 5s;
+}
+
+#shimmering-star-4 {
+  height: 10px;
+  width: 10px;
+  margin-left: 250px;
+  margin-top: 100px;
+  animation-delay: 9s;
+}
+
+#shimmering-star-5 {
+  height: 18px;
+  width: 18px;
+  margin-left: 180px;
+  margin-top: 270px;
+  animation-delay: -2s;
+}
+
+#shimmering-star-6 {
+  height: 15px;
+  width: 15px;
+  margin-left: 50px;
+  margin-top: 100px;
+  animation-delay: -3s;
+}
+
+#shimmering-star-7 {
+  height: 15px;
+  width: 15px;
+  margin-left: 250px;
+  margin-top: 150px;
+  animation-delay: -4s;
+}
+
+#shimmering-star-8 {
+  height: 13px;
+  width: 13px;
+  margin-left: 80px;
+  margin-top: 250px;
+  animation-delay: -6s;
+}
+
+#shimmering-star-9 {
+  height: 17px;
+  width: 17px;
+  margin-left: 300px;
+  margin-top: 20px;
+}
+
+#shimmering-star-10 {
+  height: 17px;
+  width: 17px;
+  margin-left: 280px;
+  margin-top: 250px;
+}
+
+#shimmering-star-11 {
+  height: 14px;
+  width: 14px;
+  margin-left: 50px;
+  margin-top: 320px;
+}
+
+/* Not logged-in display */
+#blacksmith-unauthorized-display {
+  width: 340px;
+  height: 500px;
+  box-sizing: border-box;
+  background-color: #42111e;
+  padding: 20px;
+  text-align: justify;
+  padding-top: 30px;
+}
+
+#blacksmith-mirror-school-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.blacksmith-mirror-school-icon {
+  height: 32px;
+  width: 32px;
+}
+
+.blacksmith-mirror-school-icon:hover {
+  transform: scale(1.10);
+}
+
+/* Login Button */
+#blacksmith-mirror-login {
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  background-image: url('../../../Assets/button-medium.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 160px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#blacksmith-mirror-login:hover {
+  transform: scale(1.08);
+}
+
+/* Animation Keyframes */
+@keyframes shimmer {
+  0% {
+    filter: drop-shadow(0px 0px 5px white);
+  }
+  50% {
+    filter: drop-shadow(0px 0px 5px white);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 15px #4360D1);
+  }
+}

@@ -43,7 +43,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
   width: 1000px;
   height: 635px;
   padding: 30px;
@@ -53,4 +53,122 @@
   background-image: url('../../Assets/book.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* Character Slots */
+#blacksmith-wizard-slot-list {
+  width: 340px;
+  height: 500px;
+  background-image: url('../../Assets/star-background-2.jpg'); 
+  box-sizing: border-box;
+  border-radius: 10px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.blacksmith-wizard-slot-shading {
+  background-color: #000000be;
+  width: 340px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.blacksmith-wizard-slot-header {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 7px;
+  background-color: #42111e;
+}
+
+#blacksmith-wizard-slot-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 400px;
+  align-items: center;
+}
+
+/* Character Slots */
+.blacksmith-wizard-slot-character-valid {
+  width: 90%;
+  height: 30px;
+  border-radius: 25px;
+  line-height: 30px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.blacksmith-wizard-slot-character-name {
+  width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blacksmith-wizard-slot-school-icon {
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* School Icons */
+.active-wizard-slot-storm {
+  background-image: url('../../Assets/storm-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-ice {
+  background-image: url('../../Assets/ice-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-fire {
+  background-image: url('../../Assets/fire-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-death {
+  background-image: url('../../Assets/death-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-balance {
+  background-image: url('../../Assets/balance-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-life {
+  background-image: url('../../Assets/life-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-myth {
+  background-image: url('../../Assets/myth-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+/* Character slot creator */
+#blacksmith-wizard-slot-creator {
+  width: 340px;
+  height: 500px;
+  background-color: #42111e;
+  padding: 20px;
+  box-sizing: border-box;
 }

@@ -1,8 +1,8 @@
 // Import CSS
-import { useState } from 'react';
 import './Login.css';
 
 // Import dependencies
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionTypes } from '../../ReduxStore.js';

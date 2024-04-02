@@ -90,7 +90,7 @@ export default function GearSearch({ currentGear, setCurrentGear }) {
       <div id="blacksmith-gear-search-item-list">
         {[...Array(8)].map((item, index) => {
           const currentIndex = index*page;
-          if (itemList.length > (currentIndex)) {
+          if (itemList.length > currentIndex) {
             return(
               <div key={index} className={"blacksmith-gear-search-item-valid " + (equipedItems.includes(itemList[currentIndex].name ? "blacksmith-gear-search-item-equipped" : ""))} onDoubleClick={() => {handleDoubleClickItem(itemList[currentIndex].name)}}>
                 <div className={`active-gear-${itemList[currentIndex].type} blacksmith-gear-search-display-icon`}></div>
