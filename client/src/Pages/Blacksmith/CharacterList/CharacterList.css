@@ -1,0 +1,118 @@
+/* CharacterList Component */
+/* Character Slots */
+.blacksmith-wizard-slot-character-valid {
+  width: 90%;
+  height: 30px;
+  border-radius: 25px;
+  line-height: 30px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.blacksmith-wizard-slot-character-valid:hover {
+  transform: scale(1.05);
+}
+
+.blacksmith-wizard-slot-character-valid:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+/* Placeholders */
+.blacksmith-wizard-slot-character-empty {
+  width: 90%;
+  height: 30px;
+  border-radius: 25px;
+  line-height: 30px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  opacity: 0.8;
+}
+
+.blacksmith-wizard-slot-character-empty:hover {
+  transform: scale(1.05);
+}
+
+.blacksmith-wizard-slot-character-empty:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+.active-wizard-slot-spiral {
+  background-image: url('../../../Assets/spiral-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+
+.blacksmith-wizard-slot-character-name-empty {
+  max-width: 195px;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Character Names */
+.blacksmith-wizard-slot-character-name {
+  width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blacksmith-wizard-slot-school-icon {
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* School Icons */
+.active-wizard-slot-storm {
+  background-image: url('../../../Assets/storm-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-ice {
+  background-image: url('../../../Assets/ice-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-fire {
+  background-image: url('../../../Assets/fire-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-death {
+  background-image: url('../../../Assets/death-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-balance {
+  background-image: url('../../../Assets/balance-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-life {
+  background-image: url('../../../Assets/life-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
+
+.active-wizard-slot-myth {
+  background-image: url('../../../Assets/myth-icon.png');
+  margin-left: -30px;
+  margin-right: 15px;
+}
