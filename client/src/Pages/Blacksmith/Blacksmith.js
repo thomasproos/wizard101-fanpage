@@ -17,6 +17,8 @@ export default function Blacksmith() {
   const [confirmationMessage, setConfirmationMessage] = useState({});
   const [currentSlot, setCurrentSlot] = useState({});
   const [valid, setValid] = useState(false);
+  const [page, setPage] = useState(1);
+  const numberPages = 2;
 
   // Setup global variables
   const loginStatus = useSelector(state => state.loginStatus);
@@ -57,6 +59,7 @@ export default function Blacksmith() {
   // Fetch user profile
   useEffect(() => {
     if (loginStatus) {
+      setPage(2);
       (async () => {
         try {
           const response = await fetch('/api/v1/auth/user');
@@ -74,37 +77,77 @@ export default function Blacksmith() {
 
   // If the user is logged in
   if (loginStatus) {
-    return(
-      <section id="blacksmith" className="custom-border-1">
-        <div id="blacksmith-title-background">
-          <div id="blacksmith-title">Blacksmith</div>
-        </div>
-        <div id="blacksmith-content-container">
-
-          {/* Character List */}
-          <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
-
-          {/* Character Creator */}
-          <CharacterCreator profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
-            setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid}/>
-        </div>
-
-        {/* Confirmation Message */}
-        {Object.keys(confirmationMessage).length === 3 ?
-          <div id="confirmation-background">
-            <div className="confirmation-container custom-border-2">
-              <div id="confirmation-message">{confirmationMessage.title}</div>
-              <div id="confirmation-button-container">
-                <div className="confirmation-button" onClick={handleDeleteSlot}>{confirmationMessage.left}</div>
-                <div className="confirmation-button" onClick={() => { setConfirmationMessage({}); }}>{confirmationMessage.right}</div>
+    if (page === 2) {
+      return(
+        <section id="blacksmith" className="custom-border-1">
+          <div id="blacksmith-title-background">
+            <div id="blacksmith-title">Blacksmith</div>
+          </div>
+          <div id="blacksmith-content-container">
+  
+            {/* Character List */}
+            <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
+  
+            {/* Character Creator */}
+            <CharacterCreator profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
+              setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid}/>
+              
+            {/* Page Buttons */}
+            <div id="blacksmith-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
+                if (page === 2) {
+                  setPage(1);
+                }
+              }}/>
+            <div id="blacksmith-page-number-display">{page}/{numberPages}</div>
+            <div id="blacksmith-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
+                if (page === 1) {
+                  setPage(2);
+                }
+              }}/>
+          </div>
+  
+          {/* Confirmation Message */}
+          {Object.keys(confirmationMessage).length === 3 ?
+            <div id="confirmation-background">
+              <div className="confirmation-container custom-border-2">
+                <div id="confirmation-message">{confirmationMessage.title}</div>
+                <div id="confirmation-button-container">
+                  <div className="confirmation-button" onClick={handleDeleteSlot}>{confirmationMessage.left}</div>
+                  <div className="confirmation-button" onClick={() => { setConfirmationMessage({}); }}>{confirmationMessage.right}</div>
+                </div>
               </div>
             </div>
+            :
+            <></>
+          }
+  
+        </section>
+      );
+    } else {
+      return(
+        <section id="blacksmith" className="custom-border-1">
+          <div id="blacksmith-title-background">
+            <div id="blacksmith-title">Blacksmith</div>
           </div>
-          :
-          <></>
-        }
-      </section>
-    );
+          <div id="blacksmith-content-container">
+            <OfflineDisplay loggedIn={true} setPage={setPage}/>
+
+            {/* Page Buttons */}
+            <div id="blacksmith-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
+                if (page === 2) {
+                  setPage(1);
+                }
+              }}/>
+            <div id="blacksmith-page-number-display">{page}/{numberPages}</div>
+            <div id="blacksmith-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
+                if (page === 1) {
+                  setPage(2);
+                }
+              }}/>
+          </div>
+        </section>
+      );
+    }
   } else {
     return(
       <section id="blacksmith" className="custom-border-1">
@@ -112,7 +155,7 @@ export default function Blacksmith() {
           <div id="blacksmith-title">Blacksmith</div>
         </div>
         <div id="blacksmith-content-container">
-          <OfflineDisplay />
+          <OfflineDisplay loggedIn={false}/>
         </div>
       </section>
     );

@@ -14,7 +14,7 @@ import Death from '../../../Assets/death-icon.png';
 import Myth from '../../../Assets/myth-icon.png';
 import Balance from '../../../Assets/balance-icon.png';
 
-export default function OfflineDisplay() {
+export default function OfflineDisplay({ loggedIn, setPage }) {
   // Setup navigation
   const navigate = useNavigate();
 
@@ -58,7 +58,11 @@ export default function OfflineDisplay() {
 
         You need to be logged-in in order to create wizard slots.
         
-        <div id="blacksmith-mirror-login" onClick={() => { navigate('/account/login'); }}>Login</div>
+        {loggedIn ?
+          <div id="blacksmith-mirror-login" onClick={() => { setPage(2); }}>Begin</div>
+          :
+          <div id="blacksmith-mirror-login" onClick={() => { navigate('/account/login'); }}>Login</div>
+        }
       </div>
     </>
   );

@@ -40,6 +40,7 @@
 }
 
 #blacksmith-content-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -163,4 +164,56 @@
 .confirmation-button:active {
   transform: scale(1.0);
   filter: brightness(120%);
+}
+
+/* Page Change Icons */
+#blacksmith-page-right-button {
+  background-image: url('../../Assets/forward-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 40px;
+  right: 0;
+  margin-right: 70px;
+  filter: grayscale(1);
+}
+
+#blacksmith-page-left-button {
+  background-image: url('../../Assets/back-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 40px;
+  left: 0;
+  margin-left: 70px;
+  filter: grayscale(1);
+}
+
+.page-button-enabled:hover {
+  transform: scale(1.08);
+}
+
+.page-button-enabled:active {
+  transform: scale(1.0);
+  filter: grayscale(0) brightness(120%) !important;
+}
+
+.page-button-enabled {
+  filter: grayscale(0) !important;
+}
+
+#blacksmith-page-number-display {
+  position: absolute;
+  bottom: 0;
+  color: black;
+  font-size: 40px;
+  font-weight: 1000;
+  text-shadow: 2px 0 #000000;
+  margin-bottom: 35px;
 }

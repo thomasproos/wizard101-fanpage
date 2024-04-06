@@ -14,14 +14,12 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
   const [isRunning, setIsRunning] = useState(false);
   const [buttonStatus, setButtonStatus] = useState('add');
   const [infoStatus, setInfoStatus] = useState(false);
+  const [systemMessage, setSystemMessage] = useState('');
   const mouseIsDown = useRef(false);
 
   // CSS text span
   const spanBlue = {
     color: 'rgb(78, 175, 255)'
-  };
-  const spanPink = {
-    color: 'rgb(255, 97, 189)'
   };
   const spanRed = {
     color: 'rgb(255, 89, 89)'
@@ -84,6 +82,7 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         });
 
         if (response.ok) {
+          setSystemMessage('');
           try {
             const response = await fetch('/api/v1/auth/user');
   
@@ -101,13 +100,29 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
                   school: currentSlot.school
                 });
               }
+            } else {
+              setSystemMessage('Something went wrong :(');
             }
           } catch(error) {
+            setSystemMessage('Something went wrong :(');
             console.log('Server Error: Failed to fetch user profile.');
           }
+        } else {
+          setSystemMessage('Something went wrong :(');
         }
       } catch(error) {
+        setSystemMessage('Something went wrong :(');
         console.log('Fetch Error : Failed to create new wizard character.');
+      }
+    } else {
+      if (currentSlot.name.length < 4) {
+        setSystemMessage('Minimum name length is 4');
+      } else if (!currentSlot.name.match('^[A-Z0-9\\s]{4,20}$')) {
+        setSystemMessage('No special characters!');
+      } else if (currentSlot.school === 'spiral') {
+        setSystemMessage('Please choose a school!');
+      } else if (currentSlot.level === 0) {
+        setSystemMessage('Please choose a level!')
       }
     }
   };
@@ -252,7 +267,26 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         </div>
 
         {/* Spiral Book */}
-        <img src={SpiralBook} alt="Backpack button" id="blacksmith-wizard-editor-button-inactive" />
+        <img src={SpiralBook} alt="Backpack button" className={"blacksmith-wizard-editor-button-inactive " 
+          + (currentSlot.created && !checkIfChanged() ? "blacksmith-wizard-editor-button-active" : "")} 
+          onClick={() => {
+            if (!currentSlot.created) {
+              setSystemMessage('Create your wizard first!');
+            } else if (checkIfChanged()) {
+              setSystemMessage('Save your changes first!');
+            }
+          }}/>
+
+        {/* System Messages */}
+        {systemMessage !== '' ?
+          <div id="wizard-slot-system-message" className="custom-border-2" onClick={() => { setSystemMessage(''); }}>
+            <div className="wizard-slot-system-icon"/>
+            {systemMessage}
+            <div className="wizard-slot-system-icon"/>
+          </div>
+          :
+          <></>
+        }
       </div>
     );
   } else {

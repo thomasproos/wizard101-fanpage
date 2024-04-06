@@ -177,31 +177,30 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 /* Backpack Button */
-#blacksmith-wizard-editor-button-inactive {
-  height: 60px;
-  width: 60px;
-  margin-top: 20px;
-  margin-left: auto;
-  box-sizing: border-box;
-  margin-right: auto;
+.blacksmith-wizard-editor-button-inactive {
+  height: 70px;
+  width: 70px;
+  margin-top: 35px;
+  margin-left: 120px;
   filter: grayscale(0.6);
   cursor: url('../../../Assets/no-target-cursor-small.png'), auto;
 }
 
-#blacksmith-wizard-editor-button-active {
-  height: 60px;
-  width: 60px;
-  margin-top: 40px;
+.blacksmith-wizard-editor-button-active {
+  height: 70px;
+  width: 70px;
+  margin-top: 35px;
   margin-left: 120px;
   -webkit-filter: drop-shadow(0px 12px 7px rgb(255, 58, 58));
   filter: drop-shadow(0px 0px 7px rgb(255, 219, 58));
+  cursor: url('../../../Assets/cursor-small.png'), auto;
 }
 
-#blacksmith-wizard-editor-button-active:hover {
+.blacksmith-wizard-editor-button-active:hover {
   transform: scale(1.10);
 }
 
-#blacksmith-wizard-editor-button-active:active {
+.blacksmith-wizard-editor-button-active:active {
   transform: scale(1.0);
 }
 
@@ -232,6 +231,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   top: 0;
   left: 0;
   margin: 18px;
+  cursor: url('../../../Assets/cursor-picker-small.png'), auto;
 }
 
 #tooltip-info-character-view {
@@ -250,6 +250,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 /* Nothing Selected Message */
+#wizard-slot-warning-container {
+  display: flex;
+  flex-direction: row;
+}
+
 #character-editor-message {
   width: fit-content;
   margin-left: auto;
@@ -258,4 +263,39 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   margin-top: 150px;
   padding: 10px;
   background-color: rgb(29, 5, 5);
+}
+
+/* System Warning Messages */
+#wizard-slot-system-message {
+  background-color: #000000;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 25px;
+  display: flex;
+  width: fit-content;
+  line-height: 30px;
+  gap: 10px;
+  cursor: url('../../../Assets/cursor-picker-small.png'), auto;
+}
+
+.wizard-slot-system-icon {
+  background-image: url('../../../Assets/exclamation-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  animation: glow 1s alternate infinite;
+  border-radius: 50%;
+}
+
+/* Keyframes Animations */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px -3px #ff2e2e;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #ff2e2e;
+  }
 }
