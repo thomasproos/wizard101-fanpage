@@ -10,6 +10,7 @@
   color: #F6F741;
   padding: 30px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Blacksmith Title */
@@ -97,4 +98,69 @@
   overflow-y: scroll;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+/* Confirmation Popup */
+#confirmation-background {
+  background-color: rgba(0, 0, 0, 0.575);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 6;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.confirmation-container {
+  width: 350px;
+  height: 150px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #42111e;
+  margin-top: 20vh;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Confirmation Content */
+#confirmation-message {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+#confirmation-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.confirmation-button {
+  background-image: url('../../Assets/button-medium.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+}
+
+.confirmation-button:hover {
+  transform: scale(1.08);
+}
+
+.confirmation-button:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
 }

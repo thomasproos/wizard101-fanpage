@@ -14,10 +14,44 @@ import CharacterCreator from './CharacterCreator/CharacterCreator';
 
 export default function Blacksmith() {
   const [profile, setProfile] = useState({});
-  const [currentSlot, setCurrentSlot] = useState({ index: 0, name: 'EMPTY SLOT 1', school: 'spiral', level: 0 });
+  const [confirmationMessage, setConfirmationMessage] = useState({});
+  const [currentSlot, setCurrentSlot] = useState({ index: 0, name: '', created: false, school: 'spiral', level: 0 });
 
   // Setup global variables
   const loginStatus = useSelector(state => state.loginStatus);
+
+  // Delete character slot
+  const handleDeleteSlot = async () => {
+    try {
+      const response = await fetch(`/api/v1/auth/delete-wizard-slot/${currentSlot.index}`, {
+        method: 'DELETE',
+        headers: {}
+      });
+
+      if (response.ok) {
+        const response = await fetch('/api/v1/auth/user');
+  
+        if (response.ok) {
+          const result = await response.json();
+          setConfirmationMessage({});
+          setProfile(result.user);
+
+          // Set default position
+          if (result.user.wizard_slots.length > 0) {
+            setCurrentSlot({
+              index: 0,
+              created: true,
+              name: result.user.wizard_slots[0].name,
+              school: result.user.wizard_slots[0].school,
+              level: result.user.wizard_slots[0].level
+            });
+          }
+        }
+      }
+    } catch(error) {
+      console.error('Fetch Error: Failed to delete slot and update user');
+    }
+  };
 
   // Fetch user profile
   useEffect(() => {
@@ -28,18 +62,18 @@ export default function Blacksmith() {
 
           if (response.ok) {
             const result = await response.json();
-            setProfile(result.user[0]);
+            setProfile(result.user);
 
             // Set default position
-            if (result.user[0].wizard_slots.length > 0) {
+            if (result.user.wizard_slots.length > 0) {
               setCurrentSlot({
-                index: 0, 
-                name: result.user[0].wizard_slots[0].name,
-                school: result.user[0].wizard_slots[0].school,
-                level: result.user[0].wizard_slots[0].level
+                index: 0,
+                created: true,
+                name: result.user.wizard_slots[0].name,
+                school: result.user.wizard_slots[0].school,
+                level: result.user.wizard_slots[0].level
               });
             }
-            // console.log(result.user[0]);
           }
         } catch(error) {
           console.log('Server Error: Failed to fetch user profile.');
@@ -61,8 +95,24 @@ export default function Blacksmith() {
           <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
 
           {/* Character Creator */}
-          <CharacterCreator currentSlot={currentSlot} setCurrentSlot={setCurrentSlot}/>
+          <CharacterCreator currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
+            setConfirmationMessage={setConfirmationMessage}/>
         </div>
+
+        {/* Confirmation Message */}
+        {Object.keys(confirmationMessage).length === 3 ?
+          <div id="confirmation-background">
+            <div className="confirmation-container custom-border-2">
+              <div id="confirmation-message">{confirmationMessage.title}</div>
+              <div id="confirmation-button-container">
+                <div className="confirmation-button" onClick={handleDeleteSlot}>{confirmationMessage.left}</div>
+                <div className="confirmation-button" onClick={() => { setConfirmationMessage({}); }}>{confirmationMessage.right}</div>
+              </div>
+            </div>
+          </div>
+          :
+          <></>
+        }
       </section>
     );
   } else {

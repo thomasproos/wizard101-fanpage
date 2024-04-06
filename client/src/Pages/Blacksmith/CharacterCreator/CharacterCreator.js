@@ -1,12 +1,15 @@
 // Import Assets
 import SpiralBook from '../../../Assets/spiral-book.png';
 import Button from '../../../Assets/arrow-icon.png';
+import Delete from '../../../Assets/delete-button.png';
+
+// Import dependencies
 import { useRef, useState, useEffect } from 'react';
 
 // Import CSS
 import './CharacterCreator.css';
 
-export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
+export default function CharacterCreator({ currentSlot, setCurrentSlot, setConfirmationMessage }) {
   const [valid, setValid] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [buttonStatus, setButtonStatus] = useState('add');
@@ -16,7 +19,8 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
   useInterval(() => {
     if (buttonStatus === 'add') {
       setCurrentSlot({
-        index: currentSlot.index, 
+        index: currentSlot.index,
+        created: currentSlot.created, 
         name: currentSlot.name,
         school: currentSlot.school,
         level: currentSlot.level + (currentSlot.level + 1 <= 170 ? 1 : 0)
@@ -24,6 +28,7 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
     } else {
       setCurrentSlot({
         index: currentSlot.index, 
+        created: currentSlot.created, 
         name: currentSlot.name,
         school: currentSlot.school,
         level: currentSlot.level - (currentSlot.level - 1 > 0 ? 1 : 0)
@@ -50,11 +55,21 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
   const handleCreateCharacter = async () => {
     if (valid) {
       try {
-        const response = await fetch('/api/v1/auth', {
+        const response = await fetch('/api/v1/auth/create-wizard-slot/', {
           method: 'PUT',
-          body: {},
-          headers: {}
+          body: JSON.stringify({
+            name: currentSlot.name,
+            created: currentSlot.created,
+            index: currentSlot.index, 
+            level: currentSlot.level,
+            school: currentSlot.school
+          }),
+          headers: {'Content-Type' : 'application/json'}
         });
+
+        if (response.ok) {
+          console.log('YAY :3');
+        }
       } catch(error) {
         console.log('Fetch Error : Failed to create new wizard character.');
       }
@@ -73,6 +88,7 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
             let characterName = event.target.value.toUpperCase()
             setCurrentSlot({
               index: currentSlot.index, 
+              created: currentSlot.created, 
               name: characterName,
               school: currentSlot.school,
               level: currentSlot.level
@@ -93,6 +109,7 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
               <div key={index} className={`active-wizard-slot-${school} blacksmith-wizard-editor-school-icon ` + (currentSlot.school === school ? 'current-slot-school' : '')}
               onClick={() => {setCurrentSlot({
                 index: currentSlot.index, 
+                created: currentSlot.created, 
                 name: currentSlot.name,
                 school: school,
                 level: currentSlot.level
@@ -113,6 +130,7 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
         <input type="number" id="blacksmith-wizard-editor-level-input" disabled className="custom-border-2" min="1" max="170" maxLength="3" value={currentSlot.level}
           onChange={(event) => {setCurrentSlot({
             index: currentSlot.index, 
+            created: currentSlot.created, 
             name: currentSlot.name,
             school: currentSlot.school,
             level: event.target.value
@@ -127,6 +145,7 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
           <img src={Button} id="wizard-editor-level-increase" alt="Increase Level Button" 
           onClick={() => {setCurrentSlot({
             index: currentSlot.index, 
+            created: currentSlot.created, 
             name: currentSlot.name,
             school: currentSlot.school,
             level: Number.parseInt(currentSlot.level) + (currentSlot.level + 1 <= 170 ? 1 : 0)
@@ -141,6 +160,7 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
           <img src={Button} id="wizard-editor-level-decrease" alt="Decrease Level Button" 
           onClick={() => {setCurrentSlot({
             index: currentSlot.index, 
+            created: currentSlot.created, 
             name: currentSlot.name,
             school: currentSlot.school,
             level: Number.parseInt(currentSlot.level) - (currentSlot.level - 1 > 0 ? 1 : 0)
@@ -153,7 +173,22 @@ export default function CharacterCreator({ currentSlot, setCurrentSlot }) {
       </div>
 
       {/* Save Button */}
-      <div className={"blacksmith-wizard-editor-save-button " + (valid ? "editor-save-button-valid" : "")}>Create</div>
+      <div className={"blacksmith-wizard-editor-save-button " + (valid ? "editor-save-button-valid" : "")} onClick={handleCreateCharacter}>
+        {(currentSlot.created ? "Save Changes" : "Create")}
+      </div>
+
+      {/* Delete Button */}
+      {currentSlot.created ?
+        <img src={Delete} alt="Delete Button" id="wizard-slot-delete-button" onClick={() => {
+          setConfirmationMessage({
+            title: 'Are you sure you want to delete this slot?',
+            left: 'Yes',
+            right: 'No'
+          });
+        }}/>
+        :
+        <></>
+      }
 
       {/* Spiral Book */}
       <img src={SpiralBook} alt="Backpack button" id="blacksmith-wizard-editor-button-inactive" />

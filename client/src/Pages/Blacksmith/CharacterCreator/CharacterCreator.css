@@ -9,6 +9,7 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+  position: relative;
 }
 
 .blacksmith-wizard-editor-header {
@@ -200,4 +201,23 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 #blacksmith-wizard-editor-button-active:active {
   transform: scale(1.0);
+}
+
+/* Delete Button */
+#wizard-slot-delete-button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 0;
+  right: 0;
+  margin: 18px;
+}
+
+#wizard-slot-delete-button:hover {
+  transform: scale(1.08);
+}
+
+#wizard-slot-delete-button:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
 }
