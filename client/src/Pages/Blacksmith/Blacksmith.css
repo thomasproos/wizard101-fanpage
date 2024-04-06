@@ -10,7 +10,7 @@
   color: #F6F741;
   padding: 30px;
   overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 /* Blacksmith Title */

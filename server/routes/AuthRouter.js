@@ -229,7 +229,7 @@ router.get('/user', async (req, res) => {
   }
 });
 
-router.put('/create-wizard-slot/', async (req, res) => {
+router.put('/update-wizard-slot/', async (req, res) => {
   if (req.session.username) {
     try {
       const characterSlot = req.body;
@@ -268,15 +268,6 @@ router.put('/create-wizard-slot/', async (req, res) => {
               });
               return;
             }
-
-            // Check if index is within range
-            if (characterSlot.index >= user.wizard_slots.length) {
-              res.status(400).json({
-                status: 400,
-                message: 'Index outside of wizard slot range.'
-              });
-              return;
-            }
           } else if (characterSlot.created) {
             res.status(400).json({
               status: 400,
@@ -285,7 +276,7 @@ router.put('/create-wizard-slot/', async (req, res) => {
             return;
           }
 
-          if (!user.created) {
+          if (!characterSlot.created) {
             // Insert the new wizard slot
             user.wizard_slots.push({
               name: characterSlot.name,
@@ -311,30 +302,63 @@ router.put('/create-wizard-slot/', async (req, res) => {
               message: 'Successfully updated the wizard slots.'
             });
           } else {
-            // Insert the new wizard slot
-            user.wizard_slots.push({
-              name: characterSlot.name,
-              school: characterSlot.school,
-              level: characterSlot.level,
-              hat: null,
-              robe: null,
-              boots: null,
-              deck: null,
-              wand: null,
-              athame: null,
-              ring: null,
-              amulet: null
-            });
+            // Check if index is within range
+            if (characterSlot.index >= user.wizard_slots.length) {
+              res.status(400).json({
+                status: 400,
+                message: 'Index outside of wizard slot range.'
+              });
+              return;
+            }
 
-            // Update the wizard slots
-            await UserModel.updateOne({ username: req.session.username }, {
-              wizard_slots: user.wizard_slots
-            });
-      
+            // Check if the level or school are being changed
+            if (user.wizard_slots[characterSlot.index].school !== characterSlot.school ||
+            user.wizard_slots[characterSlot.index].level > characterSlot.level) {
+              // Insert a blank slate since the school or level are being changed
+              user.wizard_slots[characterSlot.index] = {
+                name: characterSlot.name,
+                school: characterSlot.school,
+                level: characterSlot.level,
+                hat: null,
+                robe: null,
+                boots: null,
+                deck: null,
+                wand: null,
+                athame: null,
+                ring: null,
+                amulet: null
+              };
+
+              // Update the wizard slots
+              await UserModel.updateOne({ username: req.session.username }, {
+                wizard_slots: user.wizard_slots
+              });
+            } else {
+              // Only change the name, school, and level parameters
+              user.wizard_slots[characterSlot.index] = {
+                name: characterSlot.name,
+                school: characterSlot.school,
+                level: characterSlot.level,
+                hat: user.wizard_slots[characterSlot.index].hat,
+                robe: user.wizard_slots[characterSlot.index].robe,
+                boots: user.wizard_slots[characterSlot.index].boots,
+                deck: user.wizard_slots[characterSlot.index].deck,
+                wand: user.wizard_slots[characterSlot.index].wand,
+                athame: user.wizard_slots[characterSlot.index].athame,
+                ring: user.wizard_slots[characterSlot.index].ring,
+                amulet: user.wizard_slots[characterSlot.index].amulet
+              };
+
+              // Update the wizard slots
+              await UserModel.updateOne({ username: req.session.username }, {
+                wizard_slots: user.wizard_slots
+              });
+            }
+
             res.status(200).json({
               status: 200,
               message: 'Successfully updated the wizard slots.'
-            });
+            }); 
           }
         } else {
           res.status(400).json({

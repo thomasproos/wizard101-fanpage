@@ -5,7 +5,7 @@ export default function CharacterList({ profile, setCurrentSlot, currentSlot }) 
 return(
     <div id="blacksmith-wizard-slot-list" className="custom-border-2">
       <div className="blacksmith-wizard-slot-shading">
-        <div className="blacksmith-wizard-slot-header custom-border-2">Wizard Character Slots</div>
+        <div className="blacksmith-wizard-slot-header custom-border-2">Character Slots</div>
         {Object.keys(profile).length !== 0 ?
           <div id="blacksmith-wizard-slot-container">
             {[...Array(10)].map((item, index) => {
@@ -33,10 +33,10 @@ return(
                     created: false,
                     name: '',
                     school: 'spiral',
-                    level: '0',
+                    level: 0,
                   })}}>
                   <div className={`blacksmith-wizard-slot-school-icon ` + (index === currentSlot.index ? `active-wizard-slot-${currentSlot.school}` : `active-wizard-slot-spiral`)}></div>
-                  <div className="blacksmith-wizard-slot-character-name-empty">{index === currentSlot.index ? currentSlot.name : `Empty Slot ${index + 1}`}</div>
+                  <div className="blacksmith-wizard-slot-character-name-empty">{index === currentSlot.index ? currentSlot.name : ""}</div>
                 </div>
                 );
               }

@@ -106,7 +106,8 @@
 
 /* Question Icon */
 .create-account-info-icon {
-  height: 35px;
+  height: 39px;
+  width: 39px;
   cursor: url('../../Assets/cursor-picker-small.png'), auto;
 }
 
@@ -182,6 +183,8 @@
 
 .create-account-info-container {
   position: relative;
+  width: 39px;
+  height: 39px;
 }
 
 .tooltip-visible {

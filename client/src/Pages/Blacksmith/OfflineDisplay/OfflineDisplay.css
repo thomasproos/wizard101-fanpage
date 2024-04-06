@@ -169,6 +169,11 @@
   transform: scale(1.08);
 }
 
+#blacksmith-mirror-login:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
 /* Animation Keyframes */
 @keyframes shimmer {
   0% {

@@ -15,7 +15,8 @@ import CharacterCreator from './CharacterCreator/CharacterCreator';
 export default function Blacksmith() {
   const [profile, setProfile] = useState({});
   const [confirmationMessage, setConfirmationMessage] = useState({});
-  const [currentSlot, setCurrentSlot] = useState({ index: 0, name: '', created: false, school: 'spiral', level: 0 });
+  const [currentSlot, setCurrentSlot] = useState({});
+  const [valid, setValid] = useState(false);
 
   // Setup global variables
   const loginStatus = useSelector(state => state.loginStatus);
@@ -63,17 +64,6 @@ export default function Blacksmith() {
           if (response.ok) {
             const result = await response.json();
             setProfile(result.user);
-
-            // Set default position
-            if (result.user.wizard_slots.length > 0) {
-              setCurrentSlot({
-                index: 0,
-                created: true,
-                name: result.user.wizard_slots[0].name,
-                school: result.user.wizard_slots[0].school,
-                level: result.user.wizard_slots[0].level
-              });
-            }
           }
         } catch(error) {
           console.log('Server Error: Failed to fetch user profile.');
@@ -95,8 +85,8 @@ export default function Blacksmith() {
           <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
 
           {/* Character Creator */}
-          <CharacterCreator currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
-            setConfirmationMessage={setConfirmationMessage}/>
+          <CharacterCreator profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
+            setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid}/>
         </div>
 
         {/* Confirmation Message */}

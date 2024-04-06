@@ -16,7 +16,7 @@
   width: fit-content;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 15px;
+  margin-bottom: 60px;
   padding: 7px;
   border-radius: 10px;
   background-color: #220808;
@@ -93,7 +93,7 @@
 .current-slot-school {
   opacity: 1;
   margin: 0px;
-  -webkit-filter: drop-shadow(0px 12px 3px rgb(255, 219, 58));
+  -webkit-filter: drop-shadow(0px 12px 3px rgb(255, 97, 189));
   filter: drop-shadow(0px 0px 3px rgb(255, 219, 58));
 }
 
@@ -180,8 +180,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 #blacksmith-wizard-editor-button-inactive {
   height: 60px;
   width: 60px;
-  margin-top: 40px;
-  margin-left: 120px;
+  margin-top: 20px;
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
   filter: grayscale(0.6);
   cursor: url('../../../Assets/no-target-cursor-small.png'), auto;
 }
@@ -191,7 +193,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   width: 60px;
   margin-top: 40px;
   margin-left: 120px;
-  -webkit-filter: drop-shadow(0px 12px 7px rgb(255, 219, 58));
+  -webkit-filter: drop-shadow(0px 12px 7px rgb(255, 58, 58));
   filter: drop-shadow(0px 0px 7px rgb(255, 219, 58));
 }
 
@@ -213,11 +215,47 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   margin: 18px;
 }
 
-#wizard-slot-delete-button:hover {
+#wizard-slot-delete-button:hover, #wizard-slot-info-button:hover {
   transform: scale(1.08);
 }
 
-#wizard-slot-delete-button:active {
+#wizard-slot-delete-button:active, #wizard-slot-info-button:active {
   transform: scale(1.0);
   filter: brightness(120%);
+}
+
+/* Information Button */
+#wizard-slot-info-button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 0;
+  left: 0;
+  margin: 18px;
+}
+
+#tooltip-info-character-view {
+  top: 0;
+  left: 0;
+  margin-left: 80px;
+  margin-top: 12px;
+  height: fit-content;
+  background-color: rgb(0, 0, 0);
+  width: 223px;
+  color: white;
+}
+
+#blacksmith-wizard-slot-creator .tooltip::after {
+  bottom: 87.5%;
+}
+
+/* Nothing Selected Message */
+#character-editor-message {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 150px;
+  padding: 10px;
+  background-color: rgb(29, 5, 5);
 }
