@@ -5,14 +5,14 @@ import './OfflineDisplay.css';
 import { useNavigate } from 'react-router-dom';
 
 // Import Assets
-import ShimmerStar from '../../../Assets/star-shimmer.png';
-import Storm from '../../../Assets/storm-icon.png';
-import Fire from '../../../Assets/fire-icon.png';
-import Ice from '../../../Assets/ice-icon.png';
-import Life from '../../../Assets/life-icon.png';
-import Death from '../../../Assets/death-icon.png';
-import Myth from '../../../Assets/myth-icon.png';
-import Balance from '../../../Assets/balance-icon.png';
+import ShimmerStar from '../../../Assets/CustomAssets/star-shimmer.png';
+import Storm from '../../../Assets/SchoolIcons/storm-icon.png';
+import Fire from '../../../Assets/SchoolIcons/fire-icon.png';
+import Ice from '../../../Assets/SchoolIcons/ice-icon.png';
+import Life from '../../../Assets/SchoolIcons/life-icon.png';
+import Death from '../../../Assets/SchoolIcons/death-icon.png';
+import Myth from '../../../Assets/SchoolIcons/myth-icon.png';
+import Balance from '../../../Assets/SchoolIcons/balance-icon.png';
 
 export default function OfflineDisplay({ loggedIn, setPage }) {
   // Setup navigation

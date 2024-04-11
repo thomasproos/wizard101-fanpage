@@ -1,8 +1,8 @@
 // Import Assets
-import SpiralBook from '../../../Assets/spiral-book.png';
-import Button from '../../../Assets/arrow-icon.png';
-import Delete from '../../../Assets/delete-button.png';
-import Info from '../../../Assets/info-icon.png';
+import SpiralBook from '../../../Assets/Buttons/spiral-book.png';
+import Button from '../../../Assets/Buttons/arrow-icon.png';
+import Delete from '../../../Assets/Buttons/delete-button.png';
+import Info from '../../../Assets/ItemIcons/info-icon.png';
 
 // Import dependencies
 import { useRef, useState, useEffect } from 'react';
@@ -10,7 +10,8 @@ import { useRef, useState, useEffect } from 'react';
 // Import CSS
 import './CharacterCreator.css';
 
-export default function CharacterCreator({ profile, currentSlot, setCurrentSlot, setConfirmationMessage, setProfile, valid, setValid }) {
+export default function CharacterCreator({ profile, currentSlot, setCurrentSlot, setConfirmationMessage, 
+  setProfile, valid, setValid, setPage, setWizard }) {
   const [isRunning, setIsRunning] = useState(false);
   const [buttonStatus, setButtonStatus] = useState('add');
   const [infoStatus, setInfoStatus] = useState(false);
@@ -274,6 +275,9 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
               setSystemMessage('Create your wizard first!');
             } else if (checkIfChanged()) {
               setSystemMessage('Save your changes first!');
+            } else {
+              setWizard(profile.wizard_slots[currentSlot.index]);
+              setPage(3);
             }
           }}/>
 

@@ -27,7 +27,7 @@
 }
 
 #blacksmith-title-background {
-  background-image: url('../../Assets/title-banner.png');
+  background-image: url('../../Assets/CustomBook/title.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 500px;
@@ -52,7 +52,7 @@
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 50px;
-  background-image: url('../../Assets/book.png');
+  background-image: url('../../Assets/CustomBook/double-page.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -61,7 +61,7 @@
 #blacksmith-wizard-slot-list {
   width: 340px;
   height: 500px;
-  background-image: url('../../Assets/star-background-2.jpg'); 
+  background-image: url('../../Assets/Backgrounds/star-background-tall.jpg'); 
   box-sizing: border-box;
   border-radius: 10px;
   -webkit-user-select: none; /* Safari */
@@ -148,7 +148,7 @@
 }
 
 .confirmation-button {
-  background-image: url('../../Assets/button-medium.png');
+  background-image: url('../../Assets/Buttons/button-medium.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 150px;
@@ -168,7 +168,7 @@
 
 /* Page Change Icons */
 #blacksmith-page-right-button {
-  background-image: url('../../Assets/forward-icon.png');
+  background-image: url('../../Assets/Buttons/forward-icon.png');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40px;
@@ -182,7 +182,7 @@
 }
 
 #blacksmith-page-left-button {
-  background-image: url('../../Assets/back-icon.png');
+  background-image: url('../../Assets/Buttons/back-icon.png');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40px;

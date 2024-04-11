@@ -4,7 +4,7 @@ html {
   font-size: var(--text-font-size);
 
   /* Background Image */
-  background-image: url('./Assets/spiral-background.jpg');
+  background-image: url('./Assets/Backgrounds/spiral-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -12,7 +12,7 @@ html {
   overflow: hidden;
 
   /* Custom Cursor */
-  cursor: url('./Assets/cursor-small.png'), auto;
+  cursor: url('./Assets/Cursors/default-small.png'), auto;
 
   /* Global Variables */
   --title-font-size: 24px;

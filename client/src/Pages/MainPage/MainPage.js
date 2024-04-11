@@ -2,9 +2,9 @@
 import './MainPage.css';
 
 // Import Assets
-import GuideBook from '../../Assets/recipes-icon.png';
-import Gardening from '../../Assets/gardening-icon.png';
-import Blacksmith from '../../Assets/hat-icon.png';
+import GuideBook from '../../Assets/ItemIcons/recipes-icon.png';
+import Gardening from '../../Assets/ItemIcons/gardening-icon.png';
+import Blacksmith from '../../Assets/ItemIcons/hat-icon.png';
 
 export default function MainPage() {
   // Pink color style
@@ -78,10 +78,10 @@ export default function MainPage() {
         </div>
         <div className="main-about-paragraph-1">
           The name is still being workshopped, but welcome to the blacksmith! This is the creative
-          child of the website devs! The blacksmith lets wizards create and save wizard slots &#40;up to <span style={spanPink}>20</span>&#41;.
+          child of the website devs! The blacksmith lets wizards create and save character slots &#40;up to <span style={spanPink}>10</span>&#41;.
           <br/><br/>
           
-          Wizards can set their slot's level, school, and gear! Building your ideal gear setup is no longer a challenge, simply follow along
+          Wizards can set their character's name, level, school, and gear! Building your ideal gear setup is no longer a challenge, simply follow along
           one of our gear guides that suits you.
           <br/><br/>
 

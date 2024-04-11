@@ -14,7 +14,7 @@
 
 /* Login Container */
 .login-title-background {
-  background-image: url('../../Assets/title-banner.png');
+  background-image: url('../../Assets/CustomBook/title.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 500px;
@@ -73,7 +73,7 @@
   margin-left: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  cursor: url('../../Assets/cursor-small.png'), auto;
+  cursor: url('../../Assets/Cursors/default-small.png'), auto;
   caret-color: white;
   color: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -92,7 +92,7 @@
 
 /* Login Button */
 #login-container-button {
-  background-image: url('../../Assets/button-medium.png');
+  background-image: url('../../Assets/Buttons/button-medium.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 160px;
@@ -120,7 +120,7 @@
 
 #login-create-account-button {
   margin-top: -20px;
-  cursor: url('../../Assets/cursor-target-small.png'), auto;
+  cursor: url('../../Assets/Cursors/target-small.png'), auto;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */

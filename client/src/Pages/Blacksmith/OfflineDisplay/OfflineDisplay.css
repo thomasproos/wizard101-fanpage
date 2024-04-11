@@ -8,7 +8,7 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-  background-image: url('../../../Assets/star-background-2.jpg');
+  background-image: url('../../../Assets/Backgrounds/star-background-tall.jpg');
   background-size: cover;
   transition: transform .5s ease;
   width: 340px;
@@ -153,7 +153,7 @@
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
-  background-image: url('../../../Assets/button-medium.png');
+  background-image: url('../../../Assets/Buttons/button-medium.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 160px;

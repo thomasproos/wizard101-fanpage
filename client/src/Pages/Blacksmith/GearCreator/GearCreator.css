@@ -1,7 +1,7 @@
 /* Blacksmith Content */
 #blacksmith-display-box {
   position: relative;
-  background-image: url('../../../Assets/character-window.png');
+  background-image: url('../../../Assets/CustomAssets/character-window.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 340px;
@@ -33,7 +33,7 @@
 
 /* Hat */
 #blacksmith-display-hat {
-  background-image: url('../../../Assets/hat-icon.png');
+  background-image: url('../../../Assets/ItemIcons/hat-icon.png');
   background-size:auto;
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,7 +44,7 @@
 
 /* Amulet */
 #blacksmith-display-amulet {
-  background-image: url('../../../Assets/amulet-icon.png');
+  background-image: url('../../../Assets/ItemIcons/amulet-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 70px;
@@ -61,7 +61,7 @@
 }
 
 #blacksmith-display-ring {
-  background-image: url('../../../Assets/ring-icon.png');
+  background-image: url('../../../Assets/ItemIcons/ring-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 70px;
@@ -70,7 +70,7 @@
 }
 
 #blacksmith-display-wand {
-  background-image: url('../../../Assets/wand-icon.png');
+  background-image: url('../../../Assets/ItemIcons/wand-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 70px;
@@ -80,7 +80,7 @@
 
 /* All Option */
 #blacksmith-display-all {
-  background-image: url('../../../Assets/large-spiral-icon.png');
+  background-image: url('../../../Assets/ItemIcons/large-spiral-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -104,7 +104,7 @@
 }
 
 #blacksmith-display-deck {
-  background-image: url('../../../Assets/deck-icon.png');
+  background-image: url('../../../Assets/ItemIcons/deck-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 70px;
@@ -113,7 +113,7 @@
 }
 
 #blacksmith-display-robe {
-  background-image: url('../../../Assets/robe-icon.png');
+  background-image: url('../../../Assets/ItemIcons/robe-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 70px;
@@ -122,7 +122,7 @@
 }
 
 #blacksmith-display-athame {
-  background-image: url('../../../Assets/athame-icon.png');
+  background-image: url('../../../Assets/ItemIcons/athame-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 70px;
@@ -132,7 +132,7 @@
 
 /* Boots */
 #blacksmith-display-boots {
-  background-image: url('../../../Assets/boots-icon.png');
+  background-image: url('../../../Assets/ItemIcons/boots-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 70px;

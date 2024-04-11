@@ -7,8 +7,8 @@ import './Blacksmith.css';
 
 // Import Components
 import OfflineDisplay from './OfflineDisplay/OfflineDisplay';
-
-// Import Assets
+import GearSearch from './GearSearch/GearSearch.js';
+import GearCreator from './GearCreator/GearCreator.js';
 import CharacterList from './CharacterList/CharacterList';
 import CharacterCreator from './CharacterCreator/CharacterCreator';
 
@@ -18,7 +18,9 @@ export default function Blacksmith() {
   const [currentSlot, setCurrentSlot] = useState({});
   const [valid, setValid] = useState(false);
   const [page, setPage] = useState(1);
-  const numberPages = 2;
+  const [currentGear, setCurrentGear] = useState('all');
+  const [wizard, setWizard] = useState({});
+  let numberPages = 2;
 
   // Setup global variables
   const loginStatus = useSelector(state => state.loginStatus);
@@ -59,7 +61,6 @@ export default function Blacksmith() {
   // Fetch user profile
   useEffect(() => {
     if (loginStatus) {
-      setPage(2);
       (async () => {
         try {
           const response = await fetch('/api/v1/auth/user');
@@ -89,8 +90,8 @@ export default function Blacksmith() {
             <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
   
             {/* Character Creator */}
-            <CharacterCreator profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
-              setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid}/>
+            <CharacterCreator setPage={setPage} profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
+              setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid} setWizard={setWizard}/>
               
             {/* Page Buttons */}
             <div id="blacksmith-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
@@ -123,7 +124,7 @@ export default function Blacksmith() {
   
         </section>
       );
-    } else {
+    } else if (page === 1) {
       return(
         <section id="blacksmith" className="custom-border-1">
           <div id="blacksmith-title-background">
@@ -142,6 +143,32 @@ export default function Blacksmith() {
             <div id="blacksmith-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
                 if (page === 1) {
                   setPage(2);
+                }
+              }}/>
+          </div>
+        </section>
+      );
+    } else if (page === 3) {
+      numberPages = 4;
+      return(
+        <section id="blacksmith" className="custom-border-1">
+          <div id="blacksmith-title-background">
+            <div id="blacksmith-title">Backpack</div>
+          </div>
+          <div id="blacksmith-content-container">
+            <GearCreator currentGear={currentGear} setCurrentGear={setCurrentGear}/>
+            <GearSearch currentGear={currentGear} setCurrentGear={setCurrentGear} wizard={wizard}/>
+
+            {/* Page Buttons */}
+            <div id="blacksmith-page-left-button" className="page-button-enabled" onClick={() => {
+                if (page === 3) {
+                  setPage(2);
+                }
+              }}/>
+            <div id="blacksmith-page-number-display">{page}/{numberPages}</div>
+            <div id="blacksmith-page-right-button" className="page-button-enabled" onClick={() => {
+                if (page === 3) {
+                  setPage(4);
                 }
               }}/>
           </div>

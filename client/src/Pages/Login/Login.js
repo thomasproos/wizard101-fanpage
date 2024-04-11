@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actionTypes } from '../../ReduxStore.js';
 
 // Import assets
-import Spiral from '../../Assets/large-spiral-icon.png';
+import Spiral from '../../Assets/ItemIcons/large-spiral-icon.png';
 
 export default function Login() {
   const [username, setUsername] = useState('');

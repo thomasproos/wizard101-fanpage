@@ -5,11 +5,11 @@ import './CreateAccount.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionTypes } from '../../ReduxStore.js';
+import { useState } from 'react';
 
 // Import Assets
-import Info from '../../Assets/info-icon.png';
-import { useState } from 'react';
-import Spiral from '../../Assets/large-spiral-icon.png';
+import Info from '../../Assets/ItemIcons/info-icon.png';
+import Spiral from '../../Assets/ItemIcons/large-spiral-icon.png';
 
 export default function CreateAccount() {
   const [username, setUsername] = useState('');

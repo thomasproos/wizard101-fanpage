@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 const express = require('express');
-const { UserModel } = require('../database/database.js');
+const { UserModel, HatModel } = require('../database/database.js');
 const router = express.Router();
 
 router.post('/create-account', async (req, res) => {
@@ -439,6 +439,73 @@ router.delete('/delete-wizard-slot/:index', async (req, res) => {
         message: 'Invalid index parameter.'
       });
       return;
+    } catch(error) {
+      res.status(500).json({
+        status: 500,
+        message: 'Server failed to acquire this resource.'
+      });
+    }
+  } else {
+    res.status(401).json({
+      status: 401,
+      message: 'Unauthorized access to this resource.'
+    });
+  }
+});
+
+router.put('/update-wizard-items', async (req, res) => {
+  if (req.session.username) {
+    try {
+      const {wizard, gear} = req.body;
+
+      // Validate parameter
+      delete gear.__v;
+      delete gear._id;
+
+      if (gear instanceof HatModel) {
+        res.status(400).json({
+          status: 400,
+          message: 'Invalid wizard item object.'
+        });
+        return;
+      }
+
+      // Get the user from the database
+      let user = await UserModel.find({ username: req.session.username });
+      user = user[0];
+
+      // Update the object
+      let wizardIndex = -1;
+      console.log(user.wizard_slots);
+      user.wizard_slots.forEach((character, index) => {
+        if (character.id === wizard._id) {
+          wizardIndex = index;
+          return;
+        }
+      });
+
+      // Validate that a wizard was found
+      if (wizardIndex === -1) {
+        res.status(400).json({
+          status: 400,
+          message: 'Failed to locate proper wizard character slot.'
+        });
+        return;
+      }
+
+      // Update the object
+      const type = gear.type;
+      user.wizard_slots[wizardIndex][`${type}`] = gear; 
+
+      // Update the wizard slots
+      await UserModel.updateOne({ username: req.session.username }, {
+        wizard_slots: user.wizard_slots
+      });
+
+      res.status(200).json({
+        status: 200,
+        message: 'Successfully delete the wizard slot.'
+      });
     } catch(error) {
       res.status(500).json({
         status: 500,

@@ -25,12 +25,12 @@
   background-repeat: no-repeat;
   background-size: contain;
   margin-left: 15.8px;
-  cursor: url('../../../Assets/cursor-target-small.png'), auto;
+  cursor: url('../../../Assets/Cursors/target-small.png'), auto;
 }
 
 #blacksmith-gear-search-dropdown-section {
   display: none;
-  cursor: url('../../../Assets/cursor-target-small.png'), auto;
+  cursor: url('../../../Assets/Cursors/target-small.png'), auto;
   position: absolute;
   z-index: 3;
   border: 1px solid #A69F1A;
@@ -60,39 +60,39 @@
 
 /* Custom Classes for different gear options */
 .active-gear-all {
-  background-image: url('../../../Assets/spiral-icon.png');
+  background-image: url('../../../Assets/ItemIcons/spiral-icon.png');
 }
 
 .active-gear-hat {
-  background-image: url('../../../Assets/hat-icon.png');
+  background-image: url('../../../Assets/ItemIcons/hat-icon.png');
 }
 
 .active-gear-amulet {
-  background-image: url('../../../Assets/amulet-icon.png');
+  background-image: url('../../../Assets/ItemIcons/amulet-icon.png');
 }
 
 .active-gear-robe {
-  background-image: url('../../../Assets/robe-icon.png');
+  background-image: url('../../../Assets/ItemIcons/robe-icon.png');
 }
 
 .active-gear-deck {
-  background-image: url('../../../Assets/deck-icon.png');
+  background-image: url('../../../Assets/ItemIcons/deck-icon.png');
 }
 
 .active-gear-wand {
-  background-image: url('../../../Assets/wand-icon.png');
+  background-image: url('../../../Assets/ItemIcons/wand-icon.png');
 }
 
 .active-gear-athame {
-  background-image: url('../../../Assets/athame-icon.png');
+  background-image: url('../../../Assets/ItemIcons/athame-icon.png');
 }
 
 .active-gear-boots {
-  background-image: url('../../../Assets/boots-icon.png');
+  background-image: url('../../../Assets/ItemIcons/boots-icon.png');
 }
 
 .active-gear-ring {
-  background-image: url('../../../Assets/ring-icon.png');
+  background-image: url('../../../Assets/ItemIcons/ring-icon.png');
 }
 
 /* Search bar Input */
@@ -106,9 +106,9 @@
   margin-left: 16px;
   margin-bottom: 15px;
   padding-left: 35px;
-  cursor: url('../../../Assets/cursor-small.png'), auto;
-  caret-color: #a3a314;;
-  color: #a3a314;;
+  cursor: url('../../../Assets/Cursors/default-small.png'), auto;
+  caret-color: #a3a314;
+  color: #a3a314;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: var(--text-font-size);
   text-transform: uppercase;
@@ -213,7 +213,7 @@
 .blacksmith-gear-search-item-placeholder {
   width: 100%;
   height: 40px;
-  background-image: url('../../../Assets/slot-gear-banner.png');
+  background-image: url('../../../Assets/Banners/placeholder.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -223,7 +223,7 @@
 .blacksmith-gear-search-item-valid {
   width: 96%;
   height: 40px;
-  background-image: url('../../../Assets/equipable-gear-banner.png');
+  background-image: url('../../../Assets/Banners/equipable.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -234,21 +234,13 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
-}
-
-.blacksmith-gear-search-item-valid:hover {
-  filter: brightness(90%);
-}
-
-.blacksmith-gear-search-item-valid:active {
-  filter: brightness(100%);
 }
 
 /* Search Equipped Gear */
 .blacksmith-gear-search-item-equipped {
   width: 96%;
   height: 40px;
-  background-image: url('../../../Assets/empty-border.png');
+  background-image: url('../../../Assets/Banners/equiped.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -260,15 +252,15 @@
   align-items: center;
   gap: 10px;
 }
-.blacksmith-gear-search-item-equipped:hover {
-  filter: brightness(90%);
-}
 
-.blacksmith-gear-search-item-equipped:active {
-  filter: brightness(100%);
+.blacksmith-gear-search-item-equipped:hover {
+  color: white;
+  background-image: url('../../../Assets/Banners/equiped-active.png');
 }
 
 .blacksmith-gear-search-item-name {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 500px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -301,11 +293,11 @@
 }
 
 #blacksmith-gear-search-backwards {
-  background-image: url('../../../Assets/back-icon.png');
+  background-image: url('../../../Assets/Buttons/back-icon.png');
   margin-left: 10px;
 }
 
 #blacksmith-gear-search-forward {
-  background-image: url('../../../Assets/forward-icon.png');
+  background-image: url('../../../Assets/Buttons/forward-icon.png');
   margin-right: 10px;
 }

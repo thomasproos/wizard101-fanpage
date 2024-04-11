@@ -1,0 +1,6 @@
+/* Item Tooltip CSS */
+.item-tooltip {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+}

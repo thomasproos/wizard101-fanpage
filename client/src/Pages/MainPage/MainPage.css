@@ -30,7 +30,7 @@
 }
 
 .main-title-background {
-  background-image: url('../../Assets/title-banner.png');
+  background-image: url('../../Assets/CustomBook/title.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 500px;
@@ -81,7 +81,7 @@
 
 .main-about-header-container:hover {
   color: #05FDFF;
-  cursor: url('../../Assets/cursor-target-small.png'), auto;
+  cursor: url('../../Assets/Cursors/target-small.png'), auto;
 }
 
 .main-about-header-container:hover .main-about-header-icon {
@@ -100,11 +100,11 @@
 .main-about-link-external {
   text-decoration: none;
   color: #05FDFF;
-  cursor: url('../../Assets/cursor-target-small.png'), auto;
+  cursor: url('../../Assets/Cursors/target-small.png'), auto;
 }
 
 .main-about-link-internal {
   text-decoration: none;
   color: #ff67ff;
-  cursor: url('../../Assets/cursor-target-small.png'), auto;
+  cursor: url('../../Assets/Cursors/target-small.png'), auto;
 }

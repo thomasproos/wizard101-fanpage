@@ -3,10 +3,10 @@ import { useNavigate, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionTypes } from '../../ReduxStore.js';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 // Import CSS
 import './Navigation.css';
-import { useEffect } from 'react';
 
 export default function Navigation() {
   const [page, setPage] = useState('');
