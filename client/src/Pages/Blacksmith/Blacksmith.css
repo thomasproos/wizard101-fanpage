@@ -10,6 +10,7 @@
   color: #F6F741;
   padding: 30px;
   overflow-y: auto;
+  /* overflow-x: hidden; */
 }
 
 /* Blacksmith Title */
@@ -26,7 +27,7 @@
 }
 
 #blacksmith-title-background {
-  background-image: url('../../Assets/title-banner.png');
+  background-image: url('../../Assets/CustomBook/title.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 500px;
@@ -39,18 +40,180 @@
 }
 
 #blacksmith-content-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  gap: 60px;
+  gap: 50px;
   width: 1000px;
   height: 635px;
   padding: 30px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 50px;
-  background-image: url('../../Assets/book.png');
+  background-image: url('../../Assets/CustomBook/double-page.png');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* Character Slots */
+#blacksmith-wizard-slot-list {
+  width: 340px;
+  height: 500px;
+  background-image: url('../../Assets/Backgrounds/star-background-tall.jpg'); 
+  box-sizing: border-box;
+  border-radius: 10px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.blacksmith-wizard-slot-shading {
+  background-color: #000000be;
+  width: 340px;
+  height: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.blacksmith-wizard-slot-header {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 7px;
+  background-color: #42111e;
+}
+
+#blacksmith-wizard-slot-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20px, black calc(100% - 20px), transparent 100%);
+  max-height: 415px;
+  align-items: center;
+  overflow-y: scroll;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Confirmation Popup */
+#confirmation-background {
+  background-color: rgba(0, 0, 0, 0.575);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 6;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.confirmation-container {
+  width: 350px;
+  height: 150px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #42111e;
+  margin-top: 20vh;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Confirmation Content */
+#confirmation-message {
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+#confirmation-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.confirmation-button {
+  background-image: url('../../Assets/Buttons/button-medium.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+}
+
+.confirmation-button:hover {
+  transform: scale(1.08);
+}
+
+.confirmation-button:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+/* Page Change Icons */
+#blacksmith-page-right-button {
+  background-image: url('../../Assets/Buttons/forward-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 40px;
+  right: 0;
+  margin-right: 70px;
+  filter: grayscale(1);
+}
+
+#blacksmith-page-left-button {
+  background-image: url('../../Assets/Buttons/back-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 40px;
+  left: 0;
+  margin-left: 70px;
+  filter: grayscale(1);
+}
+
+.page-button-enabled:hover {
+  transform: scale(1.08);
+}
+
+.page-button-enabled:active {
+  transform: scale(1.0);
+  filter: grayscale(0) brightness(120%) !important;
+}
+
+.page-button-enabled {
+  filter: grayscale(0) !important;
+}
+
+#blacksmith-page-number-display {
+  position: absolute;
+  bottom: 0;
+  color: black;
+  font-size: 40px;
+  font-weight: 1000;
+  text-shadow: 2px 0 #000000;
+  margin-bottom: 35px;
 }

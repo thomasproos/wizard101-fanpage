@@ -1,5 +1,5 @@
 // Import Assets
-import BorderLine from '../../../Assets/border-line.png';
+import BorderLine from '../../../Assets/CustomAssets/border-line.png';
 
 // Import CSS
 import './GearCreator.css';

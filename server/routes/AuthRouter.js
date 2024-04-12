@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 const express = require('express');
-const { UserModel, RobeModel } = require('../database/database.js');
+const { UserModel, HatModel } = require('../database/database.js');
 const router = express.Router();
 
 router.post('/create-account', async (req, res) => {
@@ -191,130 +191,332 @@ router.get('/login-status', (req, res) => {
   }
 });
 
-router.get('/authenticate', async (req, res) => {
-  try {
-    const testItem = RobeModel({
-      name: 'MALISTAIRE\'S CLOAK OF FLUX',
-      type: 'robe',
-      health: 529,
-      mana: 0,
-      energy: 0,
-      power_pip: 9,
-      shadow_pip: 12,
-      archmastery: 0,
-      universal_damage: 0,
-      universal_resistance: 14,
-      universal_accuracy: 0,
-      universal_critical: 0,
-      universal_critical_block: 0,
-      universal_pierce: 0,
-      stun_resistance: 0,
-      universal_pip_conversion: 0,
-      outgoing_healing: 0,
-      ingoing_healing: 0,
-      school_damage: {
-        fire_damage: 0,
-        ice_damage: 0,
-        storm_damage: 27,
-        myth_damage: 0,
-        life_damage: 0,
-        death_damage: 0,
-        balance_damage: 0,
-        shadow_damage: 0
-      },
-      school_resistance: {
-        fire_resistance: 0,
-        ice_resistance: 0,
-        storm_resistance: 0,
-        myth_resistance: 0,
-        life_resistance: 0,
-        death_resistance: 0,
-        balance_resistance: 0,
-        shadow_resistance: 0
-      },
-      school_accuracy: {
-        fire_accuracy: 0,
-        ice_accuracy: 0,
-        storm_accuracy: 25,
-        myth_accuracy: 0,
-        life_accuracy: 0,
-        death_accuracy: 0,
-        balance_accuracy: 0,
-        shadow_accuracy: 0
-      },
-      school_critical: {
-        fire_critical: 0,
-        ice_critical: 0,
-        storm_critical: 115,
-        myth_critical: 0,
-        life_critical: 0,
-        death_critical: 0,
-        balance_critical: 0,
-        shadow_critical: 0
-      },
-      school_critical_block: {
-        fire_critical_block: 0,
-        ice_critical_block: 0,
-        storm_critical_block: 0,
-        myth_critical_block: 0,
-        life_critical_block: 0,
-        death_critical_block: 0,
-        balance_critical_block: 0,
-        shadow_critical_block: 0
-      },
-      school_pierce: {
-        fire_pierce: 0,
-        ice_pierce: 0,
-        storm_pierce: 0,
-        myth_pierce: 0,
-        life_pierce: 0,
-        death_pierce: 0,
-        balance_pierce: 0,
-        shadow_pierce: 0
-      },
-      school_pip_conversion: {
-        fire_pip_conversion: 0,
-        ice_pip_conversion: 0,
-        storm_pip_conversion: 0,
-        myth_pip_conversion: 0,
-        life_pip_conversion: 0,
-        death_pip_conversion: 0,
-        balance_pip_conversion: 0,
-        shadow_pip_conversion: 0
-      },
-      sockets: [],
-      school_only: 'Storm',
-      school_not_allowed: 'n/a',
-      level_requirement: 100,
-      tradeable: true,
-      auction: false,
-      crown: false,
-      spells: [
-        'Shadow Trap',
-        'Shadow Trap'
-      ],
-      sources: [{
-        name: 'Malistaire the Undying (Shadow)',
-        // eslint-disable-next-line max-len
-        wiki_article: 'https://wiki.wizard101central.com/wiki/Creature:Malistaire_the_Undying_(Shadow)'
-      }]
+router.get('/user', async (req, res) => {
+  if (req.session.username) {
+    try {
+      let user = await UserModel.find({ username: req.session.username });
+      user = user[0];
+
+      // Remove the password parameter
+      const filteredUser = {
+        username: req.session.username,
+        wizard_slots: user.wizard_slots !== null && user.wizard_slots !== undefined ? 
+          user.wizard_slots : []
+      };
+
+      if (Object.keys(user).length !== 0) {
+        res.status(200).json({
+          status: 200,
+          user: filteredUser
+        });
+      } else {
+        res.status(400).json({
+          status: 400,
+          message: 'Unable to find this resource.'
+        });
+      }
+    } catch(error) {
+      res.status(500).json({
+        status: 500,
+        message: 'Server failed to acquire this resource.'
+      });
+    }
+  } else {
+    res.status(401).json({
+      status: 401,
+      message: 'Unauthorized access to this resource.'
     });
+  }
+});
 
-    // Save the user
-    testItem.save();
+router.put('/update-wizard-slot/', async (req, res) => {
+  if (req.session.username) {
+    try {
+      const characterSlot = req.body;
+      const schoolList = ['storm', 'fire', 'ice', 'life', 'death', 'myth', 'balance'];
 
-    // Test if it saved
-    // const user = await UserModel.find({ username: 'test123' });
-    // const isMatch = await user[0].comparePassword('abc123');
-    // console.log('Match: ' + isMatch); 
+      // Validating the contents
+      if (Object.keys(characterSlot).length === 5) {
+        // Check each of the parameters
+        if (
+          // Name
+          characterSlot.name.match('^[A-Z0-9\\s]{4,20}$') &&
+          // School
+          schoolList.includes(characterSlot.school) &&
+          // Level
+          characterSlot.level > 0 && characterSlot.level <= 170 &&
+          // Index
+          !isNaN(characterSlot.index) && characterSlot.index >= 0 &&
+          // Created
+          typeof characterSlot.created === 'boolean'
+        ) {
+          // Fetch the currentlist of characters
+          let user = await UserModel.find({ username: req.session.username });
+          user = user[0];
 
-    // const isNotMatch = await user[0].comparePassword('asd123123');
-    // console.log('Match: ' + isNotMatch);
+          // Check if the user can fit anymore slots
+          if (user.wizard_slots === undefined || user.wizard_slots === null) {
+            user.wizard_slots = [];
+          }
 
-    res.status(200).json('Success');
+          if (JSON.stringify(user.wizard_slots) !== '[]') {
+            // Check number of slots already
+            if (user.wizard_slots.length === 10) {
+              res.status(400).json({
+                status: 400,
+                message: 'Insufficient wizard slots.'
+              });
+              return;
+            }
+          } else if (characterSlot.created) {
+            res.status(400).json({
+              status: 400,
+              message: 'No wizard slots to update.'
+            });
+            return;
+          }
 
-  } catch(error) {
-    res.status(500).json('Failed to login');
+          if (!characterSlot.created) {
+            // Insert the new wizard slot
+            user.wizard_slots.push({
+              name: characterSlot.name,
+              school: characterSlot.school,
+              level: characterSlot.level,
+              hat: null,
+              robe: null,
+              boots: null,
+              deck: null,
+              wand: null,
+              athame: null,
+              ring: null,
+              amulet: null
+            });
+
+            // Update the wizard slots
+            await UserModel.updateOne({ username: req.session.username }, {
+              wizard_slots: user.wizard_slots
+            });
+      
+            res.status(200).json({
+              status: 200,
+              message: 'Successfully updated the wizard slots.'
+            });
+          } else {
+            // Check if index is within range
+            if (characterSlot.index >= user.wizard_slots.length) {
+              res.status(400).json({
+                status: 400,
+                message: 'Index outside of wizard slot range.'
+              });
+              return;
+            }
+
+            // Check if the level or school are being changed
+            if (user.wizard_slots[characterSlot.index].school !== characterSlot.school ||
+            user.wizard_slots[characterSlot.index].level > characterSlot.level) {
+              // Insert a blank slate since the school or level are being changed
+              user.wizard_slots[characterSlot.index] = {
+                name: characterSlot.name,
+                school: characterSlot.school,
+                level: characterSlot.level,
+                hat: null,
+                robe: null,
+                boots: null,
+                deck: null,
+                wand: null,
+                athame: null,
+                ring: null,
+                amulet: null
+              };
+
+              // Update the wizard slots
+              await UserModel.updateOne({ username: req.session.username }, {
+                wizard_slots: user.wizard_slots
+              });
+            } else {
+              // Only change the name, school, and level parameters
+              user.wizard_slots[characterSlot.index] = {
+                name: characterSlot.name,
+                school: characterSlot.school,
+                level: characterSlot.level,
+                hat: user.wizard_slots[characterSlot.index].hat,
+                robe: user.wizard_slots[characterSlot.index].robe,
+                boots: user.wizard_slots[characterSlot.index].boots,
+                deck: user.wizard_slots[characterSlot.index].deck,
+                wand: user.wizard_slots[characterSlot.index].wand,
+                athame: user.wizard_slots[characterSlot.index].athame,
+                ring: user.wizard_slots[characterSlot.index].ring,
+                amulet: user.wizard_slots[characterSlot.index].amulet
+              };
+
+              // Update the wizard slots
+              await UserModel.updateOne({ username: req.session.username }, {
+                wizard_slots: user.wizard_slots
+              });
+            }
+
+            res.status(200).json({
+              status: 200,
+              message: 'Successfully updated the wizard slots.'
+            }); 
+          }
+        } else {
+          res.status(400).json({
+            status: 400,
+            message: 'Invalid wizard slots object.'
+          });
+          return;
+        }
+      } else {
+        res.status(400).json({
+          status: 400,
+          message: 'Invalid wizard slots object.'
+        });
+        return;
+      }
+    } catch(error) {
+      res.status(500).json({
+        status: 500,
+        message: 'Server failed to acquire this resource.'
+      });
+    }
+  } else {
+    res.status(401).json({
+      status: 401,
+      message: 'Unauthorized access to this resource.'
+    });
+  }
+});
+
+router.delete('/delete-wizard-slot/:index', async (req, res) => {
+  if (req.session.username) {
+    try {
+      const index = req.params.index;
+
+      // Validate parameter
+      if (isNaN(index)) {
+        res.status(400).json({
+          status: 400,
+          message: 'Invalid index parameter.'
+        });
+        return;
+      }
+
+      // Validate index range
+      if (index > 9 || index < 0) {
+        res.status(400).json({
+          status: 400,
+          message: 'Invalid index parameter.'
+        });
+        return;
+      }
+
+      // Fetch the currentlist of characters
+      let user = await UserModel.find({ username: req.session.username });
+      user = user[0];
+
+      // Edit the user's wizard slots
+      if (JSON.stringify(user.wizard_slots) !== '[]') {
+        if (user.wizard_slots.length > index) {
+          user.wizard_slots.splice(index, 1);
+        
+          // Update the wizard slots
+          await UserModel.updateOne({ username: req.session.username }, {
+            wizard_slots: user.wizard_slots
+          });
+    
+          res.status(200).json({
+            status: 200,
+            message: 'Successfully delete the wizard slot.'
+          });
+          return;
+        }
+      }
+      
+      // Error message
+      res.status(400).json({
+        status: 400,
+        message: 'Invalid index parameter.'
+      });
+      return;
+    } catch(error) {
+      res.status(500).json({
+        status: 500,
+        message: 'Server failed to acquire this resource.'
+      });
+    }
+  } else {
+    res.status(401).json({
+      status: 401,
+      message: 'Unauthorized access to this resource.'
+    });
+  }
+});
+
+router.put('/update-wizard-items', async (req, res) => {
+  if (req.session.username) {
+    try {
+      const {wizard, gear} = req.body;
+
+      // Validate parameter
+      delete gear.__v;
+      delete gear._id;
+
+      if (gear instanceof HatModel) {
+        res.status(400).json({
+          status: 400,
+          message: 'Invalid wizard item object.'
+        });
+        return;
+      }
+
+      // Get the user from the database
+      let user = await UserModel.find({ username: req.session.username });
+      user = user[0];
+
+      // Update the object
+      let wizardIndex = -1;
+      console.log(user.wizard_slots);
+      user.wizard_slots.forEach((character, index) => {
+        if (character.id === wizard._id) {
+          wizardIndex = index;
+          return;
+        }
+      });
+
+      // Validate that a wizard was found
+      if (wizardIndex === -1) {
+        res.status(400).json({
+          status: 400,
+          message: 'Failed to locate proper wizard character slot.'
+        });
+        return;
+      }
+
+      // Update the object
+      const type = gear.type;
+      user.wizard_slots[wizardIndex][`${type}`] = gear; 
+
+      // Update the wizard slots
+      await UserModel.updateOne({ username: req.session.username }, {
+        wizard_slots: user.wizard_slots
+      });
+
+      res.status(200).json({
+        status: 200,
+        message: 'Successfully delete the wizard slot.'
+      });
+    } catch(error) {
+      res.status(500).json({
+        status: 500,
+        message: 'Server failed to acquire this resource.'
+      });
+    }
+  } else {
+    res.status(401).json({
+      status: 401,
+      message: 'Unauthorized access to this resource.'
+    });
   }
 });
 

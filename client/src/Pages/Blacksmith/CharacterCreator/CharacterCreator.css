@@ -1,0 +1,301 @@
+/* Character slot creator */
+#blacksmith-wizard-slot-creator {
+  width: 340px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: #42111e;
+  padding: 20px;
+  box-sizing: border-box;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  position: relative;
+}
+
+.blacksmith-wizard-editor-header {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+  padding: 7px;
+  border-radius: 10px;
+  background-color: #220808;
+}
+
+/* Name */
+.blacksmith-wizard-editor-name-container {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+#blacksmith-wizard-editor-name-label {
+  line-height: 20px;
+}
+
+#blacksmith-wizard-editor-name-input {
+  background-color: rgba(0, 0, 0, 0.397);
+  border: none;
+  text-transform: uppercase;
+  border-radius: 20px;
+  width: 180px;
+  height: 30px;
+  outline-width: 0;
+  margin-left: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: url('../../../Assets/Cursors/default-small.png'), auto;
+  caret-color: white;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 1000;
+  font-size: 16px;
+}
+
+/* School */
+#blacksmith-wizard-editor-school-selector {
+  display: flex;
+  flex-direction: row;
+  width: 210px;
+  border-radius: 20px;
+  margin-left: 10px;
+  background-color: #300b0b;
+}
+
+#blacksmith-wizard-editor-school-selector:hover .blacksmith-wizard-editor-school-icon {
+  opacity: 0.8;
+}
+
+.blacksmith-wizard-editor-school-icon {
+  opacity: 0.5;
+  margin: 0px;
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 300ms ease;
+}
+
+.blacksmith-wizard-editor-school-icon:hover {
+  transform: scale(1.05);
+}
+
+.blacksmith-wizard-editor-school-icon:active {
+  transform: scale(1.0);
+  filter: brightness(110%);
+}
+
+.current-slot-school {
+  opacity: 1;
+  margin: 0px;
+  -webkit-filter: drop-shadow(0px 12px 3px rgb(255, 97, 189));
+  filter: drop-shadow(0px 0px 3px rgb(255, 219, 58));
+}
+
+/* Level Input */
+#blacksmith-wizard-editor-level-input {
+  background-color: rgba(0, 0, 0, 0.397);
+  border: none;
+  text-transform: uppercase;
+  border-radius: 20px;
+  width: 50px;
+  text-align: center;
+  height: 30px;
+  outline-width: 0;
+  margin-left: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: url('../../../Assets/Cursors/default-small.png'), auto;
+  caret-color: white;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 1000;
+  font-size: 16px;
+}
+
+#wizard-editor-level-increase {
+  height: 40px;
+  width: 40px;
+  rotate: 180deg;
+  margin-left: 10px;
+}
+
+#wizard-editor-level-decrease {
+  height: 40px;
+  width: 40px;
+}
+
+#wizard-editor-level-decrease:hover, #wizard-editor-level-increase:hover {
+  transform: scale(1.08);
+}
+
+#wizard-editor-level-decrease:active, #wizard-editor-level-increase:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+/* Save Button */
+.blacksmith-wizard-editor-save-button {
+  background-image: url('../../../Assets/Buttons/button-medium.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 33px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  line-height: 33px;
+  text-align: center;
+  box-sizing: border-box;
+  filter: grayscale(1);
+}
+
+.editor-save-button-valid {
+  filter: grayscale(0);
+}
+
+.editor-save-button-valid:hover {
+  transform: scale(1.08);
+}
+
+.editor-save-button-valid:active {
+  transform: scale(1.0);
+  filter: brightness(120%); 
+}
+
+/* Backpack Button */
+.blacksmith-wizard-editor-button-inactive {
+  height: 70px;
+  width: 70px;
+  margin-top: 35px;
+  margin-left: 120px;
+  filter: grayscale(0.6);
+  cursor: url('../../../Assets/Cursors/x-small.png'), auto;
+}
+
+.blacksmith-wizard-editor-button-active {
+  height: 70px;
+  width: 70px;
+  margin-top: 35px;
+  margin-left: 120px;
+  -webkit-filter: drop-shadow(0px 12px 7px rgb(255, 58, 58));
+  filter: drop-shadow(0px 0px 7px rgb(255, 219, 58));
+  cursor: url('../../../Assets/Cursors/default-small.png'), auto;
+}
+
+.blacksmith-wizard-editor-button-active:hover {
+  transform: scale(1.10);
+}
+
+.blacksmith-wizard-editor-button-active:active {
+  transform: scale(1.0);
+}
+
+/* Delete Button */
+#wizard-slot-delete-button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 0;
+  right: 0;
+  margin: 18px;
+}
+
+#wizard-slot-delete-button:hover, #wizard-slot-info-button:hover {
+  transform: scale(1.08);
+}
+
+#wizard-slot-delete-button:active, #wizard-slot-info-button:active {
+  transform: scale(1.0);
+  filter: brightness(120%);
+}
+
+/* Information Button */
+#wizard-slot-info-button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 0;
+  left: 0;
+  margin: 18px;
+  cursor: url('../../../Assets/Cursors/picker-small.png'), auto;
+}
+
+#tooltip-info-character-view {
+  top: 0;
+  left: 0;
+  margin-left: 80px;
+  margin-top: 12px;
+  height: fit-content;
+  background-color: rgb(0, 0, 0);
+  width: 223px;
+  color: white;
+}
+
+#blacksmith-wizard-slot-creator .tooltip::after {
+  bottom: 87.5%;
+}
+
+/* Nothing Selected Message */
+#wizard-slot-warning-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#character-editor-message {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 150px;
+  padding: 10px;
+  background-color: rgb(29, 5, 5);
+}
+
+/* System Warning Messages */
+#wizard-slot-system-message {
+  background-color: #000000;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-radius: 25px;
+  display: flex;
+  width: fit-content;
+  line-height: 30px;
+  gap: 10px;
+  cursor: url('../../../Assets/Cursors/picker-small.png'), auto;
+}
+
+.wizard-slot-system-icon {
+  background-image: url('../../../Assets/ItemIcons/exclamation-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  animation: errorGlow 1s alternate infinite;
+  border-radius: 50%;
+}
+
+/* Keyframes Animations */
+@keyframes errorGlow {
+  from {
+    box-shadow: 0 0 5px -3px #ff2e2e;
+  }
+  to {
+    box-shadow: 0 0 5px 3px #ff2e2e;
+  }
+}

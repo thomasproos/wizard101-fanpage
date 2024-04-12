@@ -5,11 +5,11 @@ import './CreateAccount.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionTypes } from '../../ReduxStore.js';
+import { useState } from 'react';
 
 // Import Assets
-import Info from '../../Assets/info-icon.png';
-import { useState } from 'react';
-import Spiral from '../../Assets/large-spiral-icon.png';
+import Info from '../../Assets/ItemIcons/info-icon.png';
+import Spiral from '../../Assets/ItemIcons/large-spiral-icon.png';
 
 export default function CreateAccount() {
   const [username, setUsername] = useState('');
@@ -84,13 +84,15 @@ export default function CreateAccount() {
               }}/>
 
             {/* Info Icon */}
-            <img src={Info} alt="Info Icon" className="create-account-info-icon" onClick={() => {
-              const status = [!tooltipStatus[0], false];
-              setTooltipStatus(status);
-            }}/>
-            <div className={"tooltip custom-border-2 " + (tooltipStatus[0] ? "tooltip-visible" : "")}>
-              A username must be between 4 to 20 characters and can include numbers, 
-              letters, underscores, periods, and hyphens.
+            <div className="create-account-info-container">
+              <img src={Info} alt="Info Icon" className="create-account-info-icon" onClick={() => {
+                const status = [!tooltipStatus[0], false];
+                setTooltipStatus(status);
+              }}/>
+              <div id="tooltip-info-1" className={"tooltip custom-border-2 " + (tooltipStatus[0] ? "tooltip-visible" : "")}>
+                A username must be between 4 to 20 characters and can include numbers, 
+                letters, underscores, periods, and hyphens.
+              </div>
             </div>
           </div>
 
@@ -107,12 +109,14 @@ export default function CreateAccount() {
               }}/>
 
             {/* Info Icon */}
-            <img src={Info} alt="Info Icon" className="create-account-info-icon" onClick={() => {
-              const status = [false, !tooltipStatus[1]];
-              setTooltipStatus(status);
-            }}/>
-            <div className={"tooltip custom-border-2 " + (tooltipStatus[1] ? "tooltip-visible" : "")}>
-              A password must be between 8 to 30 characters and can include numbers and letters.
+            <div className="create-account-info-container">
+              <img src={Info} alt="Info Icon" className="create-account-info-icon" onClick={() => {
+                const status = [false, !tooltipStatus[1]];
+                setTooltipStatus(status);
+              }}/>
+              <div className={"tooltip custom-border-2 " + (tooltipStatus[1] ? "tooltip-visible" : "")}>
+                A password must be between 8 to 30 characters and can include numbers and letters.
+              </div>
             </div>
           </div>
 

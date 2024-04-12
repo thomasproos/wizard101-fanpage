@@ -150,7 +150,8 @@ const userSchema = new mongoose.Schema({
   },
   wizard_slots: {
     type: [{
-      school: RequiredNumber,
+      name: RequiredString,
+      school: RequiredString,
       level: RequiredNumber,
       hat: itemSchema,
       robe: itemSchema,

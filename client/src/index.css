@@ -4,7 +4,7 @@ html {
   font-size: var(--text-font-size);
 
   /* Background Image */
-  background-image: url('./Assets/spiral-background.jpg');
+  background-image: url('./Assets/Backgrounds/spiral-background.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -12,7 +12,7 @@ html {
   overflow: hidden;
 
   /* Custom Cursor */
-  cursor: url('./Assets/cursor-small.png'), auto;
+  cursor: url('./Assets/Cursors/default-small.png'), auto;
 
   /* Global Variables */
   --title-font-size: 24px;
@@ -65,4 +65,52 @@ main {
     0 0 0 6.50px #9A921E,
     0 0 0 7px #6A6019,
     0 0 0 7.5px black;
+}
+
+.custom-border-3 {
+  box-shadow: 
+    0 0 0 1px #4269E7,
+    0 0 0 1px #223351,
+    0 0 0 1.35px rgba(54, 53, 53, 0.842),
+    0 0 0 1.75px #192952,
+    0 0 0 2.5px #1b2d58,
+    0 0 0 3.5px #18264b,
+    0 0 0 4.25px #132141,
+    0 0 0 5px #2F5ACC,
+    0 0 0 5.75px #4168DA,
+    0 0 0 6.50px #2F5ACC,
+    0 0 0 7px #21386F,
+    0 0 0 7.5px #363755;
+}
+
+.custom-border-4 {
+  box-shadow: 
+  0 0 0 1px #a5a5a5,
+  0 0 0 1px #3f3f3f,
+  0 0 0 1.35px rgba(37, 37, 37, 0.842),
+  0 0 0 1.75px #292929,
+  0 0 0 2.5px #474747,
+  0 0 0 3.5px #333333,
+  0 0 0 4.25px #272727,
+  0 0 0 5px #7e7e7e,
+  0 0 0 5.75px #8b8b8b,
+  0 0 0 6.50px #a1a1a1,
+  0 0 0 7px #444444,
+  0 0 0 7.5px #363636;
+}
+
+.custom-border-5 {
+  box-shadow: 
+  0 0 0 1px #9742e7,
+  0 0 0 1px #382251,
+  0 0 0 1.35px rgba(54, 53, 54, 0.842),
+  0 0 0 1.75px #3d1952,
+  0 0 0 2.5px #371b58,
+  0 0 0 3.5px #30184b,
+  0 0 0 4.25px #2f1341,
+  0 0 0 5px #802fcc,
+  0 0 0 5.75px #9541da,
+  0 0 0 6.50px #852fcc,
+  0 0 0 7px #52216f,
+  0 0 0 7.5px #4c3655;
 }

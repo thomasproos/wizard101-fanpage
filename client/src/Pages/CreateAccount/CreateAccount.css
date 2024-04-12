@@ -14,7 +14,7 @@
 
 /* Create Account Container */
 .create-account-title-background {
-  background-image: url('../../Assets/title-banner.png');
+  background-image: url('../../Assets/CustomBook/title.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 500px;
@@ -87,7 +87,7 @@
   margin-left: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  cursor: url('../../Assets/cursor-small.png'), auto;
+  cursor: url('../../Assets/Cursors/default-small.png'), auto;
   caret-color: white;
   color: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -106,8 +106,9 @@
 
 /* Question Icon */
 .create-account-info-icon {
-  height: 35px;
-  cursor: url('../../Assets/cursor-picker-small.png'), auto;
+  height: 39px;
+  width: 39px;
+  cursor: url('../../Assets/Cursors/picker-small.png'), auto;
 }
 
 .create-account-info-icon:hover {
@@ -121,7 +122,7 @@
 
 /* Create Button */
 #create-account-container-button {
-  background-image: url('../../Assets/button-medium.png');
+  background-image: url('../../Assets/Buttons/button-medium.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 150px;
@@ -150,7 +151,7 @@
 /* Login References */
 #create-account-login-button {
   margin-top: -20px;
-  cursor: url('../../Assets/cursor-target-small.png'), auto;
+  cursor: url('../../Assets/Cursors/target-small.png'), auto;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -166,12 +167,24 @@
   position: absolute;
   width: 200px;
   right: 0;
-  margin-right: -145px;
+  bottom: 0;
+  margin-bottom: -45px;
+  margin-right: -240px;
   background-color: #000000b4;
   border-radius: 10px;
   padding: 10px;
   display: none;
   z-index: 5;
+}
+
+#tooltip-info-1 {
+  margin-bottom: -55px;
+}
+
+.create-account-info-container {
+  position: relative;
+  width: 39px;
+  height: 39px;
 }
 
 .tooltip-visible {

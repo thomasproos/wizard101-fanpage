@@ -17,7 +17,6 @@
 
 /* Class for active headers */
 .active {
-  /* background-image: url('../../Assets/ice-logo.png'); */
   color: #a3a314;
 }
 
@@ -34,13 +33,13 @@
   height: 54px;
   width: 54px;
   margin-left: 20px;
-  background-image: url('../../Assets/website-logo.png');
+  background-image: url('../../Assets/CustomIcons/logo.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #navigation-website-container:hover #navigation-website-icon {
-  background-image: url('../../Assets/logo-animated.gif');
+  background-image: url('../../Assets/CustomIcons/animated-logo.gif');
 }
 
 /* Navigation Headers */
@@ -68,27 +67,27 @@
 
 /* Icons for each header */
 #navigation-blacksmith-icon {
-  background-image: url('../../Assets/hat-icon.png');
+  background-image: url('../../Assets/ItemIcons/hat-icon.png');
 }
 
 #navigation-gardening-icon {
-  background-image: url('../../Assets/gardening-icon.png');
+  background-image: url('../../Assets/ItemIcons/gardening-icon.png');
 }
 
 #navigation-guides-icon {
-  background-image: url('../../Assets/recipes-icon.png');
+  background-image: url('../../Assets/ItemIcons/recipes-icon.png');
 }
 
 #navigation-login-icon {
-  background-image: url('../../Assets/training-icon.png');
+  background-image: url('../../Assets/ItemIcons/training-icon.png');
 }
 
 #navigation-logout-icon {
-  background-image: url('../../Assets/sun-icon.png');
+  background-image: url('../../Assets/SchoolIcons/sun-icon.png');
 }
 
 .navigation-icon-user:hover {
-  cursor: url('../../Assets/cursor-picker-small.png'), auto;
+  cursor: url('../../Assets/Cursors/picker-small.png'), auto;
 }
 
 .navigation-icon {
