@@ -1,6 +1,7 @@
 // Import dependencies
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { actionTypes } from '../../ReduxStore.js';
 
 // Import CSS
 import './Blacksmith.css';
@@ -22,8 +23,12 @@ export default function Blacksmith() {
   const [wizard, setWizard] = useState({});
   let numberPages = 2;
 
+  // Setup state modifications
+  const dispatch = useDispatch();
+
   // Setup global variables
   const loginStatus = useSelector(state => state.loginStatus);
+  const currentPage = useSelector(state => state.currentPage);
 
   // Delete character slot
   const handleDeleteSlot = async () => {
@@ -60,6 +65,14 @@ export default function Blacksmith() {
 
   // Fetch user profile
   useEffect(() => {
+    if (currentPage !== 'backpack') {
+      const setCurrentPage = (value) => {
+        dispatch({ type: actionTypes.SET_PAGE, payload: value });
+      };
+
+      setCurrentPage('backpack');
+    }
+
     if (loginStatus) {
       (async () => {
         try {
@@ -74,7 +87,7 @@ export default function Blacksmith() {
         }
       })();
     }
-  }, [loginStatus]);
+  }, [currentPage, dispatch, loginStatus]);
 
   // If the user is logged in
   if (loginStatus) {

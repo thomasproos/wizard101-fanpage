@@ -5,6 +5,14 @@ import { actionTypes } from '../../ReduxStore.js';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+// Import Assets
+import ShimmerStar from '../../Assets/CustomAssets/star-shimmer.png';
+import Sapphire from '../../Assets/ItemIcons/sapphire-socket.png';
+import Amethyst from '../../Assets/ItemIcons/amethyst-socket.png';
+import Peridot from '../../Assets/ItemIcons/peridot-socket.png';
+import Jade from '../../Assets/ItemIcons/jade-socket.png';
+import Ruby from '../../Assets/ItemIcons/ruby-socket.png';
+
 // Import CSS
 import './Navigation.css';
 
@@ -17,6 +25,7 @@ export default function Navigation() {
 
   // Redux Store Values
   const loginStatus = useSelector(state => state.loginStatus);
+  const currentPage = useSelector(state => state.currentPage);
 
   // Fetch the current login-status
   useEffect(() => {
@@ -67,46 +76,53 @@ export default function Navigation() {
 
   return(
     <>
-      <section id="navigation" className="custom-border-1">
-        {/* Navigation Logo */}
-        <div id="navigation-website-container" onClick={() => {navigate('/')}}>
-          <div id="navigation-website-icon" />
-          <div id="navigation-website-title">Arcanum Archives</div>
-        </div>
+      <div id="navigation-bar-container">
+        <section id="navigation" className="custom-border-2">
+            {/* Navigation Logo */}
+            <div id="navigation-website-container" onClick={() => {navigate('/')}}>
+              <div id="navigation-website-icon" className={"" + currentPage === 'home' ? "home-icon" : currentPage === "backpack" ? "backpack-icon" : "home-icon" } />
+              <div id="navigation-website-title">Beguiled Socket</div>
+            </div>
 
-        {/* Navigation Headers */}
-        <section id="navigation-header-section">
-          <div id="navigation-guides-container" className="navigation-header-container">
-            <div id="navigation-guides-icon" className="navigation-icon" />
-            <div id="navigation-guides-title" className="navigation-title">Guides</div>
-          </div>
-          <div id="navigation-gardening-container" className="navigation-header-container">
-            <div id="navigation-gardening-icon" className="navigation-icon" />
-            <div id="navigation-gardening-title" className="navigation-title">Gardening</div>
-          </div>
-          <div id="navigation-blacksmith-container" className={"navigation-header-container " + (page === 'blacksmith' ? 'active' : '')}
-            onClick={() => { navigate('/blacksmith'); }}>
-            <div id="navigation-blacksmith-icon" className="navigation-icon"/>
-            <div id="navigation-blacksmith-title" className="navigation-title">Blacksmith</div>
-          </div>
-          {loginStatus ?
-            <div id="navigation-logout-container" className="navigation-header-container navigation-icon-user"
-              onClick={handleLogout}>
-              <div id="navigation-logout-icon" className="navigation-icon"/>
-              <div id="navigation-logout-title" className="navigation-title">Logout</div>
-            </div>
-            :
-            <div id="navigation-login-container" className="navigation-header-container navigation-icon-user"
-              onClick={() => { navigate('/account/login'); }}>
-              <div id="navigation-login-icon" className="navigation-icon"/>
-              <div id="navigation-login-title" className="navigation-title">Login</div>
-            </div>
-          }
-        </section>
-      </section>
+            {/* Navigation Headers */}
+            <section id="navigation-header-section">
+              <div id="navigation-guides-container" className="navigation-header-container">
+                <img src={Peridot} alt="Guide Icon" id="navigation-guides-icon" className="navigation-icon" />
+                <div id="navigation-guides-title" className="navigation-title">Guides</div>
+              </div>
+              <div id="navigation-gardening-container" className="navigation-header-container">
+                <img src={Jade} alt="Gardening Icon" id="navigation-gardening-icon" className="navigation-icon" />
+                <div id="navigation-gardening-title" className="navigation-title">Gardening</div>
+              </div>
+              <div id="navigation-blacksmith-container" className={"navigation-header-container " + (page === 'blacksmith' ? 'active' : '')}
+                onClick={() => { navigate('/blacksmith'); }}>
+                <img src={Amethyst} alt="Backpack Icon" id="navigation-blacksmith-icon" className="navigation-icon"/>
+                <div id="navigation-blacksmith-title" className="navigation-title">Blacksmith</div>
+              </div>
+              {loginStatus ?
+                <div id="navigation-logout-container" className="navigation-header-container navigation-icon-user"
+                  onClick={handleLogout}>
+                  <img src={Ruby} alt="Logout Icon" id="navigation-logout-icon" className="navigation-icon"/>
+                  <div id="navigation-logout-title" className="navigation-title">Logout</div>
+                </div>
+                :
+                <div id="navigation-login-container" className="navigation-header-container navigation-icon-user"
+                  onClick={() => { navigate('/account/login'); }}>
+                  <img src={Sapphire} alt="Login Icon" id="navigation-login-icon" className="navigation-icon"/>
+                  <div id="navigation-login-title" className="navigation-title">Login</div>
+                </div>
+              }
+            </section>
+          </section>
+      </div>
       <main>
         <Outlet />
       </main>
+      <div id="footer" className="custom-border-2">
+        <div id="footer-content">
+          Footer - This will be filled with pertinent information soon!
+        </div>
+      </div>
     </>
   );
 }

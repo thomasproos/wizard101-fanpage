@@ -1,10 +1,10 @@
 /* Main Page Component */
 #main-page-component {
   width: 80%;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.774);
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
   z-index: 1;
   position: relative;
   color: #F6F741;

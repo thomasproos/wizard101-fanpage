@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, current } from '@reduxjs/toolkit';
 
 const initialState = {
   loginStatus: false,
-  previousPage: ''
+  currentPage: 'home'
 };
 
 const actionTypes = {
@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.SET_LOGIN:
       return { ...state, loginStatus: action.payload };
     case actionTypes.SET_PAGE:
-      return { ...state, previousPage: action.payload };
+      return { ...state, currentPage: action.payload };
     default:
       return state;
   }

@@ -6,14 +6,35 @@ import GuideBook from '../../Assets/ItemIcons/recipes-icon.png';
 import Gardening from '../../Assets/ItemIcons/gardening-icon.png';
 import Blacksmith from '../../Assets/ItemIcons/hat-icon.png';
 
+// Import Dependencies
+import { useSelector, useDispatch } from 'react-redux';
+import { actionTypes } from '../../ReduxStore.js';
+import { useEffect } from 'react';
+
 export default function MainPage() {
+  // Setup state modifications
+  const dispatch = useDispatch();
+
+  // Setup global variables
+  const currentPage = useSelector(state => state.currentPage);
+
   // Pink color style
   const spanPink = {
     color: '#F6F741'
   };
 
+  useEffect(() => {
+    if (currentPage !== 'home') {
+      const setCurrentPage = (value) => {
+        dispatch({ type: actionTypes.SET_PAGE, payload: value });
+      };
+
+      setCurrentPage('home');
+    }
+  }, [currentPage, dispatch]);
+
   return(
-    <section id="main-page-component"  className="custom-border-1">
+    <section id="main-page-component"  className="custom-border-2">
       <div className="main-title-background">
         <div className="main-title">About Us</div>
       </div>

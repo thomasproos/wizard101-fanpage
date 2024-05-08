@@ -4,12 +4,12 @@ html {
   font-size: var(--text-font-size);
 
   /* Background Image */
-  background-image: url('./Assets/Backgrounds/spiral-background.jpg');
+  /* background-image: url('./Assets/Backgrounds/spiral-background.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 
-  /* Overflow */
-  overflow: hidden;
+  /* Background Color */
+  background-image: linear-gradient(#1C2D49, #22315A, #405BB6);
 
   /* Custom Cursor */
   cursor: url('./Assets/Cursors/default-small.png'), auto;
@@ -18,8 +18,11 @@ html {
   --title-font-size: 24px;
   --text-font-size: 18px;
 
+  /* Overflow */
+  overflow: hidden;
+
   /* Custom Scrollbar */
-  scrollbar-color: #afaf00 rgba(0, 0, 0, 0.452);
+  scrollbar-color: #afaf00 rgba(0, 0, 0, 0);
 }
 
 body {
@@ -32,12 +35,14 @@ html, #root {
   height: 100%;
 }
 
-body {
-  height: calc(100% - 15px);
+#root {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-main {
-  height: calc(100% - 69px);
+body {
+  height: 100%;
 }
 
 /* Custom Border */
@@ -113,4 +118,48 @@ main {
   0 0 0 6.50px #852fcc,
   0 0 0 7px #52216f,
   0 0 0 7.5px #4c3655;
+}
+
+.custom-border-6 {
+  box-shadow: 
+  0 0 0 1.25px black,
+  0 0 0 2px #5e480e,
+  0 0 0 3px #816413,
+  0 0 0 4px #B18617,
+  0 0 0 5px #c99d2d,
+  0 0 0 6px #B18617,
+  0 0 0 7px #816413,
+  0 0 0 8px #5e480e,
+  0 0 0 10px black,
+  0 0 0 11px #250707,
+  0 0 0 12px #290606,
+  0 0 0 13px #360909,
+  0 0 0 15px #4d1422,
+  0 0 0 19px #5a1729,
+  0 0 0 21px #4d1422,
+  0 0 0 22px #360909,
+  0 0 0 23px #290606,
+  0 0 0 24px #250707,
+  0 0 0 25.5px black,
+  0 0 0 26.5px #5e480e,
+  0 0 0 28px #816413,
+  0 0 0 29px #B18617,
+  0 0 0 30px #c99d2d,
+  0 0 0 31px #B18617,
+  0 0 0 32px #816413,
+  0 0 0 33px #5e480e,
+  0 0 0 34.5px black;
+}
+
+.custom-border-7 {
+  box-shadow: 
+  0 0 0 1.25px black,
+  0 0 0 2px #5e480e,
+  0 0 0 3px #816413,
+  0 0 0 4px #B18617,
+  0 0 0 5px #c99d2d,
+  0 0 0 6px #B18617,
+  0 0 0 7px #816413,
+  0 0 0 8px #5e480e,
+  0 0 0 9.25px black;
 }
