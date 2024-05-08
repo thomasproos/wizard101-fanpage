@@ -52,7 +52,7 @@ export default function OfflineDisplay({ loggedIn, setPage }) {
 
           Allowed up to 10 slots, you can customize each character!<br/><br/>
 
-          The goal of the Blacksmith is to allow you to browse gear and choose your ideal setup
+          The goal of the Backpack is to allow you to browse gear and choose your ideal setup
           based on stats, level, school, and most importantly difficulty to obtain!<br/><br/>
         </span>
 

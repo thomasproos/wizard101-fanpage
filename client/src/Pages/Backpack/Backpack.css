@@ -1,4 +1,4 @@
-/* Blacksmith Component */
+/* Backpack Component */
 #blacksmith {
   width: 80%;
   height: 100%;
@@ -13,7 +13,7 @@
   /* overflow-x: hidden; */
 }
 
-/* Blacksmith Title */
+/* Backpack Title */
 #blacksmith-title {
   font-size: 30px;
   padding-top: 2px;

@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 // Import Assets
-import ShimmerStar from '../../Assets/CustomAssets/star-shimmer.png';
 import Sapphire from '../../Assets/ItemIcons/sapphire-socket.png';
 import Amethyst from '../../Assets/ItemIcons/amethyst-socket.png';
 import Peridot from '../../Assets/ItemIcons/peridot-socket.png';
@@ -17,8 +16,6 @@ import Ruby from '../../Assets/ItemIcons/ruby-socket.png';
 import './Navigation.css';
 
 export default function Navigation() {
-  const [page, setPage] = useState('');
-
   // Establish the navigation & redux store
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -94,10 +91,10 @@ export default function Navigation() {
                 <img src={Jade} alt="Gardening Icon" id="navigation-gardening-icon" className="navigation-icon" />
                 <div id="navigation-gardening-title" className="navigation-title">Gardening</div>
               </div>
-              <div id="navigation-blacksmith-container" className={"navigation-header-container " + (page === 'blacksmith' ? 'active' : '')}
+              <div id="navigation-blacksmith-container" className="navigation-header-container"
                 onClick={() => { navigate('/blacksmith'); }}>
                 <img src={Amethyst} alt="Backpack Icon" id="navigation-blacksmith-icon" className="navigation-icon"/>
-                <div id="navigation-blacksmith-title" className="navigation-title">Blacksmith</div>
+                <div id="navigation-blacksmith-title" className="navigation-title">Backpack</div>
               </div>
               {loginStatus ?
                 <div id="navigation-logout-container" className="navigation-header-container navigation-icon-user"
