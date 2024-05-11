@@ -5,15 +5,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 25px;
-  margin-bottom: 50px;
-  margin-top: 0px;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.774);
   color: #F6F741;
-  z-index: 3;
   position: sticky;
-  top: 25px;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -22,7 +17,7 @@
 #navigation-bar-container {
   z-index: 3;
   position: sticky;
-  top: 25px;
+  top: 0px;
 }
 
 /* Class for active headers */
@@ -39,6 +34,17 @@
 }
 
 /* Navigation Logo */
+#placeholder-website-icon {
+  background-image: url('../../Assets/Jewels/circle-socket.png');
+  height: 54px;
+  width: 54px;
+  margin-left: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+
 #navigation-website-icon {
   height: 54px;
   width: 54px;
@@ -47,6 +53,7 @@
   background-size: cover;
   -webkit-transition: background-image 0.2s ease-in-out;
   transition: background-image 0.2s ease-in-out;
+  z-index: 2;
 }
 
 /* Website Title */

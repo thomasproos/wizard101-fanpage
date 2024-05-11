@@ -60,6 +60,7 @@ body {
 }
 
 .custom-border-2 {
+  margin: 7.5px;
   box-shadow: 
     0 0 0 1px #A69F1A,
     0 0 0 1.75px #5D1C2F,

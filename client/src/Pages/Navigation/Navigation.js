@@ -76,6 +76,7 @@ export default function Navigation() {
         <section id="navigation" className="custom-border-2">
             {/* Navigation Logo */}
             <div id="navigation-website-container" onClick={() => {navigate('/')}}>
+              <div id="placeholder-website-icon" />
               <div id="navigation-website-icon" className={"" + currentPage === 'home' ? "home-icon" : currentPage === "backpack" ? "backpack-icon" : "home-icon" } />
               <div id="navigation-website-title">Beguiled Socket</div>
             </div>
