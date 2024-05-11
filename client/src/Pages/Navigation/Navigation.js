@@ -115,11 +115,6 @@ export default function Navigation() {
       <main>
         <Outlet />
       </main>
-      <div id="footer" className="custom-border-2">
-        <div id="footer-content">
-          Footer - This will be filled with pertinent information soon!
-        </div>
-      </div>
     </>
   );
 }

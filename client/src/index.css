@@ -36,9 +36,12 @@ html, #root {
 }
 
 #root {
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+}
+
+main {
+  overflow-y: auto;
 }
 
 body {
