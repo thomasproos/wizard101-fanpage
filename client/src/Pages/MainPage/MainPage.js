@@ -4,7 +4,7 @@ import './MainPage.css';
 // Import Assets
 import GuideBook from '../../Assets/ItemIcons/recipes-icon.png';
 import Gardening from '../../Assets/ItemIcons/gardening-icon.png';
-import Blacksmith from '../../Assets/ItemIcons/hat-icon.png';
+import Backpack from '../../Assets/ItemIcons/hat-icon.png';
 
 // Import Dependencies
 import { useSelector, useDispatch } from 'react-redux';
@@ -91,11 +91,11 @@ export default function MainPage() {
           to release it sometime in the near future.
         </div>
 
-        {/* Blacksmith */}
+        {/* Backpack */}
         <div className="main-about-header-2 main-about-header-container" onClick={() => {window.location.href='/#/blacksmith'}}>
-          <img src={Blacksmith} alt="Blacksmith Icon" className="main-about-header-icon" />
-          <div>Blacksmith</div>
-          <img src={Blacksmith} alt="Blacksmith Icon" className="main-about-header-icon" />
+          <img src={Backpack} alt="Backpack Icon" className="main-about-header-icon" />
+          <div>Backpack</div>
+          <img src={Backpack} alt="Backpack Icon" className="main-about-header-icon" />
         </div>
         <div className="main-about-paragraph-1">
           The name is still being workshopped, but welcome to the blacksmith! This is the creative

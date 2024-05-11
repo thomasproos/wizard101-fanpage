@@ -11,7 +11,7 @@ import './index.css';
 // Import React Components
 import Navigation from './Pages/Navigation/Navigation';
 import MainPage from './Pages/MainPage/MainPage';
-import Blacksmith from './Pages/Blacksmith/Blacksmith';
+import Blacksmith from './Pages/Backpack/Backpack';
 import Login from './Pages/Login/Login';
 import CreateAccount from './Pages/CreateAccount/CreateAccount';
 

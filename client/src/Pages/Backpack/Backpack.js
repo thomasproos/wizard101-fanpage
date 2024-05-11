@@ -4,16 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { actionTypes } from '../../ReduxStore.js';
 
 // Import CSS
-import './Blacksmith.css';
+import './Backpack.css';
 
 // Import Components
-import OfflineDisplay from './OfflineDisplay/OfflineDisplay';
+import OfflineDisplay from './OfflineDisplay/OfflineDisplay.js';
 import GearSearch from './GearSearch/GearSearch.js';
 import GearCreator from './GearCreator/GearCreator.js';
-import CharacterList from './CharacterList/CharacterList';
-import CharacterCreator from './CharacterCreator/CharacterCreator';
+import CharacterList from './CharacterList/CharacterList.js';
+import CharacterCreator from './CharacterCreator/CharacterCreator.js';
 
-export default function Blacksmith() {
+export default function Backpack() {
   const [profile, setProfile] = useState({});
   const [confirmationMessage, setConfirmationMessage] = useState({});
   const [currentSlot, setCurrentSlot] = useState({});
@@ -95,7 +95,7 @@ export default function Blacksmith() {
       return(
         <section id="blacksmith" className="custom-border-1">
           <div id="blacksmith-title-background">
-            <div id="blacksmith-title">Blacksmith</div>
+            <div id="blacksmith-title">Backpack</div>
           </div>
           <div id="blacksmith-content-container">
   
@@ -141,7 +141,7 @@ export default function Blacksmith() {
       return(
         <section id="blacksmith" className="custom-border-1">
           <div id="blacksmith-title-background">
-            <div id="blacksmith-title">Blacksmith</div>
+            <div id="blacksmith-title">Backpack</div>
           </div>
           <div id="blacksmith-content-container">
             <OfflineDisplay loggedIn={true} setPage={setPage}/>
@@ -192,7 +192,7 @@ export default function Blacksmith() {
     return(
       <section id="blacksmith" className="custom-border-1">
         <div id="blacksmith-title-background">
-          <div id="blacksmith-title">Blacksmith</div>
+          <div id="blacksmith-title">Backpack</div>
         </div>
         <div id="blacksmith-content-container">
           <OfflineDisplay loggedIn={false}/>
