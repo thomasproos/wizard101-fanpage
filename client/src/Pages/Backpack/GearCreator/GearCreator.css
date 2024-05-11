@@ -1,5 +1,5 @@
 /* Backpack Content */
-#blacksmith-display-box {
+#backpack-display-box {
   position: relative;
   background-image: url('../../../Assets/CustomAssets/character-window.png');
   background-repeat: no-repeat;
@@ -13,26 +13,26 @@
 }
 
 /* All the equipment icons */
-.blacksmith-gear-icon {
+.backpack-gear-icon {
   border-radius: 50%;
   z-index: 4;
 }
 
-.blacksmith-gear-icon:hover {
+.backpack-gear-icon:hover {
   transform: scale(1.10);
 }
 
-.blacksmith-gear-icon:active {
+.backpack-gear-icon:active {
   transform: scale(1.0);
   filter: brightness(120%);
 }
 
-.blacksmith-gear-selected {
+.backpack-gear-selected {
   animation: glow 1s infinite alternate;
 }
 
 /* Hat */
-#blacksmith-display-hat {
+#backpack-display-hat {
   background-image: url('../../../Assets/ItemIcons/hat-icon.png');
   background-size:auto;
   background-repeat: no-repeat;
@@ -43,7 +43,7 @@
 }
 
 /* Amulet */
-#blacksmith-display-amulet {
+#backpack-display-amulet {
   background-image: url('../../../Assets/ItemIcons/amulet-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,14 +53,14 @@
 }
 
 /* Ring - Wand */
-#blacksmith-display-row-3 {
+#backpack-display-row-3 {
   display: flex;
   position: relative;
   flex-direction: row;
   gap: 110px;
 }
 
-#blacksmith-display-ring {
+#backpack-display-ring {
   background-image: url('../../../Assets/ItemIcons/ring-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,7 +69,7 @@
   margin-top: -40px;
 }
 
-#blacksmith-display-wand {
+#backpack-display-wand {
   background-image: url('../../../Assets/ItemIcons/wand-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,7 +79,7 @@
 }
 
 /* All Option */
-#blacksmith-display-all {
+#backpack-display-all {
   background-image: url('../../../Assets/ItemIcons/large-spiral-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,7 +95,7 @@
 }
 
 /* Deck - Robe - Athame */
-#blacksmith-display-row-4 {
+#backpack-display-row-4 {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -103,7 +103,7 @@
   margin-top: 50px;
 }
 
-#blacksmith-display-deck {
+#backpack-display-deck {
   background-image: url('../../../Assets/ItemIcons/deck-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,7 +112,7 @@
   margin-top: -40px;
 }
 
-#blacksmith-display-robe {
+#backpack-display-robe {
   background-image: url('../../../Assets/ItemIcons/robe-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -121,7 +121,7 @@
   margin-top: 10px;
 }
 
-#blacksmith-display-athame {
+#backpack-display-athame {
   background-image: url('../../../Assets/ItemIcons/athame-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -131,7 +131,7 @@
 }
 
 /* Boots */
-#blacksmith-display-boots {
+#backpack-display-boots {
   background-image: url('../../../Assets/ItemIcons/boots-icon.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -141,7 +141,7 @@
 }
 
 /* Connecting lines */
-.blacksmith-gear-line {
+.backpack-gear-line {
   display: none;
   width: 100px;
   position: absolute;

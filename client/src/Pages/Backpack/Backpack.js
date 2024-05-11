@@ -93,11 +93,11 @@ export default function Backpack() {
   if (loginStatus) {
     if (page === 2) {
       return(
-        <section id="blacksmith" className="custom-border-1">
-          <div id="blacksmith-title-background">
-            <div id="blacksmith-title">Backpack</div>
+        <section id="backpack" className="custom-border-1">
+          <div id="backpack-title-background">
+            <div id="backpack-title">Backpack</div>
           </div>
-          <div id="blacksmith-content-container">
+          <div id="backpack-content-container">
   
             {/* Character List */}
             <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
@@ -107,13 +107,13 @@ export default function Backpack() {
               setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid} setWizard={setWizard}/>
               
             {/* Page Buttons */}
-            <div id="blacksmith-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
+            <div id="backpack-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
                 if (page === 2) {
                   setPage(1);
                 }
               }}/>
-            <div id="blacksmith-page-number-display">{page}/{numberPages}</div>
-            <div id="blacksmith-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
+            <div id="backpack-page-number-display">{page}/{numberPages}</div>
+            <div id="backpack-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
                 if (page === 1) {
                   setPage(2);
                 }
@@ -139,21 +139,21 @@ export default function Backpack() {
       );
     } else if (page === 1) {
       return(
-        <section id="blacksmith" className="custom-border-1">
-          <div id="blacksmith-title-background">
-            <div id="blacksmith-title">Backpack</div>
+        <section id="backpack" className="custom-border-1">
+          <div id="backpack-title-background">
+            <div id="backpack-title">Backpack</div>
           </div>
-          <div id="blacksmith-content-container">
+          <div id="backpack-content-container">
             <OfflineDisplay loggedIn={true} setPage={setPage}/>
 
             {/* Page Buttons */}
-            <div id="blacksmith-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
+            <div id="backpack-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
                 if (page === 2) {
                   setPage(1);
                 }
               }}/>
-            <div id="blacksmith-page-number-display">{page}/{numberPages}</div>
-            <div id="blacksmith-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
+            <div id="backpack-page-number-display">{page}/{numberPages}</div>
+            <div id="backpack-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
                 if (page === 1) {
                   setPage(2);
                 }
@@ -164,22 +164,22 @@ export default function Backpack() {
     } else if (page === 3) {
       numberPages = 4;
       return(
-        <section id="blacksmith" className="custom-border-1">
-          <div id="blacksmith-title-background">
-            <div id="blacksmith-title">Backpack</div>
+        <section id="backpack" className="custom-border-1">
+          <div id="backpack-title-background">
+            <div id="backpack-title">Backpack</div>
           </div>
-          <div id="blacksmith-content-container">
+          <div id="backpack-content-container">
             <GearCreator currentGear={currentGear} setCurrentGear={setCurrentGear}/>
             <GearSearch currentGear={currentGear} setCurrentGear={setCurrentGear} wizard={wizard}/>
 
             {/* Page Buttons */}
-            <div id="blacksmith-page-left-button" className="page-button-enabled" onClick={() => {
+            <div id="backpack-page-left-button" className="page-button-enabled" onClick={() => {
                 if (page === 3) {
                   setPage(2);
                 }
               }}/>
-            <div id="blacksmith-page-number-display">{page}/{numberPages}</div>
-            <div id="blacksmith-page-right-button" className="page-button-enabled" onClick={() => {
+            <div id="backpack-page-number-display">{page}/{numberPages}</div>
+            <div id="backpack-page-right-button" className="page-button-enabled" onClick={() => {
                 if (page === 3) {
                   setPage(4);
                 }
@@ -190,11 +190,11 @@ export default function Backpack() {
     }
   } else {
     return(
-      <section id="blacksmith" className="custom-border-1">
-        <div id="blacksmith-title-background">
-          <div id="blacksmith-title">Backpack</div>
+      <section id="backpack" className="custom-border-1">
+        <div id="backpack-title-background">
+          <div id="backpack-title">Backpack</div>
         </div>
-        <div id="blacksmith-content-container">
+        <div id="backpack-content-container">
           <OfflineDisplay loggedIn={false}/>
         </div>
       </section>

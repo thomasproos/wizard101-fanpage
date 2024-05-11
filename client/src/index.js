@@ -11,7 +11,7 @@ import './index.css';
 // Import React Components
 import Navigation from './Pages/Navigation/Navigation';
 import MainPage from './Pages/MainPage/MainPage';
-import Blacksmith from './Pages/Backpack/Backpack';
+import Backpack from './Pages/Backpack/Backpack';
 import Login from './Pages/Login/Login';
 import CreateAccount from './Pages/CreateAccount/CreateAccount';
 
@@ -22,7 +22,7 @@ const router = createHashRouter([
     element: <Navigation />,
     children: [
       { path: '/', element: <MainPage /> },
-      { path: '/blacksmith', element: <Blacksmith /> },
+      { path: '/backpack', element: <Backpack /> },
       { path: '/account/login', element: <Login /> },
       { path: '/account/create-account', element: <CreateAccount /> }
     ]

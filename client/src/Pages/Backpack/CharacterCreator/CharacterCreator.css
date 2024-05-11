@@ -1,5 +1,5 @@
 /* Character slot creator */
-#blacksmith-wizard-slot-creator {
+#backpack-wizard-slot-creator {
   width: 340px;
   height: 500px;
   border-radius: 10px;
@@ -12,7 +12,7 @@
   position: relative;
 }
 
-.blacksmith-wizard-editor-header {
+.backpack-wizard-editor-header {
   width: fit-content;
   margin-right: auto;
   margin-left: auto;
@@ -23,7 +23,7 @@
 }
 
 /* Name */
-.blacksmith-wizard-editor-name-container {
+.backpack-wizard-editor-name-container {
   width: fit-content;
   margin-right: auto;
   margin-left: auto;
@@ -34,11 +34,11 @@
   margin-top: 40px;
 }
 
-#blacksmith-wizard-editor-name-label {
+#backpack-wizard-editor-name-label {
   line-height: 20px;
 }
 
-#blacksmith-wizard-editor-name-input {
+#backpack-wizard-editor-name-input {
   background-color: rgba(0, 0, 0, 0.397);
   border: none;
   text-transform: uppercase;
@@ -58,7 +58,7 @@
 }
 
 /* School */
-#blacksmith-wizard-editor-school-selector {
+#backpack-wizard-editor-school-selector {
   display: flex;
   flex-direction: row;
   width: 210px;
@@ -67,11 +67,11 @@
   background-color: #300b0b;
 }
 
-#blacksmith-wizard-editor-school-selector:hover .blacksmith-wizard-editor-school-icon {
+#backpack-wizard-editor-school-selector:hover .backpack-wizard-editor-school-icon {
   opacity: 0.8;
 }
 
-.blacksmith-wizard-editor-school-icon {
+.backpack-wizard-editor-school-icon {
   opacity: 0.5;
   margin: 0px;
   height: 30px;
@@ -81,11 +81,11 @@
   transition: opacity 300ms ease;
 }
 
-.blacksmith-wizard-editor-school-icon:hover {
+.backpack-wizard-editor-school-icon:hover {
   transform: scale(1.05);
 }
 
-.blacksmith-wizard-editor-school-icon:active {
+.backpack-wizard-editor-school-icon:active {
   transform: scale(1.0);
   filter: brightness(110%);
 }
@@ -98,7 +98,7 @@
 }
 
 /* Level Input */
-#blacksmith-wizard-editor-level-input {
+#backpack-wizard-editor-level-input {
   background-color: rgba(0, 0, 0, 0.397);
   border: none;
   text-transform: uppercase;
@@ -148,7 +148,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   -webkit-appearance: none;
 }
 /* Save Button */
-.blacksmith-wizard-editor-save-button {
+.backpack-wizard-editor-save-button {
   background-image: url('../../../Assets/Buttons/button-medium.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -177,7 +177,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 /* Backpack Button */
-.blacksmith-wizard-editor-button-inactive {
+.backpack-wizard-editor-button-inactive {
   height: 70px;
   width: 70px;
   margin-top: 35px;
@@ -186,7 +186,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   cursor: url('../../../Assets/Cursors/x-small.png'), auto;
 }
 
-.blacksmith-wizard-editor-button-active {
+.backpack-wizard-editor-button-active {
   height: 70px;
   width: 70px;
   margin-top: 35px;
@@ -196,11 +196,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   cursor: url('../../../Assets/Cursors/default-small.png'), auto;
 }
 
-.blacksmith-wizard-editor-button-active:hover {
+.backpack-wizard-editor-button-active:hover {
   transform: scale(1.10);
 }
 
-.blacksmith-wizard-editor-button-active:active {
+.backpack-wizard-editor-button-active:active {
   transform: scale(1.0);
 }
 
@@ -245,7 +245,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   color: white;
 }
 
-#blacksmith-wizard-slot-creator .tooltip::after {
+#backpack-wizard-slot-creator .tooltip::after {
   bottom: 87.5%;
 }
 

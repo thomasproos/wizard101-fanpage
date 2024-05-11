@@ -12,52 +12,52 @@ export default function GearCreator({ currentGear, setCurrentGear }) {
   };
 
   return(
-    <div id="blacksmith-display-box" className="custom-border-2">
+    <div id="backpack-display-box" className="custom-border-2">
       {/* Hat */}
-      <div id="blacksmith-display-hat" className={"blacksmith-gear-icon " + (currentGear === 'hat' ? 'blacksmith-gear-selected' : '')} 
+      <div id="backpack-display-hat" className={"backpack-gear-icon " + (currentGear === 'hat' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('hat')}}/>
 
       {/* Amulet */}
-      <div id="blacksmith-display-amulet" className={"blacksmith-gear-icon " + (currentGear === 'amulet' ? 'blacksmith-gear-selected' : '')} 
+      <div id="backpack-display-amulet" className={"backpack-gear-icon " + (currentGear === 'amulet' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('amulet')}}/>
 
       {/* Ring - Wand */}
-      <div id="blacksmith-display-row-3">
-        <div id="blacksmith-display-ring" className={"blacksmith-gear-icon " + (currentGear === 'ring' ? 'blacksmith-gear-selected' : '')} 
+      <div id="backpack-display-row-3">
+        <div id="backpack-display-ring" className={"backpack-gear-icon " + (currentGear === 'ring' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('ring')}}/>
-        <div id="blacksmith-display-wand" className={"blacksmith-gear-icon " + (currentGear === 'wand' ? 'blacksmith-gear-selected' : '')} 
+        <div id="backpack-display-wand" className={"backpack-gear-icon " + (currentGear === 'wand' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('wand')}}/>
 
         {/* CSS LINES */}
-        <img src={BorderLine} alt="" id="g-line-1" className="blacksmith-gear-line" />
-        <img src={BorderLine} alt="" id="g-line-6" className="blacksmith-gear-line" />
-        <img src={BorderLine} alt="" id="g-line-7" className="blacksmith-gear-line" />
-        <img src={BorderLine} alt="" id="g-line-8" className="blacksmith-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-1" className="backpack-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-6" className="backpack-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-7" className="backpack-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-8" className="backpack-gear-line" />
       </div>
 
-      <div id="blacksmith-display-row-center">
-        <div id="blacksmith-display-all" className={"blacksmith-gear-icon " + (currentGear === 'all' ? 'blacksmith-gear-selected' : '')} 
+      <div id="backpack-display-row-center">
+        <div id="backpack-display-all" className={"backpack-gear-icon " + (currentGear === 'all' ? 'backpack-gear-selected' : '')} 
           onClick={() => {handleGearClick('all')}}/>
       </div>
 
       {/* Deck - Robe - Athame */}
-      <div id="blacksmith-display-row-4">
-        <div id="blacksmith-display-deck" className={"blacksmith-gear-icon " + (currentGear === 'deck' ? 'blacksmith-gear-selected' : '')} 
+      <div id="backpack-display-row-4">
+        <div id="backpack-display-deck" className={"backpack-gear-icon " + (currentGear === 'deck' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('deck')}}/>
-        <div id="blacksmith-display-robe" className={"blacksmith-gear-icon " + (currentGear === 'robe' ? 'blacksmith-gear-selected' : '')} 
+        <div id="backpack-display-robe" className={"backpack-gear-icon " + (currentGear === 'robe' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('robe')}}/>
-        <div id="blacksmith-display-athame" className={"blacksmith-gear-icon " + (currentGear === 'athame' ? 'blacksmith-gear-selected' : '')} 
+        <div id="backpack-display-athame" className={"backpack-gear-icon " + (currentGear === 'athame' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('athame')}}/>
 
         {/* CSS LINES */}
-        <img src={BorderLine} alt="" id="g-line-2" className="blacksmith-gear-line" />
-        <img src={BorderLine} alt="" id="g-line-3" className="blacksmith-gear-line" />
-        <img src={BorderLine} alt="" id="g-line-4" className="blacksmith-gear-line" />
-        <img src={BorderLine} alt="" id="g-line-5" className="blacksmith-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-2" className="backpack-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-3" className="backpack-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-4" className="backpack-gear-line" />
+        <img src={BorderLine} alt="" id="g-line-5" className="backpack-gear-line" />
       </div>
 
       {/* Boots */}
-      <div id="blacksmith-display-boots" className={"blacksmith-gear-icon " + (currentGear === 'boots' ? 'blacksmith-gear-selected' : '')} 
+      <div id="backpack-display-boots" className={"backpack-gear-icon " + (currentGear === 'boots' ? 'backpack-gear-selected' : '')} 
         onClick={() => {handleGearClick('boots')}}/>
     </div>
   );

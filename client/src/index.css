@@ -3,11 +3,6 @@ html {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: var(--text-font-size);
 
-  /* Background Image */
-  /* background-image: url('./Assets/Backgrounds/spiral-background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; */
-
   /* Background Color */
   background-image: linear-gradient(#1C2D49, #22315A, #405BB6);
 
@@ -63,7 +58,6 @@ body {
 }
 
 .custom-border-2 {
-  margin: 7.5px;
   box-shadow: 
     0 0 0 1px #A69F1A,
     0 0 0 1.75px #5D1C2F,

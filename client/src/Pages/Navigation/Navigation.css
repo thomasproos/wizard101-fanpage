@@ -9,6 +9,7 @@
   background-color: rgba(0, 0, 0, 0.774);
   color: #F6F741;
   position: sticky;
+  margin: 7.5px;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -91,7 +92,7 @@
 }
 
 /* Icons for each header */
-.navigation-header-container:hover #navigation-blacksmith-icon {
+.navigation-header-container:hover #navigation-backpack-icon {
   animation: glowPurple 1s infinite alternate;
 }
 

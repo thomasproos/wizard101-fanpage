@@ -110,21 +110,21 @@ export default function GearSearch({ wizard, currentGear, setCurrentGear }) {
   }, [currentGear, wizard])
 
   return(
-    <div id="blacksmith-gear-search">
-      <div id="blacksmith-gear-search-bar-container" >
-        <input type="text" id="blacksmith-gear-search-input-bar" 
+    <div id="backpack-gear-search">
+      <div id="backpack-gear-search-bar-container" >
+        <input type="text" id="backpack-gear-search-input-bar" 
           className="custom-border-2" />
-        <div id="blacksmith-gear-search-go-button" className="custom-border-2">
-          <img src={GoArrow} alt="search-button" id="blacksmith-gear-search-go-arrow" />
+        <div id="backpack-gear-search-go-button" className="custom-border-2">
+          <img src={GoArrow} alt="search-button" id="backpack-gear-search-go-arrow" />
         </div>
 
         {/* DROP DOWN OPTION */}
-        <div id="blacksmith-gear-search-display" className={`active-gear-${currentGear}`} onClick={handleDropDown}/>
-        <section id="blacksmith-gear-search-dropdown-section" className={"" + (dropDown ? "display-visible" : "")}>
+        <div id="backpack-gear-search-display" className={`active-gear-${currentGear}`} onClick={handleDropDown}/>
+        <section id="backpack-gear-search-dropdown-section" className={"" + (dropDown ? "display-visible" : "")}>
           {gearList.map((item, index) => {
             if (item !== currentGear) {
               return(
-                <div key={index} className={`blacksmith-gear-dropdown-icon active-gear-${item}`}
+                <div key={index} className={`backpack-gear-dropdown-icon active-gear-${item}`}
                   onClick={() => {handleChangeCurrentGear(item)}} />
               );
             } else {
@@ -137,49 +137,49 @@ export default function GearSearch({ wizard, currentGear, setCurrentGear }) {
       </div>
 
       {currentGear === 'all' ?
-        <div id="blacksmith-gear-search-item-list">
+        <div id="backpack-gear-search-item-list">
           {[...Array(8)].map((item, index) => {
             const currentIndex = index*page;
             if (equipedItems.length > currentIndex) {
               return(
-                <div key={index} className={"blacksmith-gear-search-item-equipped "} 
+                <div key={index} className={"backpack-gear-search-item-equipped "} 
                   onDoubleClick={() => {handleDoubleClickItem(equipedItems[currentIndex])}}>
                   <ItemTooltip item={equipedItems[currentIndex]}/>
-                  {/* <div className={`active-gear-${itemList[currentIndex].type} blacksmith-gear-search-display-icon`}></div> */}
-                  <div className="blacksmith-gear-search-item-name">{equipedItems[currentIndex].name}</div>
+                  {/* <div className={`active-gear-${itemList[currentIndex].type} backpack-gear-search-display-icon`}></div> */}
+                  <div className="backpack-gear-search-item-name">{equipedItems[currentIndex].name}</div>
                 </div>
               );
             } else {
               return(
-                <div key={index} className="blacksmith-gear-search-item-placeholder" id={`blacksmith-gear-search-item-${index}`}></div>
+                <div key={index} className="backpack-gear-search-item-placeholder" id={`backpack-gear-search-item-${index}`}></div>
               );
             }
           })}
         </div>
         :
-        <div id="blacksmith-gear-search-item-list">
+        <div id="backpack-gear-search-item-list">
           {[...Array(8)].map((item, index) => {
             const currentIndex = index*page;
             if (itemList.length > currentIndex) {
               return(
-                <div key={index} className={"blacksmith-gear-search-item-valid " + (equipedItems.includes(itemList[currentIndex].name ? "blacksmith-gear-search-item-equipped" : ""))} 
+                <div key={index} className={"backpack-gear-search-item-valid " + (equipedItems.includes(itemList[currentIndex].name ? "backpack-gear-search-item-equipped" : ""))} 
                   onDoubleClick={() => {handleDoubleClickItem(itemList[currentIndex])}}>
-                  {/* <div className={`active-gear-${itemList[currentIndex].type} blacksmith-gear-search-display-icon`}></div> */}
-                  <div className="blacksmith-gear-search-item-name">{itemList[currentIndex].name}</div>
+                  {/* <div className={`active-gear-${itemList[currentIndex].type} backpack-gear-search-display-icon`}></div> */}
+                  <div className="backpack-gear-search-item-name">{itemList[currentIndex].name}</div>
                 </div>
               );
             } else {
               return(
-                <div key={index} className="blacksmith-gear-search-item-placeholder" id={`blacksmith-gear-search-item-${index}`}></div>
+                <div key={index} className="backpack-gear-search-item-placeholder" id={`backpack-gear-search-item-${index}`}></div>
               );
             }
           })}
         </div>
       }
 
-      <div id="blacksmith-gear-search-move-container">
-        <div id="blacksmith-gear-search-backwards" className="blacksmith-gear-search-move-button" />
-        <div id="blacksmith-gear-search-forward" className="blacksmith-gear-search-move-button" />
+      <div id="backpack-gear-search-move-container">
+        <div id="backpack-gear-search-backwards" className="backpack-gear-search-move-button" />
+        <div id="backpack-gear-search-forward" className="backpack-gear-search-move-button" />
       </div>
     </div>
   );

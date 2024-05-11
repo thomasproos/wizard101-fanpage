@@ -20,8 +20,8 @@ export default function OfflineDisplay({ loggedIn, setPage }) {
 
   return(
     <>
-      <div id="blacksmith-empty-mirror-container" className="custom-border-2" >
-        <div id="blacksmith-empty-mirror">
+      <div id="backpack-empty-mirror-container" className="custom-border-2" >
+        <div id="backpack-empty-mirror">
           <img src={ShimmerStar} alt="" id="shimmering-star-1" className="shimmering-star" />
           <img src={ShimmerStar} alt="" id="shimmering-star-2" className="shimmering-star" />
           <img src={ShimmerStar} alt="" id="shimmering-star-3" className="shimmering-star" />
@@ -35,19 +35,19 @@ export default function OfflineDisplay({ loggedIn, setPage }) {
           <img src={ShimmerStar} alt="" id="shimmering-star-11" className="shimmering-star" />  
         </div>
       </div>
-      <div id="blacksmith-unauthorized-display" className="custom-border-2">
-        Welcome to the blacksmith!<br/><br/>
+      <div id="backpack-unauthorized-display" className="custom-border-2">
+        Welcome to the backpack!<br/><br/>
 
         <span className="white-text">
           Wizards can choose one of the 7 schools:<br/>
-          <div id="blacksmith-mirror-school-container">
-            <img src={Storm} alt="School Icon" className="blacksmith-mirror-school-icon" />
-            <img src={Fire} alt="School Icon" className="blacksmith-mirror-school-icon" />
-            <img src={Ice} alt="School Icon" className="blacksmith-mirror-school-icon" />
-            <img src={Death} alt="School Icon" className="blacksmith-mirror-school-icon" />
-            <img src={Myth} alt="School Icon" className="blacksmith-mirror-school-icon" />
-            <img src={Life} alt="School Icon" className="blacksmith-mirror-school-icon" />
-            <img src={Balance} alt="School Icon" className="blacksmith-mirror-school-icon" />
+          <div id="backpack-mirror-school-container">
+            <img src={Storm} alt="School Icon" className="backpack-mirror-school-icon" />
+            <img src={Fire} alt="School Icon" className="backpack-mirror-school-icon" />
+            <img src={Ice} alt="School Icon" className="backpack-mirror-school-icon" />
+            <img src={Death} alt="School Icon" className="backpack-mirror-school-icon" />
+            <img src={Myth} alt="School Icon" className="backpack-mirror-school-icon" />
+            <img src={Life} alt="School Icon" className="backpack-mirror-school-icon" />
+            <img src={Balance} alt="School Icon" className="backpack-mirror-school-icon" />
           </div>
 
           Allowed up to 10 slots, you can customize each character!<br/><br/>
@@ -59,9 +59,9 @@ export default function OfflineDisplay({ loggedIn, setPage }) {
         You need to be logged-in in order to create wizard slots.
         
         {loggedIn ?
-          <div id="blacksmith-mirror-login" onClick={() => { setPage(2); }}>Begin</div>
+          <div id="backpack-mirror-login" onClick={() => { setPage(2); }}>Begin</div>
           :
-          <div id="blacksmith-mirror-login" onClick={() => { navigate('/account/login'); }}>Login</div>
+          <div id="backpack-mirror-login" onClick={() => { navigate('/account/login'); }}>Login</div>
         }
       </div>
     </>

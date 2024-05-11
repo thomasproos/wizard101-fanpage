@@ -143,13 +143,13 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
 
   if (Object.keys(currentSlot).length > 0) {
     return(
-      <div id="blacksmith-wizard-slot-creator" className="custom-border-2">
-        <div className="blacksmith-wizard-editor-header custom-border-2">Character View</div>
+      <div id="backpack-wizard-slot-creator" className="custom-border-2">
+        <div className="backpack-wizard-editor-header custom-border-2">Character View</div>
         
         {/* Name */}
-        <div className="blacksmith-wizard-editor-name-container">
-          <div id="blacksmith-wizard-editor-name-label">Name</div>
-          <input type="text" id="blacksmith-wizard-editor-name-input" className="custom-border-2" maxLength="20" value={currentSlot.name}
+        <div className="backpack-wizard-editor-name-container">
+          <div id="backpack-wizard-editor-name-label">Name</div>
+          <input type="text" id="backpack-wizard-editor-name-input" className="custom-border-2" maxLength="20" value={currentSlot.name}
             onChange={(event) => {
               let characterName = event.target.value.toUpperCase()
               setCurrentSlot({
@@ -167,12 +167,12 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         </div>
 
         {/* School */}
-        <div className="blacksmith-wizard-editor-name-container">
-          <div id="blacksmith-wizard-editor-name-label">School</div>
-          <div id="blacksmith-wizard-editor-school-selector" className="custom-border-2">
+        <div className="backpack-wizard-editor-name-container">
+          <div id="backpack-wizard-editor-name-label">School</div>
+          <div id="backpack-wizard-editor-school-selector" className="custom-border-2">
             {['storm', 'fire', 'ice', 'life', 'death', 'myth', 'balance'].map((school, index) => {
               return(
-                <div key={index} className={`active-wizard-slot-${school} blacksmith-wizard-editor-school-icon ` + (currentSlot.school === school ? 'current-slot-school' : '')}
+                <div key={index} className={`active-wizard-slot-${school} backpack-wizard-editor-school-icon ` + (currentSlot.school === school ? 'current-slot-school' : '')}
                 onClick={() => {setCurrentSlot({
                   index: currentSlot.index, 
                   created: currentSlot.created, 
@@ -191,9 +191,9 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         </div>
 
         {/* Level */}
-        <div className="blacksmith-wizard-editor-name-container">
-          <div id="blacksmith-wizard-editor-name-label">Level</div>
-          <input type="number" id="blacksmith-wizard-editor-level-input" disabled className="custom-border-2" min="1" max="170" value={currentSlot.level}
+        <div className="backpack-wizard-editor-name-container">
+          <div id="backpack-wizard-editor-name-label">Level</div>
+          <input type="number" id="backpack-wizard-editor-level-input" disabled className="custom-border-2" min="1" max="170" value={currentSlot.level}
             onChange={(event) => {setCurrentSlot({
               index: currentSlot.index, 
               created: currentSlot.created, 
@@ -239,7 +239,7 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         </div>
 
         {/* Save Button */}
-        <div className={"blacksmith-wizard-editor-save-button " + (valid ? currentSlot.created ? checkIfChanged() ? "editor-save-button-valid" : "" : "editor-save-button-valid" : "")} onClick={handleCreateCharacter}>
+        <div className={"backpack-wizard-editor-save-button " + (valid ? currentSlot.created ? checkIfChanged() ? "editor-save-button-valid" : "" : "editor-save-button-valid" : "")} onClick={handleCreateCharacter}>
           {(currentSlot.created ? "Save Changes" : "Create")}
         </div>
 
@@ -268,8 +268,8 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         </div>
 
         {/* Spiral Book */}
-        <img src={SpiralBook} alt="Backpack button" className={"blacksmith-wizard-editor-button-inactive " 
-          + (currentSlot.created && !checkIfChanged() ? "blacksmith-wizard-editor-button-active" : "")} 
+        <img src={SpiralBook} alt="Backpack button" className={"backpack-wizard-editor-button-inactive " 
+          + (currentSlot.created && !checkIfChanged() ? "backpack-wizard-editor-button-active" : "")} 
           onClick={() => {
             if (!currentSlot.created) {
               setSystemMessage('Create your wizard first!');
@@ -295,8 +295,8 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
     );
   } else {
     return(
-      <div id="blacksmith-wizard-slot-creator" className="custom-border-2">
-        <div className="blacksmith-wizard-editor-header custom-border-2">Character View</div>
+      <div id="backpack-wizard-slot-creator" className="custom-border-2">
+        <div className="backpack-wizard-editor-header custom-border-2">Character View</div>
 
         <div id="character-editor-message" className="custom-border-2">Please choose<br/>a character slot</div>
 

@@ -91,10 +91,10 @@ export default function Navigation() {
                 <img src={Jade} alt="Gardening Icon" id="navigation-gardening-icon" className="navigation-icon" />
                 <div id="navigation-gardening-title" className="navigation-title">Gardening</div>
               </div>
-              <div id="navigation-blacksmith-container" className="navigation-header-container"
-                onClick={() => { navigate('/blacksmith'); }}>
-                <img src={Amethyst} alt="Backpack Icon" id="navigation-blacksmith-icon" className="navigation-icon"/>
-                <div id="navigation-blacksmith-title" className="navigation-title">Backpack</div>
+              <div id="navigation-backpack-container" className="navigation-header-container"
+                onClick={() => { navigate('/backpack'); }}>
+                <img src={Amethyst} alt="Backpack Icon" id="navigation-backpack-icon" className="navigation-icon"/>
+                <div id="navigation-backpack-title" className="navigation-title">Backpack</div>
               </div>
               {loginStatus ?
                 <div id="navigation-logout-container" className="navigation-header-container navigation-icon-user"

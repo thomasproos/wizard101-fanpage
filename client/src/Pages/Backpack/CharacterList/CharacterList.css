@@ -1,5 +1,5 @@
 /* Character Slots */
-.blacksmith-wizard-slot-character-valid {
+.backpack-wizard-slot-character-valid {
   width: 90%;
   height: 30px;
   border-radius: 25px;
@@ -11,17 +11,17 @@
   flex-direction: row;
 }
 
-.blacksmith-wizard-slot-character-valid:hover {
+.backpack-wizard-slot-character-valid:hover {
   transform: scale(1.05);
 }
 
-.blacksmith-wizard-slot-character-valid:active {
+.backpack-wizard-slot-character-valid:active {
   transform: scale(1.0);
   filter: brightness(120%);
 }
 
 /* Placeholders */
-.blacksmith-wizard-slot-character-empty {
+.backpack-wizard-slot-character-empty {
   width: 90%;
   height: 30px;
   border-radius: 25px;
@@ -35,11 +35,11 @@
   opacity: 0.8;
 }
 
-.blacksmith-wizard-slot-character-empty:hover {
+.backpack-wizard-slot-character-empty:hover {
   transform: scale(1.05);
 }
 
-.blacksmith-wizard-slot-character-empty:active {
+.backpack-wizard-slot-character-empty:active {
   transform: scale(1.0);
   filter: brightness(120%);
 }
@@ -51,7 +51,7 @@
   border-radius: 50%;
 }
 
-.blacksmith-wizard-slot-character-name-empty {
+.backpack-wizard-slot-character-name-empty {
   max-width: 195px;
   text-transform: uppercase;
   overflow: hidden;
@@ -60,14 +60,14 @@
 }
 
 /* Character Names */
-.blacksmith-wizard-slot-character-name {
+.backpack-wizard-slot-character-name {
   width: 190px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.blacksmith-wizard-slot-school-icon {
+.backpack-wizard-slot-school-icon {
   height: 30px;
   width: 30px;
   background-repeat: no-repeat;

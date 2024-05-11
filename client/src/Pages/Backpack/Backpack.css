@@ -1,5 +1,5 @@
 /* Backpack Component */
-#blacksmith {
+#backpack {
   width: 80%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.774);
@@ -14,7 +14,7 @@
 }
 
 /* Backpack Title */
-#blacksmith-title {
+#backpack-title {
   font-size: 30px;
   padding-top: 2px;
   color: black;
@@ -26,7 +26,7 @@
   margin-left: auto;
 }
 
-#blacksmith-title-background {
+#backpack-title-background {
   background-image: url('../../Assets/CustomBook/title.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -39,7 +39,7 @@
   position: relative;
 }
 
-#blacksmith-content-container {
+#backpack-content-container {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -58,7 +58,7 @@
 }
 
 /* Character Slots */
-#blacksmith-wizard-slot-list {
+#backpack-wizard-slot-list {
   width: 340px;
   height: 500px;
   background-image: url('../../Assets/Backgrounds/star-background-tall.jpg'); 
@@ -69,7 +69,7 @@
   user-select: none; /* Standard syntax */
 }
 
-.blacksmith-wizard-slot-shading {
+.backpack-wizard-slot-shading {
   background-color: #000000be;
   width: 340px;
   height: 500px;
@@ -78,7 +78,7 @@
   box-sizing: border-box;
 }
 
-.blacksmith-wizard-slot-header {
+.backpack-wizard-slot-header {
   width: fit-content;
   margin-right: auto;
   margin-left: auto;
@@ -88,7 +88,7 @@
   background-color: #42111e;
 }
 
-#blacksmith-wizard-slot-container {
+#backpack-wizard-slot-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -167,7 +167,7 @@
 }
 
 /* Page Change Icons */
-#blacksmith-page-right-button {
+#backpack-page-right-button {
   background-image: url('../../Assets/Buttons/forward-icon.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -181,7 +181,7 @@
   filter: grayscale(1);
 }
 
-#blacksmith-page-left-button {
+#backpack-page-left-button {
   background-image: url('../../Assets/Buttons/back-icon.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -208,7 +208,7 @@
   filter: grayscale(0) !important;
 }
 
-#blacksmith-page-number-display {
+#backpack-page-number-display {
   position: absolute;
   bottom: 0;
   color: black;

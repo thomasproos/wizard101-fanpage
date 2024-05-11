@@ -1,10 +1,10 @@
 /* Logged Out Display */
-#blacksmith-empty-mirror-container {
+#backpack-empty-mirror-container {
   overflow: hidden; 
   position: relative;
 }
 
-#blacksmith-empty-mirror {
+#backpack-empty-mirror {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -16,7 +16,7 @@
   box-shadow: rgb(0, 0, 0) 3px 3px 6px 5px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 5px inset;
 }
 
-#blacksmith-empty-mirror:hover {
+#backpack-empty-mirror:hover {
   transform: scale(1.2);
 }
 
@@ -116,7 +116,7 @@
 }
 
 /* Not logged-in display */
-#blacksmith-unauthorized-display {
+#backpack-unauthorized-display {
   width: 340px;
   height: 500px;
   box-sizing: border-box;
@@ -126,7 +126,7 @@
   padding-top: 30px;
 }
 
-#blacksmith-mirror-school-container {
+#backpack-mirror-school-container {
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -137,17 +137,17 @@
   margin-bottom: 20px;
 }
 
-.blacksmith-mirror-school-icon {
+.backpack-mirror-school-icon {
   height: 32px;
   width: 32px;
 }
 
-.blacksmith-mirror-school-icon:hover {
+.backpack-mirror-school-icon:hover {
   transform: scale(1.10);
 }
 
 /* Login Button */
-#blacksmith-mirror-login {
+#backpack-mirror-login {
   left: 0;
   right: 0;
   margin-right: auto;
@@ -165,11 +165,11 @@
   user-select: none; /* Standard syntax */
 }
 
-#blacksmith-mirror-login:hover {
+#backpack-mirror-login:hover {
   transform: scale(1.08);
 }
 
-#blacksmith-mirror-login:active {
+#backpack-mirror-login:active {
   transform: scale(1.0);
   filter: brightness(120%);
 }

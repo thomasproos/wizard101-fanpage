@@ -92,14 +92,14 @@ export default function MainPage() {
         </div>
 
         {/* Backpack */}
-        <div className="main-about-header-2 main-about-header-container" onClick={() => {window.location.href='/#/blacksmith'}}>
+        <div className="main-about-header-2 main-about-header-container" onClick={() => {window.location.href='/#/backpack'}}>
           <img src={Backpack} alt="Backpack Icon" className="main-about-header-icon" />
           <div>Backpack</div>
           <img src={Backpack} alt="Backpack Icon" className="main-about-header-icon" />
         </div>
         <div className="main-about-paragraph-1">
-          The name is still being workshopped, but welcome to the blacksmith! This is the creative
-          child of the website devs! The blacksmith lets wizards create and save character slots &#40;up to <span style={spanPink}>10</span>&#41;.
+          The name is still being workshopped, but welcome to the backpack! This is the creative
+          child of the website devs! The backpack lets wizards create and save character slots &#40;up to <span style={spanPink}>10</span>&#41;.
           <br/><br/>
           
           Wizards can set their character's name, level, school, and gear! Building your ideal gear setup is no longer a challenge, simply follow along
