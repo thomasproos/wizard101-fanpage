@@ -2,15 +2,14 @@
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { actionTypes } from '../../ReduxStore.js';
-import { useState } from 'react';
 import { useEffect } from 'react';
 
 // Import Assets
-import Sapphire from '../../Assets/ItemIcons/sapphire-socket.png';
-import Amethyst from '../../Assets/ItemIcons/amethyst-socket.png';
-import Peridot from '../../Assets/ItemIcons/peridot-socket.png';
-import Jade from '../../Assets/ItemIcons/jade-socket.png';
-import Ruby from '../../Assets/ItemIcons/ruby-socket.png';
+import Sapphire from '../../Assets/Jewels/sapphire-socket.png';
+import Amethyst from '../../Assets/Jewels/amethyst-socket.png';
+import Peridot from '../../Assets/Jewels/peridot-socket.png';
+import Jade from '../../Assets/Jewels/jade-socket.png';
+import Ruby from '../../Assets/Jewels/ruby-socket.png';
 
 // Import CSS
 import './Navigation.css';
