@@ -9,6 +9,7 @@
   position: relative;
   color: #F6F741;
   padding: 30px;
+  overflow-x: auto;
 }
 
 /* Backpack Title */
@@ -30,11 +31,14 @@
   background-size: contain;
   width: 500px;
   height: 70px;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-top: -10px;
+  position: absolute;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: -65px;
   z-index: 3;
-  position: relative;
 }
 
 #backpack-content-container {
@@ -43,6 +47,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  right: 30px;
   gap: 50px;
   width: 1000px;
   height: 635px;

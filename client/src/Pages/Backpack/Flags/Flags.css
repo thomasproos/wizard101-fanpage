@@ -1,0 +1,82 @@
+/* Backpack Flags */
+#backpack-flags {
+  position: absolute;
+  right: 0;
+  margin-right: -60px;
+  gap: 7px;
+  display: flex;
+  flex-direction: column;
+}
+
+.backpack-flag {
+  width: 90px;
+  height: 60px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.flag-button {
+  height: 50px;
+  width: 50px;
+  margin-left: 22px;
+  margin-top: 7px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.flag-button:hover {
+  filter: drop-shadow(0 0 5px #a3a314);
+  -webkit-filter: drop-shadow(0 0 5px #a3a314);
+  transform: scale(1.10);
+}
+
+.flag-button:active {
+  transform: scale(1);
+}
+
+/* Individual Flag Icons */
+#stats-flag {
+  background-image: url('../../../Assets/Banners/stats-flag.png');
+}
+
+#stats-button {
+  background-image: url('../../../Assets/Banners/stats.png');
+  width: 40px;
+  height: 40px;
+  margin-left: 29px;
+  margin-top: 11px;
+}
+
+#backpacks-flag {
+  background-image: url('../../../Assets/Banners/backpack-flag.png');
+}
+
+#backpacks-button {
+  background-image: url('../../../Assets/Banners/backpack.png');
+  width: 43px;
+  height: 43px;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+#question-flag {
+  background-image: url('../../../Assets/Banners/question-flag.png');
+}
+
+#question-button {
+  background-image: url('../../../Assets/Banners/question.png');
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+  margin-top: 12px;
+}
+
+#settings-flag {
+  background-image: url('../../../Assets/Banners/settings-flag.png');
+}
+
+#settings-button {
+  background-image: url('../../../Assets/Banners/settings.png');
+}

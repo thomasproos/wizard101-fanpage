@@ -12,6 +12,7 @@ import GearSearch from './GearSearch/GearSearch.js';
 import GearCreator from './GearCreator/GearCreator.js';
 import CharacterList from './CharacterList/CharacterList.js';
 import CharacterCreator from './CharacterCreator/CharacterCreator.js';
+import Flags from './Flags/Flags.js';
 
 export default function Backpack() {
   const [profile, setProfile] = useState({});
@@ -94,11 +95,11 @@ export default function Backpack() {
     if (page === 2) {
       return(
         <section id="backpack" className="custom-border-2">
-          <div id="backpack-title-background">
-            <div id="backpack-title">Backpack</div>
-          </div>
           <div id="backpack-content-container">
-  
+            <div id="backpack-title-background">
+              <div id="backpack-title">Backpack</div>
+            </div>
+
             {/* Character List */}
             <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
   
@@ -140,10 +141,10 @@ export default function Backpack() {
     } else if (page === 1) {
       return(
         <section id="backpack" className="custom-border-2">
-          <div id="backpack-title-background">
-            <div id="backpack-title">Backpack</div>
-          </div>
           <div id="backpack-content-container">
+            <div id="backpack-title-background">
+              <div id="backpack-title">Backpack</div>
+            </div>
             <OfflineDisplay loggedIn={true} setPage={setPage}/>
 
             {/* Page Buttons */}
@@ -158,6 +159,7 @@ export default function Backpack() {
                   setPage(2);
                 }
               }}/>
+            <Flags />
           </div>
         </section>
       );
@@ -165,10 +167,10 @@ export default function Backpack() {
       numberPages = 4;
       return(
         <section id="backpack" className="custom-border-2">
-          <div id="backpack-title-background">
-            <div id="backpack-title">Backpack</div>
-          </div>
           <div id="backpack-content-container">
+            <div id="backpack-title-background">
+              <div id="backpack-title">Backpack</div>
+            </div>
             <GearCreator currentGear={currentGear} setCurrentGear={setCurrentGear}/>
             <GearSearch currentGear={currentGear} setCurrentGear={setCurrentGear} wizard={wizard}/>
 
@@ -191,10 +193,10 @@ export default function Backpack() {
   } else {
     return(
       <section id="backpack" className="custom-border-2">
-        <div id="backpack-title-background">
-          <div id="backpack-title">Backpack</div>
-        </div>
         <div id="backpack-content-container">
+          <div id="backpack-title-background">
+            <div id="backpack-title">Backpack</div>
+          </div>
           <OfflineDisplay loggedIn={false}/>
         </div>
       </section>
