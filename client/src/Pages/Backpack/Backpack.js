@@ -93,7 +93,7 @@ export default function Backpack() {
   if (loginStatus) {
     if (page === 2) {
       return(
-        <section id="backpack" className="custom-border-1">
+        <section id="backpack" className="custom-border-2">
           <div id="backpack-title-background">
             <div id="backpack-title">Backpack</div>
           </div>
@@ -139,7 +139,7 @@ export default function Backpack() {
       );
     } else if (page === 1) {
       return(
-        <section id="backpack" className="custom-border-1">
+        <section id="backpack" className="custom-border-2">
           <div id="backpack-title-background">
             <div id="backpack-title">Backpack</div>
           </div>
@@ -164,7 +164,7 @@ export default function Backpack() {
     } else if (page === 3) {
       numberPages = 4;
       return(
-        <section id="backpack" className="custom-border-1">
+        <section id="backpack" className="custom-border-2">
           <div id="backpack-title-background">
             <div id="backpack-title">Backpack</div>
           </div>
@@ -190,7 +190,7 @@ export default function Backpack() {
     }
   } else {
     return(
-      <section id="backpack" className="custom-border-1">
+      <section id="backpack" className="custom-border-2">
         <div id="backpack-title-background">
           <div id="backpack-title">Backpack</div>
         </div>

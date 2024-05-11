@@ -2,7 +2,7 @@
 import './GearSearch.css';
 
 // Import Assets
-import GoArrow from '../../../Assets/Buttons/arrow-icon.png';
+import GoArrow from '../../../Assets/Buttons/right-arrow.png';
 
 // Import Dependencies
 import { useEffect, useState } from 'react';

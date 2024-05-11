@@ -26,7 +26,7 @@ body {
 }
 
 /* Setting Proper Height Values */
-html, #root {
+html, #root, main {
   height: 100%;
 }
 
