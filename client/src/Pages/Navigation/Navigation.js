@@ -5,11 +5,9 @@ import { actionTypes } from '../../ReduxStore.js';
 import { useEffect } from 'react';
 
 // Import Assets
-import Sapphire from '../../Assets/Jewels/sapphire-socket.png';
 import Amethyst from '../../Assets/Jewels/amethyst-socket.png';
 import Peridot from '../../Assets/Jewels/peridot-socket.png';
 import Jade from '../../Assets/Jewels/jade-socket.png';
-import Ruby from '../../Assets/Jewels/ruby-socket.png';
 
 // Import CSS
 import './Navigation.css';
@@ -20,7 +18,7 @@ export default function Navigation() {
   const dispatch = useDispatch();
 
   // Redux Store Values
-  const loginStatus = useSelector(state => state.loginStatus);
+  // const loginStatus = useSelector(state => state.loginStatus);
   const currentPage = useSelector(state => state.currentPage);
 
   // Fetch the current login-status
@@ -45,30 +43,30 @@ export default function Navigation() {
   }, [dispatch]);
 
   // Logging out the user
-  const handleLogout = async () => {
-    try {
-      // The redux value setter method
-      const setLoginStatus = (value) => {
-        dispatch({ type: actionTypes.SET_LOGIN, payload: value });
-      };
+  // const handleLogout = async () => {
+  //   try {
+  //     // The redux value setter method
+  //     const setLoginStatus = (value) => {
+  //       dispatch({ type: actionTypes.SET_LOGIN, payload: value });
+  //     };
 
-      const response = await fetch('/api/v1/auth/logout', {
-        method: 'DELETE',
-        body: {},
-        headers: {}
-      });
+  //     const response = await fetch('/api/v1/auth/logout', {
+  //       method: 'DELETE',
+  //       body: {},
+  //       headers: {}
+  //     });
 
-      if (response.ok) {
-        const status = await response.json();
+  //     if (response.ok) {
+  //       const status = await response.json();
 
-        if (status.loggedOut) {
-          setLoginStatus(false);
-        }
-      }
-    } catch(error) {
-      console.error('Failed to logout user.');
-    }
-  };
+  //       if (status.loggedOut) {
+  //         setLoginStatus(false);
+  //       }
+  //     }
+  //   } catch(error) {
+  //     console.error('Failed to logout user.');
+  //   }
+  // };
 
   return(
     <>
@@ -96,19 +94,6 @@ export default function Navigation() {
                 <img src={Amethyst} alt="Backpack Icon" id="navigation-backpack-icon" className="navigation-icon"/>
                 <div id="navigation-backpack-title" className="navigation-title">Backpack</div>
               </div>
-              {loginStatus ?
-                <div id="navigation-logout-container" className="navigation-header-container navigation-icon-user"
-                  onClick={handleLogout}>
-                  <img src={Ruby} alt="Logout Icon" id="navigation-logout-icon" className="navigation-icon"/>
-                  <div id="navigation-logout-title" className="navigation-title">Logout</div>
-                </div>
-                :
-                <div id="navigation-login-container" className="navigation-header-container navigation-icon-user"
-                  onClick={() => { navigate('/account/login'); }}>
-                  <img src={Sapphire} alt="Login Icon" id="navigation-login-icon" className="navigation-icon"/>
-                  <div id="navigation-login-title" className="navigation-title">Login</div>
-                </div>
-              }
             </section>
           </section>
       </div>

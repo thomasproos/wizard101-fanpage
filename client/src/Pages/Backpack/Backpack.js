@@ -7,7 +7,7 @@ import { actionTypes } from '../../ReduxStore.js';
 import './Backpack.css';
 
 // Import Components
-import OfflineDisplay from './OfflineDisplay/OfflineDisplay.js';
+import InformationPage from './InformationPage/InformationPage.js';
 import GearSearch from './GearSearch/GearSearch.js';
 import GearCreator from './GearCreator/GearCreator.js';
 import Flags from './Flags/Flags.js';
@@ -63,28 +63,7 @@ export default function Backpack() {
       );
     } else if (page === 'information') {
       return(
-        <section id="backpack" className="custom-border-2">
-          <div id="backpack-content-container">
-            <div id="backpack-title-background">
-              <div id="backpack-title">Backpack</div>
-            </div>
-            <OfflineDisplay loggedIn={true} setPage={setPage}/>
-            <Flags star={true} stats={true} backpack={true} question={true} settings={true} setPage={setPage} page={page}/>
-
-            {/* Page Buttons */}
-            <div id="backpack-page-left-button" className={"" + (pageNumber === 2 ? "page-button-enabled" : "")} onClick={() => {
-                if (pageNumber === 2) {
-                  setPageNumber(1);
-                }
-              }}/>
-            <div id="backpack-page-number-display">{pageNumber}/2</div>
-            <div id="backpack-page-right-button" className={"" + (pageNumber === 1 ? "page-button-enabled" : "")} onClick={() => {
-                if (pageNumber === 1) {
-                  setPageNumber(2);
-                }
-              }}/>
-          </div>
-        </section>
+        <InformationPage loggedIn={loginStatus} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber} />
       );
     } else if (page === 3) {
       numberPages = 4;
@@ -120,7 +99,7 @@ export default function Backpack() {
           <div id="backpack-title-background">
             <div id="backpack-title">Information</div>
           </div>
-          <OfflineDisplay loggedIn={false}/>
+          <InformationPage loggedIn={false}/>
           <Flags star={false} stats={false} backpack={false} question={true} settings={false} setPage={setPage} page={page}/>
         </div>
       </section>
