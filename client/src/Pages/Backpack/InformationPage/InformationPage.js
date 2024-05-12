@@ -23,7 +23,7 @@ export default function InformationPage({ loggedIn, setPage, page, pageNumber, s
     <section id="backpack" className="custom-border-2">
       <div id="backpack-content-container">
         <div id="backpack-title-background">
-          <div id="backpack-title">Backpack</div>
+          <div id="backpack-title">Information</div>
         </div>
         
         <div id="backpack-empty-mirror-container" className="custom-border-2" >

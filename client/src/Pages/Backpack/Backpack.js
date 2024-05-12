@@ -63,33 +63,7 @@ export default function Backpack() {
       );
     } else if (page === 'information') {
       return(
-        <InformationPage loggedIn={loginStatus} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber} />
-      );
-    } else if (page === 3) {
-      numberPages = 4;
-      return(
-        <section id="backpack" className="custom-border-2">
-          <div id="backpack-content-container">
-            <div id="backpack-title-background">
-              <div id="backpack-title">Backpack</div>
-            </div>
-            <GearCreator currentGear={currentGear} setCurrentGear={setCurrentGear}/>
-            <GearSearch currentGear={currentGear} setCurrentGear={setCurrentGear} wizard={wizard}/>
-
-            {/* Page Buttons */}
-            <div id="backpack-page-left-button" className="page-button-enabled" onClick={() => {
-                if (page === 3) {
-                  setPage(2);
-                }
-              }}/>
-            <div id="backpack-page-number-display">{page}/{numberPages}</div>
-            <div id="backpack-page-right-button" className="page-button-enabled" onClick={() => {
-                if (page === 3) {
-                  setPage(4);
-                }
-              }}/>
-          </div>
-        </section>
+        <InformationPage loggedIn={(loginStatus)} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber} />
       );
     }
   } else {
