@@ -49,7 +49,7 @@
   margin-left: 10px;
   padding-left: 15px;
   padding-right: 15px;
-  cursor: url('../../../Assets/Cursors/default-small.png'), auto;
+  cursor: url('../../../../Assets/Cursors/default-small.png'), auto;
   caret-color: white;
   color: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -115,7 +115,7 @@
   margin-left: 20px;
   padding-left: 15px;
   padding-right: 15px;
-  cursor: url('../../../Assets/Cursors/default-small.png'), auto;
+  cursor: url('../../../../Assets/Cursors/default-small.png'), auto;
   caret-color: white;
   color: white;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -154,7 +154,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 /* Save Button */
 .backpack-wizard-editor-save-button {
-  background-image: url('../../../Assets/Buttons/button-medium.png');
+  background-image: url('../../../../Assets/Buttons/button-medium.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 33px;
@@ -188,7 +188,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   margin-top: 35px;
   margin-left: 120px;
   filter: grayscale(0.6);
-  cursor: url('../../../Assets/Cursors/x-small.png'), auto;
+  cursor: url('../../../../Assets/Cursors/x-small.png'), auto;
 }
 
 .backpack-wizard-editor-button-active {
@@ -198,7 +198,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   margin-left: 120px;
   -webkit-filter: drop-shadow(0px 12px 7px rgb(255, 58, 58));
   filter: drop-shadow(0px 0px 7px rgb(255, 219, 58));
-  cursor: url('../../../Assets/Cursors/default-small.png'), auto;
+  cursor: url('../../../../Assets/Cursors/default-small.png'), auto;
 }
 
 .backpack-wizard-editor-button-active:hover {
@@ -236,7 +236,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   top: 0;
   left: 0;
   margin: 18px;
-  cursor: url('../../../Assets/Cursors/picker-small.png'), auto;
+  cursor: url('../../../../Assets/Cursors/picker-small.png'), auto;
 }
 
 #tooltip-info-character-view {
@@ -282,11 +282,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
   width: fit-content;
   line-height: 30px;
   gap: 10px;
-  cursor: url('../../../Assets/Cursors/picker-small.png'), auto;
+  cursor: url('../../../../Assets/Cursors/picker-small.png'), auto;
 }
 
 .wizard-slot-system-icon {
-  background-image: url('../../../Assets/ItemIcons/exclamation-icon.png');
+  background-image: url('../../../../Assets/ItemIcons/exclamation-icon.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 30px;

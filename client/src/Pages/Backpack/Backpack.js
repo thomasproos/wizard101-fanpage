@@ -8,19 +8,15 @@ import './Backpack.css';
 
 // Import Components
 import InformationPage from './InformationPage/InformationPage.js';
-import GearSearch from './GearSearch/GearSearch.js';
-import GearCreator from './GearCreator/GearCreator.js';
 import Flags from './Flags/Flags.js';
 import StarPage from './StarPage/StarPage.js';
+import BackpackPage from './BackpackPage/BackpackPage.js';
 
 export default function Backpack() {
   const [profile, setProfile] = useState({});
   const [currentSlot, setCurrentSlot] = useState({});
   const [page, setPage] = useState('information');
   const [pageNumber, setPageNumber] = useState(1);
-  const [currentGear, setCurrentGear] = useState('all');
-  const [wizard, setWizard] = useState({});
-  let numberPages = 2;
 
   // Setup state modifications
   const dispatch = useDispatch();
@@ -59,11 +55,15 @@ export default function Backpack() {
   if (loginStatus) {
     if (page === 'star') {
       return(
-        <StarPage currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile} setProfile={setProfile} setWizard={setWizard} page={page} setPage={setPage}/>
+        <StarPage currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile} setProfile={setProfile} page={page} setPage={setPage}/>
       );
     } else if (page === 'information') {
       return(
         <InformationPage loggedIn={(loginStatus)} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      );
+    } else if (page === 'backpack') {
+      return(
+        <BackpackPage />
       );
     }
   } else {

@@ -1,13 +1,13 @@
 // Import Assets
 import { useState } from "react";
-import CharacterCreator from "../CharacterCreator/CharacterCreator";
-import CharacterList from "../CharacterList/CharacterList";
+import CharacterCreator from "./CharacterCreator/CharacterCreator";
+import CharacterList from "./CharacterList/CharacterList";
 import Flags from "../Flags/Flags";
 
 // Import CSS
 import './StarPage.css';
 
-export default function StarPage({ currentSlot, setCurrentSlot, profile, setProfile, page, setPage, setWizard }) {
+export default function StarPage({ currentSlot, setCurrentSlot, profile, setProfile, page, setPage }) {
   const [valid, setValid] = useState(false);
   const [confirmationMessage, setConfirmationMessage] = useState({});
 
@@ -56,7 +56,7 @@ export default function StarPage({ currentSlot, setCurrentSlot, profile, setProf
 
         {/* Character Creator */}
         <CharacterCreator setPage={setPage} profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
-          setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid} setWizard={setWizard}/>
+          setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid} />
         <Flags star={true} stats={true} backpack={true} question={true} settings={true} setPage={setPage} page={page}/>
       </div>
 
