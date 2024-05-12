@@ -8,12 +8,11 @@ import GoArrow from '../../../Assets/Buttons/right-arrow.png';
 import { useEffect, useState } from 'react';
 import ItemTooltip from './ItemTooltip/ItemTooltip';
 
-export default function GearSearch({ wizard, currentGear, setCurrentGear }) {
+export default function GearSearch({ currentSlot, currentGear, setCurrentGear }) {
   const [dropDown, setDropDown] = useState(false);
   // Define array of gear items
   const [gearList] = useState(['all', 'hat', 'robe', 'boots', 'wand', 'ring', 'deck', 'athame', 'amulet']);
   const [itemList, setItemList] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [equipedItems, setEquipedItems] = useState([]);
 
@@ -42,10 +41,10 @@ export default function GearSearch({ wizard, currentGear, setCurrentGear }) {
     }
 
     // Update the user
-    const response = await fetch('/api/v1/auth/update-wizard-items', {
+    const response = await fetch('/api/v1/auth/update-currentSlot-items', {
       method: 'PUT',
       body: JSON.stringify({
-        wizard: wizard,
+        currentSlot: currentSlot,
         gear: item
       }),
       headers: {'Content-Type' : 'application/json'}
@@ -65,7 +64,6 @@ export default function GearSearch({ wizard, currentGear, setCurrentGear }) {
     (async () => {
       if (currentGear !== 'all') {
         try {
-          setLoading(true);
           const response = await fetch(`/api/v1/item/random-items/${50}/${currentGear}`);
   
           // Validate response
@@ -80,34 +78,34 @@ export default function GearSearch({ wizard, currentGear, setCurrentGear }) {
         const itemsList = [];
 
         // Add each item to the list
-        if (wizard.hat !== null) {
-          itemsList.push(wizard.hat);
+        if (currentSlot.hat !== null) {
+          itemsList.push(currentSlot.hat);
         }
-        if (wizard.robe !== null) {
-          itemsList.push(wizard.robe);
+        if (currentSlot.robe !== null) {
+          itemsList.push(currentSlot.robe);
         }
-        if (wizard.boots !== null) {
-          itemsList.push(wizard.boots);
+        if (currentSlot.boots !== null) {
+          itemsList.push(currentSlot.boots);
         }
-        if (wizard.amulet !== null) {
-          itemsList.push(wizard.amulet);
+        if (currentSlot.amulet !== null) {
+          itemsList.push(currentSlot.amulet);
         }
-        if (wizard.athame !== null) {
-          itemsList.push(wizard.athame);
+        if (currentSlot.athame !== null) {
+          itemsList.push(currentSlot.athame);
         }
-        if (wizard.ring !== null) {
-          itemsList.push(wizard.ring);
+        if (currentSlot.ring !== null) {
+          itemsList.push(currentSlot.ring);
         }
-        if (wizard.deck !== null) {
-          itemsList.push(wizard.deck);
+        if (currentSlot.deck !== null) {
+          itemsList.push(currentSlot.deck);
         }
-        if (wizard.wand !== null) {
-          itemsList.push(wizard.wand);
+        if (currentSlot.wand !== null) {
+          itemsList.push(currentSlot.wand);
         }
         setEquipedItems(itemsList);
       }
     })();
-  }, [currentGear, wizard])
+  }, [currentGear, currentSlot])
 
   return(
     <div id="backpack-gear-search">

@@ -15,6 +15,7 @@ import BackpackPage from './BackpackPage/BackpackPage.js';
 export default function Backpack() {
   const [profile, setProfile] = useState({});
   const [currentSlot, setCurrentSlot] = useState({});
+  const [currentGear, setCurrentGear] = useState('all');
   const [page, setPage] = useState('information');
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -63,7 +64,7 @@ export default function Backpack() {
       );
     } else if (page === 'backpack') {
       return(
-        <BackpackPage />
+        <BackpackPage currentGear={currentGear} setCurrentGear={setCurrentGear} currentSlot={currentSlot} page={page} setPage={setPage}/>
       );
     }
   } else {

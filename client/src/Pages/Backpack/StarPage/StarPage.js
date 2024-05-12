@@ -1,5 +1,7 @@
-// Import Assets
+// Import Dependencies
 import { useState } from "react";
+
+// Import Components
 import CharacterCreator from "./CharacterCreator/CharacterCreator";
 import CharacterList from "./CharacterList/CharacterList";
 import Flags from "../Flags/Flags";
