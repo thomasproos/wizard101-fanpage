@@ -16,6 +16,7 @@
   background-size: contain;
 }
 
+/* Button Settings */
 .flag-button {
   height: 50px;
   width: 50px;
@@ -24,19 +25,37 @@
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
+  filter: grayscale(1);
 }
 
-.flag-button:hover {
+/* Active Button */
+.button-active {
+  filter: grayscale(0);
+}
+
+.button-active:hover {
   filter: drop-shadow(0 0 5px #a3a314);
   -webkit-filter: drop-shadow(0 0 5px #a3a314);
   transform: scale(1.10);
 }
 
-.flag-button:active {
+.button-active:active {
   transform: scale(1);
 }
 
 /* Individual Flag Icons */
+#star-flag {
+  background-image: url('../../../Assets/Banners/star-flag.png');
+}
+
+#star-button {
+  background-image: url('../../../Assets/Banners/star.png');
+  width: 43px;
+  height: 43px;
+  margin-left: 22px;
+  margin-top: 8px;
+}
+
 #stats-flag {
   background-image: url('../../../Assets/Banners/stats-flag.png');
 }

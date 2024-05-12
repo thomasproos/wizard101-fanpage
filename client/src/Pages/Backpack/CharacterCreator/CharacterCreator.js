@@ -172,7 +172,7 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
           <div id="backpack-wizard-editor-school-selector" className="custom-border-2">
             {['storm', 'fire', 'ice', 'life', 'death', 'myth', 'balance'].map((school, index) => {
               return(
-                <div key={index} className={`active-wizard-slot-${school} backpack-wizard-editor-school-icon ` + (currentSlot.school === school ? 'current-slot-school' : '')}
+                <div key={index} className={`active-wizard-slot-${school} active-wizard-slot-icon backpack-wizard-editor-school-icon ` + (currentSlot.school === school ? 'current-slot-school' : '')}
                 onClick={() => {setCurrentSlot({
                   index: currentSlot.index, 
                   created: currentSlot.created, 

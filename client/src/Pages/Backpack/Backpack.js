@@ -10,16 +10,14 @@ import './Backpack.css';
 import OfflineDisplay from './OfflineDisplay/OfflineDisplay.js';
 import GearSearch from './GearSearch/GearSearch.js';
 import GearCreator from './GearCreator/GearCreator.js';
-import CharacterList from './CharacterList/CharacterList.js';
-import CharacterCreator from './CharacterCreator/CharacterCreator.js';
 import Flags from './Flags/Flags.js';
+import StarPage from './StarPage/StarPage.js';
 
 export default function Backpack() {
   const [profile, setProfile] = useState({});
-  const [confirmationMessage, setConfirmationMessage] = useState({});
   const [currentSlot, setCurrentSlot] = useState({});
-  const [valid, setValid] = useState(false);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState('information');
+  const [pageNumber, setPageNumber] = useState(1);
   const [currentGear, setCurrentGear] = useState('all');
   const [wizard, setWizard] = useState({});
   let numberPages = 2;
@@ -30,39 +28,6 @@ export default function Backpack() {
   // Setup global variables
   const loginStatus = useSelector(state => state.loginStatus);
   const currentPage = useSelector(state => state.currentPage);
-
-  // Delete character slot
-  const handleDeleteSlot = async () => {
-    try {
-      const response = await fetch(`/api/v1/auth/delete-wizard-slot/${currentSlot.index}`, {
-        method: 'DELETE',
-        headers: {}
-      });
-
-      if (response.ok) {
-        const response = await fetch('/api/v1/auth/user');
-  
-        if (response.ok) {
-          const result = await response.json();
-          setConfirmationMessage({});
-          setProfile(result.user);
-
-          // Set default position
-          if (result.user.wizard_slots.length > 0) {
-            setCurrentSlot({
-              index: 0,
-              created: true,
-              name: result.user.wizard_slots[0].name,
-              school: result.user.wizard_slots[0].school,
-              level: result.user.wizard_slots[0].level
-            });
-          }
-        }
-      }
-    } catch(error) {
-      console.error('Fetch Error: Failed to delete slot and update user');
-    }
-  };
 
   // Fetch user profile
   useEffect(() => {
@@ -92,53 +57,11 @@ export default function Backpack() {
 
   // If the user is logged in
   if (loginStatus) {
-    if (page === 2) {
+    if (page === 'star') {
       return(
-        <section id="backpack" className="custom-border-2">
-          <div id="backpack-content-container">
-            <div id="backpack-title-background">
-              <div id="backpack-title">Backpack</div>
-            </div>
-
-            {/* Character List */}
-            <CharacterList currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile}/>
-  
-            {/* Character Creator */}
-            <CharacterCreator setPage={setPage} profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
-              setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid} setWizard={setWizard}/>
-              
-            {/* Page Buttons */}
-            <div id="backpack-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
-                if (page === 2) {
-                  setPage(1);
-                }
-              }}/>
-            <div id="backpack-page-number-display">{page}/{numberPages}</div>
-            <div id="backpack-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
-                if (page === 1) {
-                  setPage(2);
-                }
-              }}/>
-          </div>
-  
-          {/* Confirmation Message */}
-          {Object.keys(confirmationMessage).length === 3 ?
-            <div id="confirmation-background">
-              <div className="confirmation-container custom-border-2">
-                <div id="confirmation-message">{confirmationMessage.title}</div>
-                <div id="confirmation-button-container">
-                  <div className="confirmation-button" onClick={handleDeleteSlot}>{confirmationMessage.left}</div>
-                  <div className="confirmation-button" onClick={() => { setConfirmationMessage({}); }}>{confirmationMessage.right}</div>
-                </div>
-              </div>
-            </div>
-            :
-            <></>
-          }
-  
-        </section>
+        <StarPage currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} profile={profile} setProfile={setProfile} setWizard={setWizard} page={page} setPage={setPage}/>
       );
-    } else if (page === 1) {
+    } else if (page === 'information') {
       return(
         <section id="backpack" className="custom-border-2">
           <div id="backpack-content-container">
@@ -146,20 +69,20 @@ export default function Backpack() {
               <div id="backpack-title">Backpack</div>
             </div>
             <OfflineDisplay loggedIn={true} setPage={setPage}/>
+            <Flags star={true} stats={true} backpack={true} question={true} settings={true} setPage={setPage} page={page}/>
 
             {/* Page Buttons */}
-            <div id="backpack-page-left-button" className={"" + (page === 2 ? "page-button-enabled" : "")} onClick={() => {
-                if (page === 2) {
-                  setPage(1);
+            <div id="backpack-page-left-button" className={"" + (pageNumber === 2 ? "page-button-enabled" : "")} onClick={() => {
+                if (pageNumber === 2) {
+                  setPageNumber(1);
                 }
               }}/>
-            <div id="backpack-page-number-display">{page}/{numberPages}</div>
-            <div id="backpack-page-right-button" className={"" + (page === 1 ? "page-button-enabled" : "")} onClick={() => {
-                if (page === 1) {
-                  setPage(2);
+            <div id="backpack-page-number-display">{pageNumber}/2</div>
+            <div id="backpack-page-right-button" className={"" + (pageNumber === 1 ? "page-button-enabled" : "")} onClick={() => {
+                if (pageNumber === 1) {
+                  setPageNumber(2);
                 }
               }}/>
-            <Flags />
           </div>
         </section>
       );
@@ -195,9 +118,10 @@ export default function Backpack() {
       <section id="backpack" className="custom-border-2">
         <div id="backpack-content-container">
           <div id="backpack-title-background">
-            <div id="backpack-title">Backpack</div>
+            <div id="backpack-title">Information</div>
           </div>
           <OfflineDisplay loggedIn={false}/>
+          <Flags star={false} stats={false} backpack={false} question={true} settings={false} setPage={setPage} page={page}/>
         </div>
       </section>
     );

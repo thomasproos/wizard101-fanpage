@@ -1,0 +1,29 @@
+/* Tooltip CSS */
+#tooltip {
+  position: absolute;
+  background-color: white;
+  width: fit-content;
+  color: black;
+  font-weight: 1000;
+  text-shadow: 0px 0.2px, 0.2px 0px, 0.2px 0.2px;
+  padding: 10px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Side Tooltip */
+.left-tooltip {
+
+}
+
+.bottom-tooltip {
+
+}
+
+.right-tooltip {
+  right: 0;
+}
+
+.top-tooltip {
+  
+}
