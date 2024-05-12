@@ -62,7 +62,7 @@ export default function Backpack() {
       return(
         <InformationPage loggedIn={(loginStatus)} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber} />
       );
-    } else if (page === 'backpack') {
+    } else if (page === 'backpack' && Object.keys(currentSlot).length > 0) {
       return(
         <BackpackPage currentGear={currentGear} setCurrentGear={setCurrentGear} currentSlot={currentSlot} page={page} setPage={setPage}/>
       );

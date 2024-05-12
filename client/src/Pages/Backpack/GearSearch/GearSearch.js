@@ -77,6 +77,8 @@ export default function GearSearch({ currentSlot, currentGear, setCurrentGear })
       } else {
         const itemsList = [];
 
+        console.log(currentSlot);
+
         // Add each item to the list
         if (currentSlot.hat !== null) {
           itemsList.push(currentSlot.hat);

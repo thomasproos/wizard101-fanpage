@@ -18,7 +18,15 @@ return(
                         created: true,
                         name: profile.wizard_slots[index].name,
                         school: profile.wizard_slots[index].school,
-                        level: profile.wizard_slots[index].level
+                        level: profile.wizard_slots[index].level,
+                        hat: profile.wizard_slots[index].hat,
+                        robe: profile.wizard_slots[index].robe,
+                        boots: profile.wizard_slots[index].boots,
+                        deck: profile.wizard_slots[index].deck,
+                        wand: profile.wizard_slots[index].wand,
+                        athame: profile.wizard_slots[index].athame,
+                        ring: profile.wizard_slots[index].ring,
+                        amulet: profile.wizard_slots[index].amulet
                       });
                     }}>
                     <div className={`active-wizard-slot-${profile.wizard_slots[index].school} backpack-wizard-slot-school-icon`}></div>

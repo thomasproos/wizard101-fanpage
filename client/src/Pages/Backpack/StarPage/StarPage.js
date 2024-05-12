@@ -36,7 +36,8 @@ export default function StarPage({ currentSlot, setCurrentSlot, profile, setProf
               created: true,
               name: result.user.wizard_slots[0].name,
               school: result.user.wizard_slots[0].school,
-              level: result.user.wizard_slots[0].level
+              level: result.user.wizard_slots[0].level,
+              wizard: result.user.wizard_slots[0]
             });
           }
         }

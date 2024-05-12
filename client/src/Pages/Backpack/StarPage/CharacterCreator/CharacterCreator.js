@@ -37,7 +37,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         created: currentSlot.created, 
         name: currentSlot.name,
         school: currentSlot.school,
-        level: currentSlot.level + (currentSlot.level + 1 <= 170 ? 1 : 0)
+        level: currentSlot.level + (currentSlot.level + 1 <= 170 ? 1 : 0),
+        hat: currentSlot.hat,
+        robe: currentSlot.robe,
+        boots: currentSlot.boots,
+        deck: currentSlot.deck,
+        wand: currentSlot.wand,
+        athame: currentSlot.athame,
+        ring: currentSlot.ring,
+        amulet: currentSlot.amulet
       })
     } else {
       setCurrentSlot({
@@ -45,7 +53,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
         created: currentSlot.created, 
         name: currentSlot.name,
         school: currentSlot.school,
-        level: currentSlot.level - (currentSlot.level - 1 > 0 ? 1 : 0)
+        level: currentSlot.level - (currentSlot.level - 1 > 0 ? 1 : 0),
+        hat: currentSlot.hat,
+        robe: currentSlot.robe,
+        boots: currentSlot.boots,
+        deck: currentSlot.deck,
+        wand: currentSlot.wand,
+        athame: currentSlot.athame,
+        ring: currentSlot.ring,
+        amulet: currentSlot.amulet
       })
     }
   }, isRunning ? 50 : null);
@@ -98,7 +114,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
                   created: true,
                   index: currentSlot.index > profile.wizard_slots.length - 1 ? profile.wizard_slots.length : currentSlot.index, 
                   level: currentSlot.level,
-                  school: currentSlot.school
+                  school: currentSlot.school,
+                  hat: currentSlot.hat,
+                  robe: currentSlot.robe,
+                  boots: currentSlot.boots,
+                  deck: currentSlot.deck,
+                  wand: currentSlot.wand,
+                  athame: currentSlot.athame,
+                  ring: currentSlot.ring,
+                  amulet: currentSlot.amulet
                 });
               }
             } else {
@@ -157,7 +181,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
                 created: currentSlot.created, 
                 name: characterName,
                 school: currentSlot.school,
-                level: currentSlot.level
+                level: currentSlot.level,
+                hat: currentSlot.hat,
+                robe: currentSlot.robe,
+                boots: currentSlot.boots,
+                deck: currentSlot.deck,
+                wand: currentSlot.wand,
+                athame: currentSlot.athame,
+                ring: currentSlot.ring,
+                amulet: currentSlot.amulet
               });
               if (characterName.match('^[A-Z0-9\\s]{4,20}$') && currentSlot.level > 0 && currentSlot.level <= 170 && currentSlot.school !== 'spiral') {
                 setValid(true);
@@ -178,7 +210,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
                   created: currentSlot.created, 
                   name: currentSlot.name,
                   school: school,
-                  level: currentSlot.level
+                  level: currentSlot.level,
+                  hat: currentSlot.hat,
+                  robe: currentSlot.robe,
+                  boots: currentSlot.boots,
+                  deck: currentSlot.deck,
+                  wand: currentSlot.wand,
+                  athame: currentSlot.athame,
+                  ring: currentSlot.ring,
+                  amulet: currentSlot.amulet
                 });
                 if (currentSlot.name.match('^[A-Z0-9\\s]{4,20}$') && currentSlot.level > 0 && currentSlot.level <= 170) {
                   setValid(true);
@@ -199,7 +239,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
               created: currentSlot.created, 
               name: currentSlot.name,
               school: currentSlot.school,
-              level: event.target.value
+              level: event.target.value,
+              hat: currentSlot.hat,
+              robe: currentSlot.robe,
+              boots: currentSlot.boots,
+              deck: currentSlot.deck,
+              wand: currentSlot.wand,
+              athame: currentSlot.athame,
+              ring: currentSlot.ring,
+              amulet: currentSlot.amulet
             });
             if (currentSlot.name.match('^[A-Z0-9\\s]{4,20}$') && event.target.value > 0 && event.target.value <= 170 && currentSlot.school !== 'spiral') {
               setValid(true);
@@ -214,7 +262,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
               created: currentSlot.created, 
               name: currentSlot.name,
               school: currentSlot.school,
-              level: currentSlot.level + (currentSlot.level + 1 <= 170 ? 1 : 0)
+              level: currentSlot.level + (currentSlot.level + 1 <= 170 ? 1 : 0),
+              hat: currentSlot.hat,
+              robe: currentSlot.robe,
+              boots: currentSlot.boots,
+              deck: currentSlot.deck,
+              wand: currentSlot.wand,
+              athame: currentSlot.athame,
+              ring: currentSlot.ring,
+              amulet: currentSlot.amulet
             });
             if (currentSlot.name.match('^[A-Z0-9\\s]{4,20}$') && currentSlot.level + 1 > 0 && currentSlot.level <= 170 && currentSlot.school !== 'spiral') {
               setValid(true);
@@ -229,7 +285,15 @@ export default function CharacterCreator({ profile, currentSlot, setCurrentSlot,
               created: currentSlot.created, 
               name: currentSlot.name,
               school: currentSlot.school,
-              level: currentSlot.level - (currentSlot.level - 1 > 0 ? 1 : 0)
+              level: currentSlot.level - (currentSlot.level - 1 > 0 ? 1 : 0),
+              hat: currentSlot.hat,
+              robe: currentSlot.robe,
+              boots: currentSlot.boots,
+              deck: currentSlot.deck,
+              wand: currentSlot.wand,
+              athame: currentSlot.athame,
+              ring: currentSlot.ring,
+              amulet: currentSlot.amulet
             });
             if (currentSlot.name.match('^[A-Z0-9\\s]{4,20}$') && currentSlot.level > 0 && currentSlot.level <= 170 && currentSlot.school !== 'spiral') {
               setValid(true);
