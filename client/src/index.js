@@ -22,9 +22,13 @@ const router = createHashRouter([
     element: <Navigation />,
     children: [
       { path: '/', element: <MainPage /> },
-      { path: '/backpack', element: <Backpack /> },
+      // Account Pages
       { path: '/account/login', element: <Login /> },
-      { path: '/account/create-account', element: <CreateAccount /> }
+      { path: '/account/create-account', element: <CreateAccount /> },
+      // Backpack Pages
+      { path: '/backpack/character-list', element: <Backpack navigatePage="star" /> },
+      { path: '/backpack/information', element: <Backpack navigatePage="information" /> },
+      { path: '/backpack/stats', element: <Backpack navigatePage="stats" /> }
     ]
   }
 ]);

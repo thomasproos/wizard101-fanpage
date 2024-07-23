@@ -26,12 +26,27 @@
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
-  filter: grayscale(1);
 }
 
 /* Active Button */
-.button-active {
-  filter: grayscale(0);
+.button-active #star-button {
+  background-image: url('../../../Assets/Banners/transparent-star.png');
+}
+
+.button-active #stats-button {
+  background-image: url('../../../Assets/Banners/transparent-stats.png');
+}
+
+.button-active #backpacks-button {
+  background-image: url('../../../Assets/Banners/transparent-backpack.png');
+}
+
+.button-active #question-button {
+  background-image: url('../../../Assets/Banners/transparent-question.png');
+}
+
+.button-active #settings-button {
+  background-image: url('../../../Assets/Banners/transparent-settings.png');
 }
 
 .button-active:hover {

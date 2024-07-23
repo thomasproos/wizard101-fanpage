@@ -60,7 +60,7 @@ export default function StarPage({ currentSlot, setCurrentSlot, profile, setProf
         {/* Character Creator */}
         <CharacterCreator setPage={setPage} profile={profile} currentSlot={currentSlot} setCurrentSlot={setCurrentSlot} confirmationMessage={confirmationMessage}
           setConfirmationMessage={setConfirmationMessage} setProfile={setProfile} valid={valid} setValid={setValid} />
-        <Flags star={true} stats={true} backpack={true} question={true} settings={true} setPage={setPage} page={page}/>
+        <Flags star={true} stats={true} backpack={Object.keys(currentSlot).length > 0} question={true} settings={true} setPage={setPage} page={page}/>
       </div>
 
       {/* Confirmation Message */}

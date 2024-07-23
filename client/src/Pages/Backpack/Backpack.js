@@ -1,39 +1,36 @@
 // Import dependencies
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { actionTypes } from '../../ReduxStore.js';
+import { useSearchParams } from "react-router-dom";
 
 // Import CSS
 import './Backpack.css';
 
 // Import Components
 import InformationPage from './InformationPage/InformationPage.js';
-import Flags from './Flags/Flags.js';
 import StarPage from './StarPage/StarPage.js';
 import BackpackPage from './BackpackPage/BackpackPage.js';
 
-export default function Backpack() {
+export default function Backpack({ navigatePage }) {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [profile, setProfile] = useState({});
   const [currentSlot, setCurrentSlot] = useState({});
   const [currentGear, setCurrentGear] = useState('all');
   const [page, setPage] = useState('information');
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(searchParams.get('page') > 0 ? searchParams.get('page') : 1);
+
+  // Get current page
 
   // Setup state modifications
   const dispatch = useDispatch();
 
   // Setup global variables
   const loginStatus = useSelector(state => state.loginStatus);
-  const currentPage = useSelector(state => state.currentPage);
 
   // Fetch user profile
   useEffect(() => {
-    if (currentPage !== 'backpack') {
-      const setCurrentPage = (value) => {
-        dispatch({ type: actionTypes.SET_PAGE, payload: value });
-      };
-
-      setCurrentPage('backpack');
+    if (navigatePage !== page) {
+      setPage(navigatePage);
     }
 
     if (loginStatus) {
@@ -50,7 +47,7 @@ export default function Backpack() {
         }
       })();
     }
-  }, [currentPage, dispatch, loginStatus]);
+  }, [dispatch, loginStatus, navigatePage]);
 
   // If the user is logged in
   if (loginStatus) {
@@ -60,24 +57,16 @@ export default function Backpack() {
       );
     } else if (page === 'information') {
       return(
-        <InformationPage loggedIn={(loginStatus)} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+        <InformationPage currentSlot={currentSlot} loggedIn={(loginStatus)} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber} />
       );
-    } else if (page === 'backpack' && Object.keys(currentSlot).length > 0) {
+    } else if (page === 'backpack') {
       return(
         <BackpackPage currentGear={currentGear} setCurrentGear={setCurrentGear} currentSlot={currentSlot} page={page} setPage={setPage}/>
       );
     }
   } else {
     return(
-      <section id="backpack" className="custom-border-2">
-        <div id="backpack-content-container">
-          <div id="backpack-title-background">
-            <div id="backpack-title">Information</div>
-          </div>
-          <InformationPage loggedIn={false}/>
-          <Flags star={false} stats={false} backpack={false} question={true} settings={false} setPage={setPage} page={page}/>
-        </div>
-      </section>
+      <InformationPage loggedIn={false} setPage={setPage} page={page} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     );
   }
 }

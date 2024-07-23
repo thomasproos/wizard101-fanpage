@@ -15,7 +15,7 @@ import Myth from '../../../Assets/SchoolIcons/myth-icon.png';
 import Balance from '../../../Assets/SchoolIcons/balance-icon.png';
 import Flags from '../Flags/Flags';
 
-export default function InformationPage({ loggedIn, setPage, page, pageNumber, setPageNumber }) {
+export default function InformationPage({ loggedIn, setPage, page, pageNumber, setPageNumber, currentSlot }) {
   // Setup navigation
   const navigate = useNavigate();
 
@@ -71,7 +71,7 @@ export default function InformationPage({ loggedIn, setPage, page, pageNumber, s
           }
         </div>
 
-        <Flags star={loggedIn} stats={loggedIn} backpack={loggedIn} question={true} settings={true} setPage={setPage} page={page}/>
+        <Flags star={loggedIn} stats={loggedIn} backpack={(loggedIn && Object.keys(currentSlot).length > 0)} question={true} settings={loggedIn} setPage={setPage} page={page}/>
 
         {/* Page Buttons */}
         <div id="backpack-page-left-button" className={"" + (pageNumber === 2 ? "page-button-enabled" : "")} onClick={() => {

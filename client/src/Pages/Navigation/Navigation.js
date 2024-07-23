@@ -72,30 +72,30 @@ export default function Navigation() {
     <>
       <div id="navigation-bar-container">
         <section id="navigation" className="custom-border-2">
-            {/* Navigation Logo */}
-            <div id="navigation-website-container" onClick={() => {navigate('/')}}>
-              <div id="placeholder-website-icon" />
-              <div id="navigation-website-icon" className={"" + currentPage === 'home' ? "home-icon" : currentPage === "backpack" ? "backpack-icon" : "home-icon" } />
-              <div id="navigation-website-title">Beguiled Socket</div>
-            </div>
+          {/* Navigation Logo */}
+          <div id="navigation-website-container" onClick={() => {navigate('/')}}>
+            <div id="placeholder-website-icon" />
+            <div id="navigation-website-icon" className={"" + currentPage === 'home' ? "home-icon" : currentPage === "backpack" ? "backpack-icon" : "home-icon" } />
+            <div id="navigation-website-title">Beguiled Socket</div>
+          </div>
 
-            {/* Navigation Headers */}
-            <section id="navigation-header-section">
-              <div id="navigation-guides-container" className="navigation-header-container">
-                <img src={Peridot} alt="Guide Icon" id="navigation-guides-icon" className="navigation-icon" />
-                <div id="navigation-guides-title" className="navigation-title">Guides</div>
-              </div>
-              <div id="navigation-gardening-container" className="navigation-header-container">
-                <img src={Jade} alt="Gardening Icon" id="navigation-gardening-icon" className="navigation-icon" />
-                <div id="navigation-gardening-title" className="navigation-title">Gardening</div>
-              </div>
-              <div id="navigation-backpack-container" className="navigation-header-container"
-                onClick={() => { navigate('/backpack'); }}>
-                <img src={Amethyst} alt="Backpack Icon" id="navigation-backpack-icon" className="navigation-icon"/>
-                <div id="navigation-backpack-title" className="navigation-title">Backpack</div>
-              </div>
-            </section>
+          {/* Navigation Headers */}
+          <section id="navigation-header-section">
+            <div id="navigation-guides-container" className="navigation-header-container">
+              <img src={Peridot} alt="Guide Icon" id="navigation-guides-icon" className="navigation-icon" />
+              <div id="navigation-guides-title" className="navigation-title">Guides</div>
+            </div>
+            <div id="navigation-gardening-container" className="navigation-header-container">
+              <img src={Jade} alt="Gardening Icon" id="navigation-gardening-icon" className="navigation-icon" />
+              <div id="navigation-gardening-title" className="navigation-title">Gardening</div>
+            </div>
+            <div id="navigation-backpack-container" className="navigation-header-container"
+              onClick={() => { navigate('/backpack/information?page=2'); }}>
+              <img src={Amethyst} alt="Backpack Icon" id="navigation-backpack-icon" className="navigation-icon"/>
+              <div id="navigation-backpack-title" className="navigation-title">Backpack</div>
+            </div>
           </section>
+        </section>
       </div>
       <main>
         <Outlet />
